@@ -2,10 +2,10 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
-
 [submodule ".zsh/custom/themes/powerlevel9k"]
 	path = .zsh/custom/themes/powerlevel9k
 	url = https://github.com/bhilburn/powerlevel9k.git
 [submodule ".awesome-terminal-fonts"]
 	path = .awesome-terminal-fonts
 	url = https://github.com/gabrielelana/awesome-terminal-fonts.git
+	branch = patching-strategy

@@ -1,10 +1,12 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/ja1034/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
+export DEFAULT_USER=janwillhaus
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+
 ZSH_CUSTOM=$HOME/.zsh/custom
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='awesome-patched'
@@ -14,7 +16,7 @@ POWERLEVEL9K_MODE='awesome-patched'
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -42,7 +44,7 @@ POWERLEVEL9K_MODE='awesome-patched'
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+# HIST_STAMPS="dd.mm.yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -88,12 +90,10 @@ source $ZSH/oh-my-zsh.sh
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # User specific aliases and functions
 
-alias ls='ls -lah --color=auto'
+alias ls='ls -lah'
 
-set show-all-if-ambiguous on
-set completion-ignore-case on
-
-#complete -cf sudo
+#set show-all-if-ambiguous on
+#set completion-ignore-case on
 
 
 # Various aliases for cool commands
