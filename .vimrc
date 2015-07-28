@@ -5,6 +5,8 @@ source ~/.vim/sources/mappings.vim
 " Lines of history
 set history=700
 
+" Highlight current line
+set cul
 
 " Set to auto read when file is changed from the outside
 set autoread
