@@ -1,4 +1,7 @@
 
+" Include other config files
+source ~/.vim/sources/mappings.vim
+
 " Lines of history
 set history=700
 
