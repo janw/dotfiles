@@ -11,6 +11,12 @@ ZSH_CUSTOM=$HOME/.zsh/custom
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='awesome-patched'
 
+# Modify left prompt from the default
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context virtualenv dir vcs)
+POWERLEVEL9K_VIRTUALENV_BACKGROUND="black"
+POWERLEVEL9K_VIRTUALENV_FOREGROUND="white"
+
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -53,7 +59,9 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git virtualenv)
+
+
 
 # User configuration
 
