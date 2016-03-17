@@ -33,5 +33,6 @@ else
 fi
 
 # Finally change shell
-chsh -s $(which zsh) 
+chsh -s $(which zsh)
+
 
