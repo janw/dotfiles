@@ -14,21 +14,21 @@ ln -s $DOTDIR/.zsh       $HOME
 ln -s $DOTDIR/.vim       $HOME
 ln -s $DOTDIR/.vimrc     $HOME
 
-# Move into font directory
-cd .awesome-terminal-fonts/patched
 
-# Copy font to library and clear font cache for user fonts
+# Link font to library and clear font cache for user fonts
 if [ "$(uname)" = "Darwin" ]
 then
-    cp SourceCodePro+Powerline+Awesome+Regular.* ~/Library/Fonts/
+
+    ln -s $DOTDIR/.awesome-terminal-fonts/patched/*.sh $HOME/Library/Fonts/
+    ln -s $DOTDIR/.awesome-terminal-fonts/patched/*.ttf $HOME/Library/Fonts/
     atsutil databases -remove
 
-    open $DOTDIR/Solarized\ Dark\ SourceCodePro\ Powerline.terminal
-    open $DOTDIR/Solarized\ Light\ SourceCodePro\ Powerline.terminal
 else
-    mkdir -p ~/.fonts
-    cp -f SourceCodePro+Powerline+Awesome+Regular.* ~/.fonts
-    fc-cache -fv ~/.fonts
+    mkdir -p $HOME/.local/share/fonts
+    ln -s $DOTDIR/.awesome-terminal-fonts/patched/*.sh $HOME/.local/share/fonts
+    ln -s $DOTDIR/.awesome-terminal-fonts/patched/*.ttf $HOME/.local/share/fonts
+
+    fc-cache -f
     echo "Remember to change the console font accordingly!"
 fi
 
