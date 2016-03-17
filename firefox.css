@@ -139,6 +139,34 @@ toolbarbutton > image {
 }
 
 
+/* Style the toolbar buttons */
+
+.findbar-button:not(:-moz-any([checked="true"],[disabled="true"])) > .toolbarbutton-text,
+:-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
+:-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
+:-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1 > .toolbarbutton-badge-stack,
+:-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1 > .toolbarbutton-icon {
+ background: var(--main-theme-bg-color);
+   opacity: 0.5;
+   padding: 3px 3px !important;
+   margin: 1px !important;
+   border-radius: 0px;
+   border: none !important;
+}
+.findbar-button:not(:-moz-any([checked="true"],[disabled="true"])):hover > .toolbarbutton-text,
+:-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1[open]:not([disabled=true]) > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
+:-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:not([disabled=true]):not([open]):hover > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
+:-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:not([disabled=true]):not([open]):hover > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
+:-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:not([disabled=true]):hover > .toolbarbutton-badge-stack,
+:-moz-any(#TabsToolbar, #nav-bar) .toolbarbutton-1:not([disabled=true]):hover > .toolbarbutton-icon {
+    background: var(--main-theme-bg-border-color);
+    border-radius: 0px;
+    border: none !important;
+    filter: grayscale(100%);
+    opacity: 1;
+}
+
+
 /* SSLeuth (extension) specific changes
 *
 * Support for SSLeuth extension has been built in to allow proper assessments
@@ -352,13 +380,6 @@ will not work correctly in overflow mode */
 .tabbrowser-tabs .tab-throbber[selected="true"],
 .tabbrowser-tabs .tab-icon-image[selected="true"] {
     filter: grayscale(0%);
-}
-
-
-
-/* Border around window when non-fullscreen */
-#downloads-button, #new-tab-button, #ctraddon_bookmarks-button, #ctraddon_reload-button, #bookmarks-button, #reload-button, .tab-icon-image {
-    opacity: 0.6 !important;
 }
 
 
