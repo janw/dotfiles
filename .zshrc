@@ -7,10 +7,17 @@ export DEFAULT_USER=jan
 export EDITOR=vim
 
 # Set the theme
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_MODE='awesome-patched'
+case $(tty) in
+    /dev/tty[0-9])
+        ZSH_THEME="af-magic"
+    ;;
+    *)
+        ZSH_THEME="powerlevel9k/powerlevel9k"
+esac
 
-# Modify left prompt from the default
+
+# Modify powerline styling
+POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context virtualenv dir vcs)
 POWERLEVEL9K_VIRTUALENV_BACKGROUND="black"
 POWERLEVEL9K_VIRTUALENV_FOREGROUND="white"
