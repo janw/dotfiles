@@ -1,16 +1,16 @@
 /* Firefox or Thunderbird Black Slate
 * (c) 2016 Jan Willhaus <mail@janwillhaus.de>
-* 
+*
 * Contains code from Mozilla Firefox 29, specifically
 * <chrome://browser/skin/browser.css> and
 * <chrome://global/skin/icons/close.svg>.
-* 
+*
 * This Source Code Form is subject to the terms of the Mozilla Public
 * License, v. 2.0. If a copy of the MPL was not distributed with this
 * file, You can obtain one at https://mozilla.org/MPL/2.0/.
-* 
+*
 * For use with the default themes in Firefox or Thunderbird.
-* 
+*
 * Note:  In order to make maintenance easier, the same code is used for
 * both the Firefox and Thunderbird versions of this style.  The *only*
 * change necessary for Thunderbird is to replace all instances of
@@ -19,12 +19,12 @@
 *
 * Vim:  :%s/\(#\)TabsToolbar/\1tabs-toolbar/g|%s/\(\.\)tabbrowser/\1tabmail/g
 * Sed:  sed -e 's/\(#\)TabsToolbar/\1tabs-toolbar/g;s/\(\.\)tabbrowser/\1tabmail/g'
-* 
+*
 * To change it back:
-* 
+*
 * Vim:  :%s/\(#\)tabs-toolbar/\1TabsToolbar/g|%s/\(\.\)tabmail/\1tabbrowser/g
 * Sed:  sed -e 's/\(#\)tabs-toolbar/\1TabsToolbar/g;s/\(\.\)tabmail/\1tabbrowser/g'
-* 
+*
 */
 
 /* Color variables */
@@ -46,7 +46,6 @@
     --main-border-radius:                   8px;
     --main-font-family:                     "Inconsolata Awesome", Inconsolata, monospace !important;
     --main-font-size:                       15px;
-
 }
 
 
@@ -152,7 +151,7 @@ toolbarbutton > image {
 
 #ssleuth-box-urlbar {
     background: transparent;
-    margin-left: 0px; 
+    margin-left: 0px;
     margin-right: 0;
     padding-left: 4px;
 }
@@ -167,12 +166,12 @@ toolbarbutton > image {
 }
 #ssleuth-ub-rank{
     font-size: var(--main-font-size);
-    color: var(--main-theme-bg-color) !important; 
+    color: var(--main-theme-bg-color) !important;
 }
 
 #ssleuth-box-urlbar {
     background-image: none !important;
-    padding-right: 7px; 
+    padding-right: 7px;
     border-radius: 0 8px 8px 0;
 }
 #ssleuth-box-urlbar[rank="default"] {
@@ -222,20 +221,20 @@ toolbarbutton > image {
     display:none !important;
 }
 
-#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #identity-icon { 
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #identity-icon {
     display: none;
 }
 
 #identity-box.verifiedIdentity {
-    padding-top: 0 !important; 
-    padding-bottom: 0 !important; 
-    font-size: var(--main-font-size); 
-    color: var(--main-theme-bg-color) !important; 
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    font-size: var(--main-font-size);
+    color: var(--main-theme-bg-color) !important;
     background: var(--main-theme-success-color) !important;
     border-radius: 0 8px 8px 0 !important;
 }
 
-#identity-box:before {display: -moz-box; -moz-box-align: center;} 
+#identity-box:before {display: -moz-box; -moz-box-align: center;}
 #urlbar #identity-box.verifiedIdentity:before {
     padding-right: 0.3em;
     content:"EV:";
@@ -365,7 +364,7 @@ will not work correctly in overflow mode */
 
 /* Hide close, stop, and reload buttons */
 
-#urlbar-reload-button, 
+#urlbar-reload-button,
 #urlbar-stop-button,
 .tab-close-button,
 .tabs-closebutton {
