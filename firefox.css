@@ -1,41 +1,95 @@
 /* Firefox or Thunderbird Black Slate
- * (c) 2016 Jan Willhaus <mail@janwillhaus.de>
- * 
- * Contains code from Mozilla Firefox 29, specifically
- * <chrome://browser/skin/browser.css> and
- * <chrome://global/skin/icons/close.svg>.
- * 
- * This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at https://mozilla.org/MPL/2.0/.
- * 
- * For use with the default themes in Firefox or Thunderbird.
- * 
- * Note:  In order to make maintenance easier, the same code is used for
- * both the Firefox and Thunderbird versions of this style.  The *only*
- * change necessary for Thunderbird is to replace all instances of
- * "(#)TabsToolbar" with "(#)tabs-toolbar" and to replace all instances of
- * "(.)tabbrowser" with "(.)tabmail" (ignore the parentheses):
- *
- * Vim:  :%s/\(#\)TabsToolbar/\1tabs-toolbar/g|%s/\(\.\)tabbrowser/\1tabmail/g
- * Sed:  sed -e 's/\(#\)TabsToolbar/\1tabs-toolbar/g;s/\(\.\)tabbrowser/\1tabmail/g'
- * 
- * To change it back:
- * 
- * Vim:  :%s/\(#\)tabs-toolbar/\1TabsToolbar/g|%s/\(\.\)tabmail/\1tabbrowser/g
- * Sed:  sed -e 's/\(#\)tabs-toolbar/\1TabsToolbar/g;s/\(\.\)tabmail/\1tabbrowser/g'
- * 
- */
+* (c) 2016 Jan Willhaus <mail@janwillhaus.de>
+* 
+* Contains code from Mozilla Firefox 29, specifically
+* <chrome://browser/skin/browser.css> and
+* <chrome://global/skin/icons/close.svg>.
+* 
+* This Source Code Form is subject to the terms of the Mozilla Public
+* License, v. 2.0. If a copy of the MPL was not distributed with this
+* file, You can obtain one at https://mozilla.org/MPL/2.0/.
+* 
+* For use with the default themes in Firefox or Thunderbird.
+* 
+* Note:  In order to make maintenance easier, the same code is used for
+* both the Firefox and Thunderbird versions of this style.  The *only*
+* change necessary for Thunderbird is to replace all instances of
+* "(#)TabsToolbar" with "(#)tabs-toolbar" and to replace all instances of
+* "(.)tabbrowser" with "(.)tabmail" (ignore the parentheses):
+*
+* Vim:  :%s/\(#\)TabsToolbar/\1tabs-toolbar/g|%s/\(\.\)tabbrowser/\1tabmail/g
+* Sed:  sed -e 's/\(#\)TabsToolbar/\1tabs-toolbar/g;s/\(\.\)tabbrowser/\1tabmail/g'
+* 
+* To change it back:
+* 
+* Vim:  :%s/\(#\)tabs-toolbar/\1TabsToolbar/g|%s/\(\.\)tabmail/\1tabbrowser/g
+* Sed:  sed -e 's/\(#\)tabs-toolbar/\1TabsToolbar/g;s/\(\.\)tabmail/\1tabbrowser/g'
+* 
+*/
+
+/* Color variables */
+:root {
+    --main-theme-bg-color:                  #222222; /* Overall background */
+    --main-theme-bg-border-color:           #333333; /* Used on borders when their contents are of bg-color */
+    --main-theme-bg-selected-color:         #285577; /* Used on selected browser tabs */
+    --main-theme-bg-selected-border-color:  #4c7899; /* Used on selected browser tabs */
+
+    --main-theme-text-prm-color:            #dddddd; /* Primary text color */
+    --main-theme-text-bright-color:         #ffffff; /* Alternative text color (for increased invisibility) */
+    --main-theme-text-dimm-color:           #888888; /* Alternative text color (for decreased invisibility) */
+
+    --main-theme-alert-color:               rgba(238, 99, 82,0.9);
+    --main-theme-warning-color:             rgba(250,192, 94,0.7);
+    --main-theme-notify-color:              rgba( 89,205,144,0.7);
+    --main-theme-success-color:             rgba( 89,205,144,1.0);
+
+    --main-border-radius:                   8px;
+    --main-font-family:                     "Inconsolata Awesome", Inconsolata, monospace !important;
+    --main-font-size:                       15px;
+
+}
+
 
 
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 
 
-/* Border around window when non-fullscreen */
+#main-window {
+    -moz-appearance: none !important;
+    background: var(--main-theme-bg-color) !important;
+}
 
 #main-window[sizemode="normal"]:not([inFullscreen]) #nav-bar,
 #main-window[sizemode="maximized"] #nav-bar {
     border-radius: 0px !important;
+    background: var(--main-theme-bg-color) !important;
+}
+
+menubar {
+    -moz-appearance: none !important;
+    border-color: var(--main-theme-bg-border-color) !important;
+    text-shadow: none !important;
+}
+menubar > menu {
+    -moz-appearance: none !important;
+    color: var(--main-theme-text-dimm-color) !important;
+    font-family: var(--main-font-family);
+}
+
+menubar > menu:hover {
+    color: var(--main-theme-text-prm-color) !important;
+
+}
+
+
+/* Grayscale private browsing indicator */
+
+.private-browsing-indicator,
+* #private-browsing-indicator-titlebar,
+* #private-browsing-indicator,
+* .private-browsing-indicator {
+    opacity: 0.7;
+    filter: grayscale(100%) brightness(220%);
 }
 
 
@@ -43,110 +97,117 @@
 
 #urlbar, #searchbar .searchbar-textbox {
     margin-left: 10px !important;
-    background: #333333 !important;
+    background: var(--main-theme-bg-border-color) !important;
     box-shadow: none !important;
-    border-color:  #333333!important;
+    border-color:  var(--main-theme-bg-border-color) !important;
     border-radius: 0px !important;
-    color: #dddddd !important;
-    font-family: "Inconsolata Awesome" !important;
-    font-size: 15px !important;
+    color: var(--main-theme-text-prm-color) !important;
+    font-family: var(--main-font-family);
+    font-size: var(--main-font-size) !important;
 
 }
 
 #searchbar .searchbar-textbox {
-   margin-left: 0 !important;
+    margin-left: 0 !important;
 }
 
 
 /* URL and Search (Nav) bar */
 
 #nav-bar {
-    background: #222222 !important;
+    background: var(--main-theme-bg-color) !important;
     box-shadow: none !important;
     border: none !important;
     margin: 0px !important;
-    color: #dddddd !important;
+    color: var(--main-theme-text-prm-color) !important;
 }
 
 
 /* Back and forward buttons */
 
 #back-button .toolbarbutton-icon, #forward-button .toolbarbutton-icon {
-   border-radius: 0px!important;
-   background: #222222 !important;
-   border: 1px solid #333333 !important;
-   color: #dddddd !important;
+    border-radius: 0px!important;
+    background: var(--main-theme-bg-color) !important;
+    border: 1px solid var(--main-theme-bg-border-color) !important;
+    color: var(--main-theme-text-prm-color) !important;
+}
+
+
+/* Remove unnecessary toolbar button borders */
+
+toolbarbutton > image {
+    border: none !important;
 }
 
 
 /* SSLeuth (extension) specific changes
- *
- * Support for SSLeuth extension has been built in to allow proper assessments
- * on the quality of the current connection's SSL state. Ratings are properly
- * colored and are integrated with Firefox'es internal SSL state icons.
- *
- * Everyone should consider using SSLeuth:
- * https://addons.mozilla.org/de/firefox/addon/ssleuth/
- */
+*
+* Support for SSLeuth extension has been built in to allow proper assessments
+* on the quality of the current connection's SSL state. Ratings are properly
+* colored and are integrated with Firefox'es internal SSL state icons.
+*
+* Everyone should consider using SSLeuth:
+* https://addons.mozilla.org/de/firefox/addon/ssleuth/
+*/
 
 #ssleuth-box-urlbar {
-   background: transparent;
-   margin-left: 0px; 
-   margin-right: 0;
-   padding-left: 4px;
+    background: transparent;
+    margin-left: 0px; 
+    margin-right: 0;
+    padding-left: 4px;
 }
 
 #ssleuth-ub-img {
-   display: none !important;
+    display: none !important;
 }
 
 #ssleuth-ub-rank:not([rank="default"]):before{
-   content: "SSL: ";
-   font-weight: bold;
+    content: "SSL: ";
+    font-weight: bold;
 }
 #ssleuth-ub-rank{
-   font-size: 15px;
-   color: #222222 !important; 
+    font-size: var(--main-font-size);
+    color: var(--main-theme-bg-color) !important; 
 }
 
 #ssleuth-box-urlbar {
-   background-image: none !important;
-   padding-right: 7px; 
-   border-radius: 0 8px 8px 0;
+    background-image: none !important;
+    padding-right: 7px; 
+    border-radius: 0 8px 8px 0;
 }
 #ssleuth-box-urlbar[rank="default"] {
-   display: none !important;
+    display: none !important;
 }
 #ssleuth-box-urlbar[rank="low"] {
-   background: rgba(238,99,82,0.9);
+    background: var(--main-theme-alert-color);
 }
 #ssleuth-box-urlbar[rank="medium"] {
-   background: rgba(250,192,94,0.7);
+    background: var(--main-theme-warning-color);
 }
 #ssleuth-box-urlbar[rank="high"] {
-   background: rgba(89,205,144,0.7);
+    background: var(--main-theme-notify-color);
 }
 #ssleuth-box-urlbar[rank="vhigh"] {
-   background: rgba(89,205,144,1);
+    background: var(--main-theme-success-color);
 }
 
 
 /* Identity box */
 
 #identity-box {
-   margin-left: -8px;
-   padding-left: 8px;
+    margin-left: -8px;
+    padding-left: 8px;
 }
- 
+
 #identity-box.weakCipher,
 #identity-box.mixedDisplayContent,
 #identity-box.mixedDisplayContentLoadedActiveBlocked {
-   background: rgba(238,99,82,0.9) !important;
+    background: var(--main-theme-alert-color) !important;
 
 }
 
 #identity-box:hover {
-   backface-visibility: #444 !important;
+    backface-visibility: #444 !important;
 }
 
 #identity-icon-country-label {padding-top: 2px; font-size: 0.75em ;}
@@ -158,38 +219,42 @@
 
 
 #main-window[stylish-url^="https://"] #connection-icon{
-   display:none !important;
+    display:none !important;
 }
 
 #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #identity-icon { 
-   display: none;
+    display: none;
 }
 
-#identity-box.verifiedIdentity {padding-top: 0 !important; padding-bottom: 0; font-size: 15px; color: #222 !important; background:rgba(89,205,144,0.99) !important;   border-radius: 0 8px 8px 0 !important;
+#identity-box.verifiedIdentity {
+    padding-top: 0 !important; 
+    padding-bottom: 0 !important; 
+    font-size: var(--main-font-size); 
+    color: var(--main-theme-bg-color) !important; 
+    background: var(--main-theme-success-color) !important;
+    border-radius: 0 8px 8px 0 !important;
 }
 
 #identity-box:before {display: -moz-box; -moz-box-align: center;} 
 #urlbar #identity-box.verifiedIdentity:before {
-   padding-right: 0.3em;
-   content:"EV:";
-   font-weight: bold;
+    padding-right: 0.3em;
+    content:"EV:";
+    font-weight: bold;
 }
-
 
 #identity-icon {
- margin-left: 5px;
+    margin-left: 5px;
 }
-
 
 
 /* Search field */
+
 #searchbar .search-go-button {
-	display: none !important;
+    display: none !important;
 }
 
-
 #searchbar .searchbar-dropmarker-image {
-	display: none !important;
+    display: none !important;
 }
 
 
@@ -197,218 +262,246 @@
 
 
 #TabsToolbar {
- padding-right: 0 !important;
+    -moz-appearance: none !important;
+    background: var(--main-theme-bg-color) !important;
+    padding-right: 0 !important;
 }
 
 .tabbrowser-tabs {
- -moz-appearance: none !important;
- background: #222222;
- margin: 0 !important;
- min-height: 0 !important;
- z-index: 1 !important;
+    -moz-appearance: none !important;
+    background: var(--main-theme-bg-color) !important;
+    margin: 0 !important;
+    min-height: 0 !important;
+    z-index: 1 !important;
 }
 
-/* Must be `... > scrollbox`, not `... > .arrowscrollbox-scrollbox`
-   for Thunderbird */
 .tabbrowser-tabs .tabbrowser-arrowscrollbox > scrollbox {
- padding: 0 !important;
+    padding: 0 !important;
 }
 
 .tabbrowser-tabs .tabbrowser-arrowscrollbox > .scrollbutton-up:not([disabled]),
 .tabbrowser-tabs .tabbrowser-arrowscrollbox > .scrollbutton-down:not([disabled]) {
- border-style: none !important;
+    border-style: none !important;
 }
 
 .tabbrowser-tabs .scrollbutton-up {
- padding-left: 3px !important;
+    padding-left: 3px !important;
 }
 
 .tabbrowser-tabs .scrollbutton-up[disabled="true"] {
- padding-left: 1px !important;
+    padding-left: 1px !important;
 }
 
 /* Fix extra space between rows of tabs with Tab Mix Plus multibar mode */
 .tabbrowser-tabs[multibar] .tabbrowser-tab {
- vertical-align: top !important;
+    vertical-align: top !important;
 }
 
 /* margin-right has to be done on .tab-stack, not tab; otherwise pinned tabs
-   will not work correctly in overflow mode */
+will not work correctly in overflow mode */
 .tabbrowser-tabs .tab-stack {
- min-height: 30px !important;
- height: 30px !important;  /* That's Numberwang! */
- max-height: 30px !important;
- margin-right: 1px !important;  /* That's Numberwang! */
+    min-height: 30px !important;
+    height: 30px !important;
+    max-height: 30px !important;
+    margin-right: 1px !important;
+    padding-bottom: 1px !important;
+    font-family: var(--main-font-family);
+    font-size: var(--main-font-size);
 }
 
 .tabbrowser-tabs .tab-background {
- margin: 0 !important;
+    margin: 0 !important;
 }
 
-.tabbrowser-tabs .tab-background[selected=true] {
- background: #2222ff !important;
-}
 
 .tabbrowser-tabs .tab-background-start,
 .tabbrowser-tabs .tab-background-end {
- display: none !important;
+    display: none !important;
 }
 
 /* Making this display: none; causes tabs to not respond to clicks */
 .tabbrowser-tabs .tab-background-middle {
- margin: 0 !important;
- border-style: none !important;
- background: #222222 !important;
+    margin: 0 !important;
+    border-style: none !important;
+    background: var(--main-theme-bg-color) !important;
 }
 
 .tabbrowser-tabs .tab-content {
- padding: 0 6px !important;  /* That's Numberwang! */
- background-color: #222222 !important;
- color: #dddddd !important;
- border: 2px solid #333333;
+    padding: 0 8px !important;
+    background-color: var(--main-theme-bg-color) !important;
+    color: var(--main-theme-text-dimm-color) !important;
+    border: 1px solid var(--main-theme-bg-border-color);
 }
 
-/* Fix extra padding caused by <https://hg.mozilla.org/mozilla-central/diff/666746987b4b/browser/themes/shared/tabs.inc.css#l1.12> */
-.tabbrowser-tabs .tab-content[pinned] {
- -moz-padding-end: 0 !important;
-}
 
 .tabbrowser-tabs .tab-content[selected=true] {
- color: HighlightText !important;
+    color: var(--main-theme-text-bright-color) !important;
+    border: 1px solid var(--main-theme-bg-selected-border-color) !important;
+    background: var(--main-theme-bg-selected-color) !important;
 }
 
-/* Fix position of title-changed-in-pinned-tab indicator */
-.tabbrowser-tabs .tabbrowser-tab[pinned][titlechanged]:not([selected="true"]) > .tab-stack > .tab-content {
- background-position: center bottom 0 !important;
-}
+
+
+
+/* Tab icons and throbbers in grayscale when not selected */
 
 .tabbrowser-tabs .tab-throbber,
 .tabbrowser-tabs .tab-icon-image {
- margin-top: 0 !important;
+    margin-top: 0 !important;
+    filter: brightness(90%) grayscale(100%) ;
 }
-
-.tabbrowser-tabs .tab-content:not([pinned]) .tab-throbber,
-.tabbrowser-tabs .tab-content:not([pinned]) .tab-icon-image {
- -moz-margin-end: 5px !important;
-}
-
-.tabbrowser-tabs .tab-close-button {
- margin: -1px 0 0 5px !important;
+.tabbrowser-tabs .tab-throbber[selected="true"],
+.tabbrowser-tabs .tab-icon-image[selected="true"] {
+    filter: grayscale(0%);
 }
 
 
 
-/* Close button icon */
-
-.tabbrowser-tabs .tab-close-button,
-#TabsToolbar .tabs-closebutton {
-   width: 12px !important; height: 12px !important;
+/* Border around window when non-fullscreen */
+#downloads-button, #new-tab-button, #ctraddon_bookmarks-button, #ctraddon_reload-button, #bookmarks-button, #reload-button, .tab-icon-image {
+    opacity: 0.6 !important;
 }
 
-.tabbrowser-tabs .tab-close-button:not([selected]):not(:hover),
-.tabbrowser-tabs .tab-close-button[selected]:not(:hover),
-#TabsToolbar .tabs-closebutton:not([selected]):not(:hover),
-#TabsToolbar .tabs-closebutton[selected]:not(:hover) {
- opacity: 0.3 !important;
- filter: invert(1);
+
+/* Hide close, stop, and reload buttons */
+
+#urlbar-reload-button, 
+#urlbar-stop-button,
+.tab-close-button,
+.tabs-closebutton {
+    display: none !important;
 }
 
-/* Toolbar button */
 
-#TabsToolbar > .tabs-closebutton {
- margin-top: 5px !important;
- color: #a1a1a1 !important;
-}
+/* Fixed tab bar height */
 
-#TabsToolbar .tabs-closebutton .toolbarbutton-icon {
- visibility: collapse !important;
-}
-
-/* End Toolbar button */
-
-/* Fix Tab Mix Plus close-button-on-hover mode */
-.tabbrowser-tabs .tabbrowser-tab .tabs-closebutton {
-   background: none !important;
- background-position: 0 5px !important;
-}
-
-/* End Close button icon */
-
-/* Let's rotate the board! */
-
-.tabbrowser-tabs:not([overflow]) {
-   margin-bottom: 0 !important;  /* That's... *not* Numberwang. */
-}
-
-/* Fix tabbar height */
 #tabbrowser-tabs {
- min-height: 30px !important;
- height: 30px !important;
+    min-height: 30px !important;
+    height: 30px !important;
 }
 
-/* Fix toolbar button positions */
-#TabsToolbar {
- margin-top: calc(30px - 31px + 3px) !important;
-}
-.tabbrowser-tabs {
- margin-top: calc(31px - 30px - 3px) !important;
-}
 
-/* Fix scrollbutton icon and shadow positions with above hack */
-#TabsToolbar .scrollbutton-up,
-#TabsToolbar .scrollbutton-down {
- margin-bottom: calc(31px - 30px - 1px) !important;
-}
-#TabsToolbar .arrowscrollbox-overflow-start-indicator,
-#TabsToolbar .arrowscrollbox-overflow-end-indicator {
- background-size: 100% calc(100% - 2px) !important;
-}
+/* Pinned tabs */
 
+.tabbrowser-tabs .tab-content[pinned] {
+    padding: 0 0px !important;
+    margin: 0 !important;
+    width: 33px;
+}
 .tabbrowser-tabs .tab-content[pinned] .tab-throbber,
 .tabbrowser-tabs .tab-content[pinned] .tab-icon-image {
- -moz-margin-end: 5px !important;
+    padding: 0 !important;
+    margin-left: 7px !important;
+    -moz-margin-before: 0px !important;
+    -moz-margin-end: 0px !important;
+    filter: none !important;
+    opacity: 0.99 !important;
+}
+.tabbrowser-tabs .tab-content[pinned] .tab-text {
+    visibility: hidden !important;
+}
+.tabbrowser-tabs .tab-content[pinned] {
+    -moz-padding-end: 0 !important;
 }
 
-.tabbrowser-tabs tab[image]:not([pinned]) .tab-icon-image + .tab-text {
- margin-left: -1px !important
+
+/* Fix position of title-changed-in-pinned-tab indicator */
+
+.tabbrowser-tabs .tabbrowser-tab[pinned][titlechanged]:not([selected="true"]) > .tab-stack > .tab-content {
+    background-position: center bottom 0 !important;
 }
+
 
 /* Remove background tab separators */
+
 .tabbrowser-tabs[movingtab] > .tabbrowser-tab[beforeselected]:not([last-visible-tab])::after,
 .tabbrowser-tabs .tabbrowser-tab:not([selected]):not([afterselected-visible]):not([afterhovered]):not([first-visible-tab]):not(:hover)::before,
 .tabbrowser-tabs:not([overflow]) > .tabbrowser-tab[last-visible-tab]:not([selected]):not([beforehovered]):not(:hover)::after {
- display: none !important;
+    display: none !important;
 }
 
-/* Restore toolbar button style new tab button */
+/* New tab button in grayscale (without replacing the image) */
 
 .tabbrowser-tabs .tabs-newtab-button {
- width: 30px !important;
- margin: 0 !important;
- background: none !important;
+    width: 30px !important;
+    margin: 0 !important;
+    background: none !important;
 }
-
-/* Fix position of new tab button with Tab Mix Plus multibar mode */
-.tabbrowser-tabs[tabmix_australis="true"][multibar] .tabs-newtab-button {
- margin-top: -3px !important;
-}
-
 .tabbrowser-tabs .tabs-newtab-button > .toolbarbutton-icon {
- -moz-margin-end: 0 !important;
- padding: 02px 6px !important;
- border: 1px solid transparent !important;
- border-radius: 2px !important;
- transition-property: background-color, border-color !important;
- transition-duration: 150ms !important;
+    -moz-margin-end: 0 !important;
+    padding: 8px !important;
+    height: 30px;
+    opacity: 0.2;
+    filter: grayscale(100%) contrast(200%) brightness(200%);
+    transition-property: background-color filter opacity !important;
+    transition-duration:200ms !important;
 }
 .tabbrowser-tabs .tabs-newtab-button:not([disabled=true]):hover > .toolbarbutton-icon {
- background-color: hsla(0,0%,100%,.3) !important;
- background-image: linear-gradient(hsla(0,0%,100%,.7), hsla(0,0%,100%,.2)) !important;
- border: 1px solid rgb(154,154,154) !important;
- box-shadow: 0 1px 0 hsla(0,0%,100%,.3) inset,
-             0 0 0 1px hsla(0,0%,100%,.2) inset,
-             0 1px 0 hsla(0,0%,0%,.03) !important;  /* You've been Wangernumbed! */
+    background: #444444 !important;
+    filter: grayscale(100%) contrast(150%) brightness(200%);
+    opacity: 0.4;
 }
 
 
+/* Thunderbird-specific */
+
+/* This part is also included in the Firefox distribution of this style
+in order to make maintenance easier.  "TabsToolbar" and "tabbrowser"
+are replaced appropriately for the Thunderbird distribution as
+described at the top in the header. */
+
+#messengerWindow #TabsToolbar {
+    padding-bottom: 1px !important;
+}
+
+#messengerWindow #TabsToolbar:not(:-moz-lwtheme) {
+    color: -moz-menubartext !important;
+}
+
+#messengerWindow .tabbrowser-tabs .tabbrowser-tab {
+    margin-bottom: 0 !important;
+    color: inherit !important;
+}
+
+#messengerWindow .tabbrowser-tabs .tab-background {
+    opacity: 1 !important;
+}
+
+#messengerWindow .tabbrowser-tabs .tab-text {
+    border-style: none !important;
+    color: inherit !important;
+    opacity: 1 !important;
+}
+
+#messengerWindow .contentTabToolbox {
+    border-bottom-style: none !important;
+}
+
+/* Fix toolbar button positions */
+#messengerWindow #TabsToolbar > :not(#tabcontainer) {
+    margin-bottom: -2px !important;
+}
+
+/* Undo some Firefox fixes */
+#messengerWindow .tabbrowser-tabs:not([overflow]) {
+    margin-bottom: 0 !important;
+}
+
+#messengerWindow .tabbrowser-tabs .tab-content:not([pinned]) .tab-throbber,
+#messengerWindow .tabbrowser-tabs .tab-content:not([pinned]) .tab-icon-image {
+    -moz-margin-end: 6px !important;
+}
+
+/* End Thunderbird-specific */
+
+
+#notification-popup-box {
+    -moz-appearance: none !important;
+    background: transparent !important;
+    background-image: none!important;
+    box-shadow: none !important;
+    border-image: none !important;
+    border: 0px;
+    list-style-image: none;
+}
 
