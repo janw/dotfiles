@@ -9,3 +9,6 @@
 	path = .awesome-terminal-fonts
 	url = https://github.com/gabrielelana/awesome-terminal-fonts.git
 	branch = patching-strategy
+[submodule "opt/i3lock-fancy"]
+	path = opt/i3lock-fancy
+	url = https://github.com/meskarune/i3lock-fancy.git
