@@ -115,4 +115,6 @@ alias ls='ls -lah'
 # Various aliases for cool commands
 alias UbuntuVersion="lsb_release -a | grep \"Release:\|Codename:\" | awk '{print $2}'"
 alias dig='dig ANY'
-#export PROMPT_COMMAND='q="- $(date +%T)"; while [[ ${#q} -lt $COLUMNS ]]; do q="${q:0:1}$q"; done; echo -e "\033[0;90m$q";'
+
+# Avoid homebrew from sending analytics
+export HOMEBREW_NO_ANALYTICS=1
