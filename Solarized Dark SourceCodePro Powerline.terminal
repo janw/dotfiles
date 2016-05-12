@@ -1214,7 +1214,7 @@
 	AAAAABkAAAAAAAAAAAAAAAAAAADb
 	</data>
 	<key>BlinkText</key>
-	<false/>
+	<true/>
 	<key>CommandString</key>
 	<string></string>
 	<key>CursorColor</key>
@@ -1296,7 +1296,7 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
 	AAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5TU2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNs
-	YXNzI0AuAAAAAAAAEBCAAoADXxAmU291cmNlQ29kZVBybytQb3dlcmxpbmUrQXdlc29t
+	YXNzI0AmAAAAAAAAEBCAAoADXxAmU291cmNlQ29kZVBybytQb3dlcmxpbmUrQXdlc29t
 	ZVJlZ3VsYXLSExQVFlokY2xhc3NuYW1lWCRjbGFzc2VzVk5TRm9udKIVF1hOU09iamVj
 	dF8QD05TS2V5ZWRBcmNoaXZlctEaG1Ryb290gAEIERojLTI3PEJLUltiaXJ0dnihprG6
 	wcTN3+LnAAAAAAAAAQEAAAAAAAAAHAAAAAAAAAAAAAAAAAAAAOk=
@@ -1545,9 +1545,9 @@
 	Da0Nsg26Db0Nzw3SDdcAAAAAAAACAQAAAAAAAAAtAAAAAAAAAAAAAAAAAAAN2Q==
 	</data>
 	<key>UseBoldFonts</key>
-	<false/>
-	<key>UseBrightBold</key>
 	<true/>
+	<key>UseBrightBold</key>
+	<false/>
 	<key>blackColour</key>
 	<data>
 	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
@@ -1599,7 +1599,7 @@
 	ZmZmg1MTpj6DeHnQPoPQg+A+AYY=
 	</data>
 	<key>columnCount</key>
-	<integer>150</integer>
+	<integer>90</integer>
 	<key>cyanColour</key>
 	<data>
 	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
@@ -1616,14 +1616,14 @@
 	ZmZmg/4CRz+DBTzdPYMgzt4+AYY=
 	</data>
 	<key>name</key>
-	<string>Solarized Dark</string>
+	<string>Solarized Dark SourceCodePro Powerline</string>
 	<key>redColour</key>
 	<data>
 	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
 	ZmZmg6i7UT+DUATePYMl2hA+AYY=
 	</data>
 	<key>rowCount</key>
-	<integer>48</integer>
+	<integer>42</integer>
 	<key>shellExitAction</key>
 	<integer>1</integer>
 	<key>type</key>
