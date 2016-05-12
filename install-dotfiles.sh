@@ -13,7 +13,7 @@ ln -s $DOTDIR/.zshrc     $HOME
 ln -s $DOTDIR/.zsh       $HOME
 ln -s $DOTDIR/.vim       $HOME
 ln -s $DOTDIR/.vimrc     $HOME
-
+ln -s $DOTDIR/.tmux.conf $HOME
 
 # Link font to library and clear font cache for user fonts
 if [ "$(uname)" = "Darwin" ]
