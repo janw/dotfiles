@@ -117,6 +117,11 @@ export LANG=en_US.UTF-8
 
 alias ls='ls -lah'
 
+# Some hash shortcuts (shasum required)
+alias sha256='shasum -a256'
+alias sha512='shasum -a512'
+alias sha1='shasum -a1'
+
 #set show-all-if-ambiguous on
 #set completion-ignore-case on
 
