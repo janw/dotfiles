@@ -1,6 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export DOTFILES=$HOME/.dotfiles
+export HOSTNAME=$(hostname)
 ZSH_CUSTOM=$HOME/.zsh/custom
 
 # Basic work environment
@@ -70,6 +71,10 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git virtualenv)
+
+if [ $HOSTNAME = "(.*)Informatik\.Uni\-Oldenburg\.DE$" ] && [ "$(uname)" = "Darwin" ]; then
+        plugins=()
+fi
 
 # Tmux-plugin specific settings
 ZSH_TMUX_AUTOSTART="false"
