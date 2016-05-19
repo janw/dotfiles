@@ -5,6 +5,7 @@
 [submodule ".zsh/custom/themes/powerlevel9k"]
 	path = .zsh/custom/themes/powerlevel9k
 	url = https://github.com/bhilburn/powerlevel9k.git
+    branch = master
 [submodule ".awesome-terminal-fonts"]
 	path = .awesome-terminal-fonts
 	url = https://github.com/gabrielelana/awesome-terminal-fonts.git
