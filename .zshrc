@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export DOTFILES=$HOME/.dotfiles
 ZSH_CUSTOM=$HOME/.zsh/custom
 
 # Basic work environment
@@ -111,3 +112,8 @@ set completion-ignore-case on
 
 # Avoid homebrew from sending analytics
 export HOMEBREW_NO_ANALYTICS=1
+
+# Custom functions
+upgrade_dotfiles () {
+    /bin/sh $DOTFILES/upgrade-dotfiles.sh
+}
