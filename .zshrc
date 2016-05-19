@@ -3,8 +3,9 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$HOME/.zsh/custom
 
 # Basic work environment
-export DEFAULT_USER=jan
 export EDITOR=vim
+export DEFAULT_USER=janwillhaus
+
 
 # Set the theme
 case $(tty) in
