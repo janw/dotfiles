@@ -1,6 +1,33 @@
 
+set nocompatible              " required
+filetype off                  " required
+
+" Runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Plugin Area!
+Plugin 'tmhedberg/SimpylFold'
+Bundle 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'altercation/vim-colors-solarized'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 " Include other config files
 source ~/.vim/sources/mappings.vim
+
+" Nerdtree-specific settings
+autocmd vimenter * NERDTree
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Lines of history
 set history=700
