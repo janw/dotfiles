@@ -14,7 +14,8 @@ Plugin 'tmhedberg/SimpylFold'
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
@@ -28,6 +29,13 @@ source ~/.vim/sources/mappings.vim
 autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Airline-specific settings
+set laststatus=2
+let g:airline_theme='solarized'
+let g:airline#extensions#tabline#enabled=1
+let g:airline_powerline_fonts=1
+
 
 " Lines of history
 set history=700
