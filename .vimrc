@@ -38,19 +38,16 @@ set cul
 " Set to auto read when file is changed from the outside
 set autoread
 
-"Always show current position
-set ruler
-
 " Show line numbers
 set number
 
 " Height of the command bar
-set cmdheight=2
+set cmdheight=1
 
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
@@ -63,7 +60,8 @@ set incsearch
 syntax enable
 
 " Configure color scheme and slightly modify line numbers
-colorscheme peachpuff
+set background=dark
+colorscheme solarized
 highlight LineNr ctermfg=green
 
 
@@ -95,36 +93,34 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
 
+" Enable PEP8 compliant python indentation
+au BufNewFile,BufRead *.py;
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
 
+" Enable proper indentation for webdevelopment
+au BufNewFile,BufRead *.js, *.html, *.css;
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
 
-""""""""""""""""""""""""""""""
-" => Status line
-""""""""""""""""""""""""""""""
-" Always show the status line
-set laststatus=2
+" Enable whitespace and tab flagging
+highlight UnwanttedTab ctermbg=red guibg=darkred
+highlight TrailSpace guibg=red ctermbg=darkred
+match UnwanttedTab /\t/
+match TrailSpace / \+$/
 
-" Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
-
-
-
-
-
-
-
-" Returns true if paste mode is enabled
-function! HasPaste()
-    if &paste
-         return 'PASTE MODE  '
-    en
-    return ''
-endfunction
-
-
-
-
-
+autocmd ColorScheme * highlight UnwanttedTab ctermbg=red guibg=darkred
+autocmd ColorScheme * highlight TrailSpace guibg=red ctermbg=darkred
 
 
 
