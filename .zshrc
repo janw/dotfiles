@@ -104,7 +104,6 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias ll='ls -lah'
 alias UbuntuVersion="lsb_release -a | grep \"Release:\|Codename:\" | awk '{print $2}'"
 alias dig='dig ANY'
-source $HOME/.zsh/virtualenv-auto-activate.sh
 
 # Some hash shortcuts (shasum required)
 alias sha256='shasum -a256'
