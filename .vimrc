@@ -28,6 +28,7 @@ source ~/.vim/sources/mappings.vim
 
 " Nerdtree-specific settings
 autocmd vimenter * NERDTree
+autocmd VimEnter * wincmd p
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
