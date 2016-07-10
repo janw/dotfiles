@@ -106,6 +106,9 @@ set wrap "Wrap lines
 set foldmethod=indent
 set foldlevel=99
 
+" Allow proper crontab-editing on macOS
+au BufEnter /private/tmp/crontab.* setl backupcopy=yes
+
 " Enable PEP8 compliant python indentation
 au BufNewFile,BufRead *.py;
     \ set tabstop=4
