@@ -139,5 +139,4 @@ match TrailSpace / \+$/
 autocmd ColorScheme * highlight UnwanttedTab ctermbg=red guibg=darkred
 autocmd ColorScheme * highlight TrailSpace guibg=red ctermbg=darkred
 
-
-
+autocmd BufWritePre *.py %s/\s\+$//e
