@@ -19,6 +19,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'itmammoth/doorboy.vim'
+""Plugin 'elzr/vim-json' "" Useful for working with tons of JSON
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
