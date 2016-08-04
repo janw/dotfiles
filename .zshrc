@@ -110,6 +110,9 @@ alias sha256='shasum -a256'
 alias sha512='shasum -a512'
 alias sha1='shasum -a1'
 
+# Zypper is a damn long word
+alias zy='sudo zypper'
+
 # Shell-specific comfort features
 set show-all-if-ambiguous on
 set completion-ignore-case on
