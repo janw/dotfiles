@@ -8,12 +8,13 @@ DOTDIR=$(pwd)
 git submodule init && git submodule update
 
 # Create symlinks into the home dir to enable usage of the files
-ln -s $DOTDIR/.oh-my-zsh $HOME
-ln -s $DOTDIR/.zshrc     $HOME
-ln -s $DOTDIR/.zsh       $HOME
-ln -s $DOTDIR/.vim       $HOME
-ln -s $DOTDIR/.vimrc     $HOME
-ln -s $DOTDIR/.tmux.conf $HOME
+ln -sf $DOTDIR/.oh-my-zsh $HOME
+ln -sf $DOTDIR/.zshrc     $HOME
+ln -sf $DOTDIR/.zsh       $HOME
+ln -sf $DOTDIR/.vim       $HOME
+ln -sf $DOTDIR/.vimrc     $HOME
+ln -sf $DOTDIR/.tmux.conf $HOME
+ln -sf $DOTDIR/.atom      $HOME
 
 # Link font to library and clear font cache for user fonts
 if [ "$(uname)" = "Darwin" ]

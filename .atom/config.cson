@@ -1,0 +1,20 @@
+"*":
+  core:
+    themes: [
+      "one-light-ui"
+      "solarized-light-syntax"
+    ]
+  editor:
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+    softWrapHangingIndent: 4
+  "exception-reporting":
+    userId: "1a743eaf-a8a8-050d-ec12-e52437e24ab5"
+  "one-light-ui":
+    fontSize: 10
+    layoutMode: "Compact"
+    tabSizing: "Minimum"
+  welcome:
+    showOnStartup: false
