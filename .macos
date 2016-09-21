@@ -634,6 +634,13 @@ defaults write com.tapbots.TweetbotMac streamingPinToTopEnabled -bool false
 defaults write com.tapbots.TweetbotMac showStatusItem -bool false
 
 ###############################################################################
+# System Services                                                             #
+###############################################################################
+
+# Disable Game Center daemon
+launchctl unload -w /System/Library/LaunchAgents/com.apple.gamed.plist
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
