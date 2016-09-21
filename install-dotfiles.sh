@@ -20,14 +20,14 @@ ln -sf $DOTDIR/.atom      $HOME
 if [ "$(uname)" = "Darwin" ]
 then
 
-    ln -s $DOTDIR/.awesome-terminal-fonts/patched/*.sh $HOME/Library/Fonts/
-    ln -s $DOTDIR/.awesome-terminal-fonts/patched/*.ttf $HOME/Library/Fonts/
+    ln -sf $DOTDIR/.awesome-terminal-fonts/patched/*.sh $HOME/Library/Fonts/
+    ln -sf $DOTDIR/.awesome-terminal-fonts/patched/*.ttf $HOME/Library/Fonts/
     atsutil databases -remove
 
 else
     mkdir -p $HOME/.local/share/fonts
-    ln -s $DOTDIR/.awesome-terminal-fonts/patched/*.sh $HOME/.local/share/fonts
-    ln -s $DOTDIR/.awesome-terminal-fonts/patched/*.ttf $HOME/.local/share/fonts
+    ln -sf $DOTDIR/.awesome-terminal-fonts/patched/*.sh $HOME/.local/share/fonts
+    ln -sf $DOTDIR/.awesome-terminal-fonts/patched/*.ttf $HOME/.local/share/fonts
 
     fc-cache -f
     echo "Remember to change the console font accordingly!"
