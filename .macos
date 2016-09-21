@@ -32,8 +32,8 @@ defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 # Disable animation when opening Info dialog
 defaults write com.apple.finder DisableAllAnimations -bool true
 
-# Speed up Mission Control animations
-defaults write com.apple.dock expose-animation-duration -float 0.1
+# Disable Mission Control animations
+defaults write com.apple.dock expose-animation-duration -float 0
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
