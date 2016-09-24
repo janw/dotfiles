@@ -5,6 +5,7 @@
       "solarized-light-syntax"
     ]
   editor:
+    fontSize: 12
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
@@ -12,6 +13,8 @@
     softWrapHangingIndent: 4
   "exception-reporting":
     userId: "1a743eaf-a8a8-050d-ec12-e52437e24ab5"
+  "linter-python-pep8":
+    pep8DirToExecutable: "/usr/local/bin/"
   "one-light-ui":
     fontSize: 10
     layoutMode: "Compact"
