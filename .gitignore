@@ -6,5 +6,6 @@
 /.atom/storage/
 
 # Vim stuff
+/.vim/.netrwhist
 /.vim/bundle/
 !/.vim/bundle/Vundle.vim
