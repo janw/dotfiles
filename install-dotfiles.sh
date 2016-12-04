@@ -13,7 +13,7 @@ ln -sf $DOTDIR/.zshrc     $HOME
 ln -sf $DOTDIR/.zsh       $HOME
 ln -sf $DOTDIR/.vim       $HOME
 ln -sf $DOTDIR/.vimrc     $HOME
-ln -sf $DOTDIR/.tmux.conf $HOME
+#ln -sf $DOTDIR/.tmux.conf $HOME
 ln -sf $DOTDIR/.atom      $HOME
 
 # Link font to library and clear font cache for user fonts
@@ -35,5 +35,3 @@ fi
 
 # Finally change shell
 chsh -s $(which zsh)
-
-
