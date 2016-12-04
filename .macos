@@ -640,6 +640,9 @@ defaults write com.tapbots.TweetbotMac showStatusItem -bool false
 # Disable Game Center daemon
 launchctl unload -w /System/Library/LaunchAgents/com.apple.gamed.plist
 
+# Disable Photo Analysis daemon
+launchctl unload -w /System/Library/LaunchAgents/com.apple.photoanalysisd.plist
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
