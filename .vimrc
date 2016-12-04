@@ -11,7 +11,6 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugin Area!
 Plugin 'tmhedberg/SimpylFold'
-Bundle 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-airline/vim-airline'
