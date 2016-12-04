@@ -1,0 +1,11 @@
+packages: [
+  "autocomplete-python"
+  "fold-functions"
+  "language-ini"
+  "linter"
+  "linter-pep8"
+  "linter-python-pep8"
+  "markdown-preview-plus"
+  "package-sync"
+  "python-indent"
+]

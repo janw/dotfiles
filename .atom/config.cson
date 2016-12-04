@@ -1,5 +1,10 @@
 "*":
   core:
+    disabledPackages: [
+      "metrics"
+      "linter-python-pep8"
+    ]
+    telemetryConsent: "no"
     themes: [
       "one-light-ui"
       "solarized-light-syntax"
@@ -11,13 +16,28 @@
     showInvisibles: true
     softWrap: true
     softWrapHangingIndent: 4
+    tabLength: 4
   "exception-reporting":
     userId: "1a743eaf-a8a8-050d-ec12-e52437e24ab5"
+  "fold-functions":
+    autofoldGrammars: [
+      "Python"
+    ]
+    skipAutofoldWhenOnlyOneFunction: true
+  global:
+    whitespace:
+      removeTrailingWhitespace: false
+  linter:
+    errorPanelHeight: 69
   "linter-python-pep8":
     pep8DirToExecutable: "/usr/local/bin/"
   "one-light-ui":
     fontSize: 10
     layoutMode: "Compact"
     tabSizing: "Minimum"
+  "package-sync":
+    createOnChange: true
+    forceOverwrite: true
   welcome:
     showOnStartup: false
+  whitespace: {}
