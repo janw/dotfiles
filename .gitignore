@@ -1,0 +1,10 @@
+# Atom stuff
+/.atom/blob-store/
+/.atom/compile-cache/
+/.atom/.node-gyp/
+/.atom/packages/
+/.atom/storage/
+
+# Vim stuff
+/.vim/bundle/
+!/.vim/bundle/Vundle.vim
