@@ -15,6 +15,13 @@ ln -sf $DOTDIR/.vim       $HOME
 ln -sf $DOTDIR/.vimrc     $HOME
 #ln -sf $DOTDIR/.tmux.conf $HOME
 ln -sf $DOTDIR/.atom      $HOME
+ln -sf $DOTDIR/.i3        $HOME
+
+# X server files
+ln -sf $DOTDIR/.Xdefaults        $HOME
+ln -sf $DOTDIR/.Xresources.light $HOME
+ln -sf $DOTDIR/.Xresources.dark  $HOME
+
 
 # Link font to library and clear font cache for user fonts
 if [ "$(uname)" = "Darwin" ]
