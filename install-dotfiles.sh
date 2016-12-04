@@ -16,6 +16,7 @@ ln -sf $DOTDIR/.vimrc     $HOME
 #ln -sf $DOTDIR/.tmux.conf $HOME
 ln -sf $DOTDIR/.atom      $HOME
 ln -sf $DOTDIR/.i3        $HOME
+ln -sf $DOTDIR/.compton.conf $HOME
 
 # X server files
 ln -sf $DOTDIR/.Xdefaults        $HOME
