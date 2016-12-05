@@ -71,7 +71,7 @@ set incsearch
 syntax enable
 
 " Configure color scheme and slightly modify line numbers
-set background=light
+set background=dark
 colorscheme solarized
 highlight LineNr ctermfg=green
 
