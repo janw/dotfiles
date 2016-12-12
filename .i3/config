@@ -109,7 +109,9 @@ set $workspace5 "5"
 set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
-set $workspace9 "9"
+set $workspace9 "9 Mail "
+assign [class="Evolution"] $workspace9
+assign [class="Thunderbird"] $workspace9
 set $workspace10 "10 Music "
 assign [class="Spotify"] $workspace10
 
