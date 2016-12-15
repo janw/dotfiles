@@ -73,9 +73,6 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git virtualenv)
 
-if [ $HOSTNAME = "(.*)Informatik\.Uni\-Oldenburg\.DE$" ] && [ "$(uname)" = "Darwin" ]; then
-        plugins=()
-fi
 
 # Tmux-plugin specific settings
 ZSH_TMUX_AUTOSTART="false"
