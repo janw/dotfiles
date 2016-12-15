@@ -73,7 +73,7 @@ set hlsearch
 set incsearch
 
 " Configure color scheme and slightly modify line numbers
-set background=light
+set background=dark
 colorscheme solarized
 highlight LineNr ctermfg=green
 
