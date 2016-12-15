@@ -2,27 +2,32 @@
 set nocompatible              " required
 filetype off                  " required
 
-" Runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Runtime path to include Dein and initialize
+set rtp+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
+call dein#begin('~/.vim/bundle')
 
-" Let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" Let Dein manage Dein, required
+call dein#add('Shougo/dein.vim')
 
 " Plugin Area!
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'itmammoth/doorboy.vim'
+call dein#add('tmhedberg/SimpylFold')
+call dein#add('scrooloose/nerdtree')
+call dein#add('Xuyuanp/nerdtree-git-plugin')
+call dein#add('vim-airline/vim-airline')
+call dein#add('vim-airline/vim-airline-themes')
+call dein#add('altercation/vim-colors-solarized')
+call dein#add('airblade/vim-gitgutter')
+call dein#add('itmammoth/doorboy.vim')
 ""Plugin 'elzr/vim-json' "" Useful for working with tons of JSON
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call dein#end()              " required
 filetype plugin indent on    " required
+syntax enable                " required
+
+if dein#check_install()
+  call dein#install()
+endif
 
 " Include other config files
 source ~/.vim/sources/mappings.vim
@@ -66,9 +71,6 @@ set hlsearch
 
 " Makes search act like search in modern browsers
 set incsearch
-
-" Enable syntax highlighting
-syntax enable
 
 " Configure color scheme and slightly modify line numbers
 set background=light

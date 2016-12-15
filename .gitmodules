@@ -1,15 +1,15 @@
-
+ 
 [submodule ".oh-my-zsh"]
-	path = .oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
+    path = .oh-my-zsh
+    url = https://github.com/robbyrussell/oh-my-zsh.git
 [submodule ".zsh/custom/themes/powerlevel9k"]
-	path = .zsh/custom/themes/powerlevel9k
-	url = https://github.com/bhilburn/powerlevel9k.git
+    path = .zsh/custom/themes/powerlevel9k
+    url = https://github.com/bhilburn/powerlevel9k.git
     branch = master
 [submodule ".awesome-terminal-fonts"]
 	path = .awesome-terminal-fonts
 	url = https://github.com/gabrielelana/awesome-terminal-fonts.git
 	branch = patching-strategy
-[submodule ".vim/bundle/Vundle.vim"]
-	path = .vim/bundle/Vundle.vim
-	url = https://github.com/gmarik/Vundle.vim.git
+[submodule ".vim/bundle/repos/github.com/Shougo/dein.vim"]
+    path = .vim/bundle/repos/github.com/Shougo/dein.vim
+    url = https://github.com/Shougo/dein.vim.git
