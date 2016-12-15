@@ -103,7 +103,6 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 
 # User specific aliases and functions
 alias ll='ls -lah'
-alias UbuntuVersion="lsb_release -a | grep \"Release:\|Codename:\" | awk '{print $2}'"
 alias dig='dig ANY'
 
 # Some hash shortcuts (shasum required)
@@ -124,4 +123,23 @@ export HOMEBREW_NO_ANALYTICS=1
 # Custom functions
 upgrade_dotfiles () {
     /bin/sh $DOTFILES/upgrade-dotfiles.sh
+}
+
+os_version () {
+    #
+    if hash lsb_release 2>/dev/null; then
+        lsb_release -a | grep "Release:|Codename:" | awk '{print $2}'
+    fi
+
+    if [ -f "/etc/issue" ]; then
+        cat /etc/issue
+    fi
+
+    if [ -f "/etc/*-release" ]; then
+        cat /etc/*-release
+    fi
+
+    if hash system_profiler 2>/dev/null; then
+        system_profiler SPSoftwareDataType | grep "System Version:"
+    fi
 }
