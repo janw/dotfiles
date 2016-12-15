@@ -10,7 +10,7 @@
       "solarized-light-syntax"
     ]
   editor:
-    fontSize: 12
+    fontSize: 11
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
