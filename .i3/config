@@ -232,4 +232,4 @@ bindsym XF86AudioPrev exec playerctl previous
 
 exec_always feh --bg-scale ~/Pictures/wallpaper.jpg
 exec_always xrdb -load ~/.Xresources.light
-exec --no-startup-id compton --config ~/.compton.conf
+#exec --no-startup-id compton --config ~/.compton.conf

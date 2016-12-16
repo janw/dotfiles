@@ -31,7 +31,7 @@ esac
 # Modify powerline styling
 POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context virtualenv dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time os_icon)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
 POWERLEVEL9K_VIRTUALENV_BACKGROUND="black"
 POWERLEVEL9K_VIRTUALENV_FOREGROUND="white"
 POWERLEVEL9K_CONTEXT_FOREGROUND='252'
@@ -69,16 +69,16 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # Plugins from ~/.oh-my-zsh/plugins/*
 # Custom plugins from ~/.oh-my-zsh/custom/plugins/*
-plugins=(git virtualenv dotenv)
+plugins=(git virtualenvwrapper dotenv jira)
 
 # Tmux-plugin specific settings
 ZSH_TMUX_AUTOSTART="false"
 ZSH_TMUX_AUTOSTART_ONCE="true"
 
 # User configuration
-
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
+export JIRA_URL="https://jira.tgm.io"
 
 source $ZSH/oh-my-zsh.sh
 
