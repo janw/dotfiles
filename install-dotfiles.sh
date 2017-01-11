@@ -23,6 +23,8 @@ ln -sf $DOTDIR/.Xdefaults        $HOME
 ln -sf $DOTDIR/.Xresources.light $HOME
 ln -sf $DOTDIR/.Xresources.dark  $HOME
 
+# Emacs.d directory
+ln -sf $DOTDIR/.emacs.d          $HOME
 
 # Link font to library and clear font cache for user fonts
 if [ "$(uname)" = "Darwin" ]
