@@ -12,6 +12,7 @@ call dein#add('Shougo/dein.vim')
 " Plugin Area!
 call dein#add('tmhedberg/SimpylFold')
 call dein#add('scrooloose/nerdtree')
+call dein#add('scrooloose/nerdcommenter')
 call dein#add('Xuyuanp/nerdtree-git-plugin')
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
