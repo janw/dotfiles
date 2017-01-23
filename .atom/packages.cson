@@ -1,4 +1,5 @@
 packages: [
+  "auto-detect-indentation"
   "autocomplete-python"
   "fold-functions"
   "language-ini"
