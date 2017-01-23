@@ -24,6 +24,8 @@
       "Python"
     ]
     skipAutofoldWhenOnlyOneFunction: true
+  "git-diff":
+    showIconsInEditorGutter: true
   global:
     whitespace:
       removeTrailingWhitespace: false
