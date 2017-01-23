@@ -19,6 +19,7 @@ call dein#add('vim-airline/vim-airline-themes')
 call dein#add('altercation/vim-colors-solarized')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('itmammoth/doorboy.vim')
+call dein#add('groenewege/vim-less')
 ""Plugin 'elzr/vim-json' "" Useful for working with tons of JSON
 
 " All of your Plugins must be added before the following line
