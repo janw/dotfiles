@@ -13,3 +13,9 @@
 # Emacs stuff
 /.emacs.d/elpa
 /.emacs.d/auto-save-list
+
+# Font stuff
+fantasquesans
+firacode
+FiraCode_*.zip
+FantasqueSansMono.zip
