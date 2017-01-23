@@ -139,11 +139,20 @@ highlight UnwanttedTab ctermbg=red guibg=darkred
 highlight TrailSpace guibg=red ctermbg=darkred
 match UnwanttedTab /\t/
 match TrailSpace / \+$/
-
 autocmd ColorScheme * highlight UnwanttedTab ctermbg=red guibg=darkred
 autocmd ColorScheme * highlight TrailSpace guibg=red ctermbg=darkred
 
+" Remove trailing whitespace in python files automagically on save
 autocmd BufWritePre *.py %s/\s\+$//e
+
+" Enable overly long line flagging and colorcolumn
+if exists('+colorcolumn')
+  set colorcolumn=80
+endif
+
+highlight OverLength ctermbg=red ctermfg=white guibg=darkred
+match OverLength /\%81v.\+/
+
 
 " Custom settings for nerdcommenter
 let g:NERDDefaultAlign = 'left'
