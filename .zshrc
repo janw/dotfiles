@@ -4,6 +4,7 @@ export DOTFILES=$HOME/.dotfiles
 export HOSTNAME=$(hostname)
 ZSH_CUSTOM=$HOME/.zsh/custom
 export TERM="xterm-256color"
+export WORKON_HOME=~/.envs
 
 # Basic work environment
 export EDITOR=vim
