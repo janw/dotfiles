@@ -1,4 +1,6 @@
 "*":
+  "autocomplete-python":
+    useKite: false
   core:
     disabledPackages: [
       "metrics"
