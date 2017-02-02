@@ -30,6 +30,21 @@ ln -sf $DOTDIR/.Xresources.dark  $HOME
 # Emacs.d directory
 ln -sf $DOTDIR/.emacs.d          $HOME
 
+
+# Setup git config
+echo -e "\n\nSetting up global git config ..."
+git config --global core.autocrlf 'input'
+git config --global core.excludesfile "${DOTDIR}/gitignore_global"
+git config --global core.editor 'vim'
+git config --global core.pager 'less -FX'
+git config --global user.name 'Jan Willhaus'
+git config --global user.email 'mail@janwillhaus.de'
+git config --global push.default 'simple'
+
+# Show the config just to be sure
+git config --global -l
+
+
 echo -e "\n\nDownloading additional fonts ..."
 # Download a few new fonts from the web and install them, too.
 wget -nc "https://github.com/tonsky/FiraCode/releases/download/1.204/FiraCode_1.204.zip"
