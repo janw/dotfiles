@@ -35,11 +35,22 @@ ln -sf $DOTDIR/.emacs.d          $HOME
 echo -e "\n\nSetting up global git config ..."
 git config --global core.autocrlf 'input'
 git config --global core.excludesfile "${DOTDIR}/gitignore_global"
+git config --global core.attributesfile "${DOTDIR}/gitattributes_global"
 git config --global core.editor 'vim'
 git config --global core.pager 'less -FX'
 git config --global user.name 'Jan Willhaus'
 git config --global user.email 'mail@janwillhaus.de'
 git config --global push.default 'simple'
+
+## Setup diff filters
+git config --global diff.pandoc2md.textconv 'pandoc --to=markdown'
+git config --global diff.pandoc2md.prompt false
+
+git config --global diff.wrap.textconv 'fmt -w80'
+git config --global diff.wrap.prompt false
+
+git config --global diff.hilighter.textconv 'pygmentize -f terminal256 -O style=fruity'
+git config --global diff.hilighter.prompt false
 
 # Show the config just to be sure
 git config --global -l
