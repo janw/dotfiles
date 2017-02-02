@@ -1,0 +1,6 @@
+*.txt   text
+*.py    diff=hilighter
+*.md    diff=wrap
+*.tex   diff=wrap
+*.docx  diff=pandoc2md
+*.odt   diff=pandoc2md
