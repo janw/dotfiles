@@ -1,0 +1,8 @@
+*~
+.DS_Store
+*.log
+*.blg
+*.bbl
+*.o
+__pycache__
+*.pyc
