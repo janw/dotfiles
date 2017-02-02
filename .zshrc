@@ -108,6 +108,9 @@ alias sha1='shasum -a1'
 # Zypper is a damn long word
 alias zy='sudo zypper'
 
+# Git shortcuts/aliases
+alias glol='git log --oneline --graph --max-count=7 --decorate' #  overwrites plugin's glol!
+
 # Shell-specific comfort features
 set show-all-if-ambiguous on
 set completion-ignore-case on
