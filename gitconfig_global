@@ -1,0 +1,24 @@
+[user]
+    name = Jan Willhaus
+    email = mail@janwillhaus.de
+
+[core]
+    editor = vim
+    precomposeunicode = true
+    pager = less -FX
+    autocrlf = input
+
+[push]
+    default = simple
+
+[diff "hilighter"]
+    textconv = pygmentize -f terminal256 -O style=fruity
+    prompt = false
+
+[diff "pandoc2md"]
+    textconv = pandoc --to=markdown --columns=80
+    prompt = false
+
+[diff "wrap"]
+    textconv = fmt -w80
+    prompt = false
