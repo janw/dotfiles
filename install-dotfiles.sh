@@ -42,9 +42,7 @@ git config -l
 
 
 echo -e "\n\nDownloading additional fonts ..."
-# Download a few new fonts from the web and install them, too.
-wget -nc "https://github.com/tonsky/FiraCode/releases/download/1.204/FiraCode_1.204.zip"
-unzip -n FiraCode_1.204.zip -d firacode 2>&1 > /dev/null
+# Download a fonts from the web and install them.
 
 wget -nc "https://github.com/belluzj/fantasque-sans/releases/download/v1.7.1/FantasqueSansMono.zip"
 unzip -n FantasqueSansMono.zip -d fantasquesans 2>&1 > /dev/null
@@ -56,9 +54,6 @@ then
     echo -e "\n\nWe're on macOS."
 
     echo "Linking fonts ..."
-    ln -sf $DOTDIR/.awesome-terminal-fonts/build/*.sh $HOME/Library/Fonts/
-    ln -sf $DOTDIR/.awesome-terminal-fonts/build/*.ttf $HOME/Library/Fonts/
-    ln -sf $DOTDIR/firacode/otf/*.otf $HOME/Library/Fonts/
     ln -sf $DOTDIR/fantasquesans/OTF/*.otf $HOME/Library/Fonts/
 
     echo "Refreshing font cache ..."
@@ -71,15 +66,10 @@ else
 
 
     echo "Linking fonts ..."
-    ln -sf $DOTDIR/.awesome-terminal-fonts/build/*.sh $HOME/.fonts
-    ln -sf $DOTDIR/.awesome-terminal-fonts/build/*.ttf $HOME/.fonts
-    ln -sf $DOTDIR/10-symbols.conf $HOME/.config/fontconfig/conf.d/
-    ln -sf $DOTDIR/firacode/otf/*.otf $HOME/.fonts
     ln -sf $DOTDIR/fantasquesans/OTF/*.otf $HOME/.fonts
 
     echo "Refreshing font cache ..."
     #fc-cache -f
-    #xsudo dpkg-reconfigure fontconfig
 
     echo "Remember to change the console font accordingly!"
 fi

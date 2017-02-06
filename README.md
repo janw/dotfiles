@@ -4,7 +4,7 @@ My personal set of config files for vim, zsh, git (and probably more to come). I
 
 Simply clone the repository, and run `./install-dotfiles.sh`. This will update all submodules, create symlinks and even add the necessary fonts for Powerline themes ([Powerlevel9k](https://github.com/bhilburn/powerlevel9k), [vim-airline](https://github.com/vim-airline/vim-airline))
 
-    This of course requires at least `git` to be installed, `vim` and `zsh` are recommended, too.
+This of course requires at least `git` to be installed, `vim` and `zsh` are recommended, too.
 
 ```bash
 sudo apt-get install git vim zsh || brew install git vim zsh

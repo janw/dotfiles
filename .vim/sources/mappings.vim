@@ -31,5 +31,3 @@ nnoremap <C-H> <C-W><C-H>
 " Enable folding with the spacebar
 nnoremap <space> za
 
-" Enable changing the colormap using F5
-call togglebg#map("<F5>")
