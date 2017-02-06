@@ -8,8 +8,8 @@
     ]
     telemetryConsent: "no"
     themes: [
-      "one-light-ui"
-      "solarized-light-syntax"
+      "one-dark-ui"
+      "monokai"
     ]
   editor:
     fontSize: 11

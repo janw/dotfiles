@@ -7,6 +7,7 @@ packages: [
   "linter-pep8"
   "linter-python-pep8"
   "markdown-preview-plus"
+  "monokai"
   "package-sync"
   "python-indent"
 ]
