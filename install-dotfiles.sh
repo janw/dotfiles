@@ -42,9 +42,7 @@ git config -l
 
 
 echo -e "\n\nDownloading additional fonts ..."
-# Download a few new fonts from the web and install them, too.
-wget -nc "https://github.com/tonsky/FiraCode/releases/download/1.204/FiraCode_1.204.zip"
-unzip -n FiraCode_1.204.zip -d firacode 2>&1 > /dev/null
+# Download a fonts from the web and install them.
 
 wget -nc "https://github.com/belluzj/fantasque-sans/releases/download/v1.7.1/FantasqueSansMono.zip"
 unzip -n FantasqueSansMono.zip -d fantasquesans 2>&1 > /dev/null
