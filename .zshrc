@@ -1,8 +1,6 @@
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
 export DOTFILES=$HOME/.dotfiles
 export HOSTNAME=$(hostname)
-ZSH_CUSTOM=$HOME/.zsh/custom
 export TERM="xterm-256color"
 export WORKON_HOME=~/.envs
 
@@ -10,77 +8,24 @@ export WORKON_HOME=~/.envs
 export EDITOR=vim
 export DEFAULT_USER=janwillhaus
 
-
-# Set the theme
-case $(tty) in
-    /dev/tty[0-9])
-        ZSH_THEME="af-magic"
-    ;;
-    *)
-        ZSH_THEME="powerlevel9k/powerlevel9k"
-esac
-
-# Modify powerline styling
-POWERLEVEL9K_MODE='awesome-fontconfig'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context virtualenv dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=( time)
-POWERLEVEL9K_VIRTUALENV_BACKGROUND="black"
-POWERLEVEL9K_VIRTUALENV_FOREGROUND="white"
-
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
-POWERLEVEL9K_MULTILINE_SECOND_PROMPT_PREFIX='\uf054 '
-
-POWERLEVEL9K_CHANGESET_HASH_LENGTH=6
-
-POWERLEVEL9K_HIDE_BRANCH_ICON=true
-POWERLEVEL9K_VCS_GIT_ICON=''
-POWERLEVEL9K_HOME_ICON=''
-POWERLEVEL9K_HOME_SUB_ICON=''
-POWERLEVEL9K_FOLDER_ICON=''
-
-
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=10
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-HIST_STAMPS="yyyy-mm-dd"
-
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Plugins from ~/.oh-my-zsh/plugins/*
-# Custom plugins from ~/.oh-my-zsh/custom/plugins/*
-plugins=(git virtualenvwrapper dotenv jira)
-
-# Tmux-plugin specific settings
-ZSH_TMUX_AUTOSTART="false"
-ZSH_TMUX_AUTOSTART_ONCE="true"
-
 # User configuration
 export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
-export JIRA_URL="https://jira.tgm.io"
 
-source $ZSH/oh-my-zsh.sh
+source $HOME/.dotfiles/antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle virtualenvwrapper
+antigen bundle dotenv
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
+antigen apply
 
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8

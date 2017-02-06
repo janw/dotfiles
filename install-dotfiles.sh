@@ -56,9 +56,6 @@ then
     echo -e "\n\nWe're on macOS."
 
     echo "Linking fonts ..."
-    ln -sf $DOTDIR/.awesome-terminal-fonts/build/*.sh $HOME/Library/Fonts/
-    ln -sf $DOTDIR/.awesome-terminal-fonts/build/*.ttf $HOME/Library/Fonts/
-    ln -sf $DOTDIR/firacode/otf/*.otf $HOME/Library/Fonts/
     ln -sf $DOTDIR/fantasquesans/OTF/*.otf $HOME/Library/Fonts/
 
     echo "Refreshing font cache ..."
@@ -71,15 +68,10 @@ else
 
 
     echo "Linking fonts ..."
-    ln -sf $DOTDIR/.awesome-terminal-fonts/build/*.sh $HOME/.fonts
-    ln -sf $DOTDIR/.awesome-terminal-fonts/build/*.ttf $HOME/.fonts
-    ln -sf $DOTDIR/10-symbols.conf $HOME/.config/fontconfig/conf.d/
-    ln -sf $DOTDIR/firacode/otf/*.otf $HOME/.fonts
     ln -sf $DOTDIR/fantasquesans/OTF/*.otf $HOME/.fonts
 
     echo "Refreshing font cache ..."
     #fc-cache -f
-    #xsudo dpkg-reconfigure fontconfig
 
     echo "Remember to change the console font accordingly!"
 fi
