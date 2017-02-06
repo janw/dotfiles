@@ -16,7 +16,7 @@ call dein#add('scrooloose/nerdcommenter')
 call dein#add('Xuyuanp/nerdtree-git-plugin')
 call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
-call dein#add('altercation/vim-colors-solarized')
+call dein#add('flazz/vim-colorschemes')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('itmammoth/doorboy.vim')
 call dein#add('groenewege/vim-less')
@@ -42,9 +42,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Airline-specific settings
 set laststatus=2
-let g:airline_theme='solarized'
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
+let g:airline_theme='molokai'
 
 
 " Lines of history
@@ -76,7 +76,7 @@ set incsearch
 
 " Configure color scheme and slightly modify line numbers
 set background=dark
-colorscheme solarized
+colorscheme monokai
 highlight LineNr ctermfg=green
 
 
