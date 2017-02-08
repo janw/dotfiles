@@ -35,8 +35,8 @@ endif
 source ~/.vim/sources/mappings.vim
 
 " Nerdtree-specific settings
-autocmd vimenter * NERDTree
-autocmd VimEnter * wincmd p
+"autocmd vimenter * NERDTree
+"autocmd VimEnter * wincmd p
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -76,7 +76,7 @@ set incsearch
 
 " Configure color scheme and slightly modify line numbers
 set background=dark
-colorscheme monokai
+colorscheme Monokai
 highlight LineNr ctermfg=green
 
 

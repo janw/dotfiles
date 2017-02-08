@@ -6,7 +6,6 @@ export WORKON_HOME=~/.envs
 
 # Basic work environment
 export EDITOR=vim
-export DEFAULT_USER=janwillhaus
 
 # User configuration
 export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
@@ -17,11 +16,35 @@ source $HOME/.dotfiles/antigen/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
+if [[ $(hostname -A) =~ hs\-woe\.de ]]
+then
+    echo "You're at work. Hi ja1034!"
+    export DEFAULT_USER=ja1034
+    POWERLEVEL9K_HOME_ICON=""
+
+    # Add jira quick access
+    antigen bundle jira
+    antigen bundle ubuntu
+    export JIRA_URL="https://jira.tgm.io"
+
+
+
+    POWERLEVEL9K_CUSTOM_ZEITERFASSUNG="echo  \$(zeiterf -sd)"
+    POWERLEVEL9K_CUSTOM_ZEITERFASSUNG_BACKGROUND="yellow"
+    POWERLEVEL9K_CUSTOM_ZEITERFASSUNG_FOREGROUND="black"
+
+    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time custom_zeiterfassung)
+else
+    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
+fi
+
+export TERM="xterm-256color"
+
+
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
 antigen bundle virtualenvwrapper
 antigen bundle dotenv
-
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
@@ -87,3 +110,8 @@ os_version () {
         system_profiler SPSoftwareDataType | grep "System Version:"
     fi
 }
+
+export PATH="/home/ja1034/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+

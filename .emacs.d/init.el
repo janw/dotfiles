@@ -38,9 +38,11 @@
  '(git-gutter:modified-sign "~~")
  '(package-selected-packages
    (quote
-    (which-key linum-relative evil-nerd-commenter airline-themes powerline git-gutter magit solarized-theme zenburn-theme auto-compile use-package)))
+    (which-key linum-relative evil-nerd-commenter airline-themes powerline git-gutter magit solarized-theme auto-compile use-package)))
  '(save-place t)
  '(show-paren-mode t))
+
+(global-set-key (kbd "C-c C-r") 'load-file)
 
 ;; Start off with beautifying this dumpsterfire
 (use-package solarized-theme)
@@ -54,8 +56,9 @@
 (load-theme 'airline-solarized-alternate-gui)
 
 ;; Commentation
-(use-package evil-nerd-commenter)
-(evilnc-default-hotkeys)
+(use-package evil-nerd-commenter
+  :config
+  (evilnc-default-hotkeys))
 
 
 ;; Disable various bars
@@ -70,8 +73,10 @@
 
 ;; Show line numbers and allow relative line numbers
 (global-linum-mode t)
-(use-package linum-relative)
-(global-set-key (kbd "C-x ü") 'linum-relative-toggle)
+(use-package linum-relative
+  :commands linum-relative-toggle
+  :init
+  global-set-key (kbd "C-c l") 'Linum-relative-toggle))
  
 ;; Free the left alt-key for special characters
 (setq ns-right-alternate-modifier nil)
@@ -88,9 +93,10 @@
 (global-set-key (kbd "C-x n") 'git-gutter:next-hunk)
 
 ;; Heeeeehlp when waiting in minibuffer with an unfinished command
-(use-package which-key)
-(which-key-mode)
-(which-key-setup-side-window-bottom)
+(use-package which-key
+  :config
+  (which-key-mode)
+  (which-key-setup-side-window-bottom))
 
 
 (custom-set-faces

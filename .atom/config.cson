@@ -6,13 +6,13 @@
       "metrics"
       "linter-python-pep8"
     ]
+    packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
       "monokai"
     ]
   editor:
-    fontSize: 11
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
