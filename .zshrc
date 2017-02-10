@@ -2,13 +2,12 @@
 export DOTFILES=$HOME/.dotfiles
 export HOSTNAME=$(hostname)
 export TERM="xterm-256color"
-export WORKON_HOME=~/.envs
 
 # Basic work environment
 export EDITOR=vim
 
 # User configuration
-export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $HOME/.dotfiles/antigen/antigen.zsh
@@ -19,26 +18,17 @@ antigen use oh-my-zsh
 if [[ $HOSTNAME =~ hs\-woe\.de ]]
 then
     echo "You're at work. Hi ja1034!"
-    export DEFAULT_USER=ja1034
-    POWERLEVEL9K_HOME_ICON=""
+    echo "Still got $(zeiterf -sd) to go"
 
     # Add jira quick access
     antigen bundle jira
-    antigen bundle ubuntu
     export JIRA_URL="https://jira.tgm.io"
 
-
-
-    POWERLEVEL9K_CUSTOM_ZEITERFASSUNG="echo  \$(zeiterf -sd)"
-    POWERLEVEL9K_CUSTOM_ZEITERFASSUNG_BACKGROUND="yellow"
-    POWERLEVEL9K_CUSTOM_ZEITERFASSUNG_FOREGROUND="black"
-
-    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time custom_zeiterfassung)
+    # Add other work-specific tools
+    antigen bundle ubuntu
 else
-    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
+
 fi
-
-
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
@@ -113,7 +103,10 @@ os_version () {
     fi
 }
 
-export PATH="/home/ja1034/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if type pyenv >/dev/null 2>&1; then
+    export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+    export SPACESHIP_VENV_SHOW=false
 
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
