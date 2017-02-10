@@ -16,7 +16,7 @@ source $HOME/.dotfiles/antigen/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-if [[ $(hostname -A) =~ hs\-woe\.de ]]
+if [[ $HOSTNAME =~ hs\-woe\.de ]]
 then
     echo "You're at work. Hi ja1034!"
     export DEFAULT_USER=ja1034
@@ -38,15 +38,17 @@ else
     POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
 fi
 
-export TERM="xterm-256color"
 
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
 antigen bundle virtualenvwrapper
 antigen bundle dotenv
+
+# Bundles from third-party sources
 antigen bundle zsh-users/zsh-syntax-highlighting
 
+# Final steps ...
 antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
 antigen apply
 
