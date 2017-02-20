@@ -14,8 +14,7 @@ call dein#add('tmhedberg/SimpylFold')
 call dein#add('scrooloose/nerdtree')
 call dein#add('scrooloose/nerdcommenter')
 call dein#add('Xuyuanp/nerdtree-git-plugin')
-call dein#add('vim-airline/vim-airline')
-call dein#add('vim-airline/vim-airline-themes')
+call dein#add('itchyny/lightline.vim')
 call dein#add('flazz/vim-colorschemes')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('itmammoth/doorboy.vim')
@@ -40,12 +39,8 @@ source ~/.vim/sources/mappings.vim
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Airline-specific settings
+" Allow for nice statusline
 set laststatus=2
-let g:airline#extensions#tabline#enabled=1
-let g:airline_powerline_fonts=1
-let g:airline_theme='molokai'
-
 
 " Lines of history
 set history=700
@@ -134,6 +129,9 @@ au BufNewFile,BufRead *.js, *.html, *.css;
     \ set softtabstop=2
     \ set shiftwidth=2
 
+" JSON highlighting
+au! BufRead,BufNewFile *.json set filetype=json
+
 " Enable whitespace and tab flagging
 highlight UnwanttedTab ctermbg=red guibg=darkred
 highlight TrailSpace guibg=red ctermbg=darkred
@@ -152,6 +150,21 @@ endif
 
 highlight OverLength ctermbg=red ctermfg=white guibg=darkred
 match OverLength /\%81v.\+/
+
+augroup json_autocmd
+  autocmd!
+  autocmd FileType json set autoindent
+  autocmd FileType json set formatoptions=tcq2l
+  autocmd FileType json set textwidth=78 shiftwidth=2
+  autocmd FileType json set softtabstop=2 tabstop=8
+  autocmd FileType json set expandtab
+  autocmd FileType json set foldmethod=syntax
+augroup END
+
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost ~/.vimrc source ~/.vimrc
+augroup END " }
 
 
 " Custom settings for nerdcommenter
