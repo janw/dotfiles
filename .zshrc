@@ -1,6 +1,5 @@
 # Path to your oh-my-zsh installation.
 export DOTFILES=$HOME/.dotfiles
-export HOSTNAME=$(hostname)
 export TERM="xterm-256color"
 
 # Basic work environment
@@ -10,29 +9,30 @@ export EDITOR=vim
 export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# Work around OS-different versions of `hostname`
+local_hostname () { echo $(hostname -A || hostname -F || hostname) | tail -n1 }
+
 source $HOME/.dotfiles/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-if [[ $HOSTNAME =~ hs\-woe\.de ]]
+if [[ $(local_hostname) =~ hs\-woe\.de ]]
 then
     echo "You're at work. Hi ja1034!"
-    echo "Still got $(zeiterf -sd) to go"
+    echo "  $(zeiterf -sd)"
+    export DEFAULT_USER=ja1034
 
     # Add jira quick access
     antigen bundle jira
     export JIRA_URL="https://jira.tgm.io"
 
-    # Add other work-specific tools
-    antigen bundle ubuntu
 else
 
 fi
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
-antigen bundle virtualenvwrapper
 antigen bundle dotenv
 
 # Bundles from third-party sources

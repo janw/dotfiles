@@ -14,13 +14,12 @@ call dein#add('tmhedberg/SimpylFold')
 call dein#add('scrooloose/nerdtree')
 call dein#add('scrooloose/nerdcommenter')
 call dein#add('Xuyuanp/nerdtree-git-plugin')
-call dein#add('vim-airline/vim-airline')
-call dein#add('vim-airline/vim-airline-themes')
+call dein#add('itchyny/lightline.vim')
 call dein#add('flazz/vim-colorschemes')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('itmammoth/doorboy.vim')
 call dein#add('groenewege/vim-less')
-""Plugin 'elzr/vim-json' "" Useful for working with tons of JSON
+call dein#add('elzr/vim-json')
 
 " All of your Plugins must be added before the following line
 call dein#end()              " required
@@ -40,12 +39,8 @@ source ~/.vim/sources/mappings.vim
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Airline-specific settings
+" Allow for nice statusline
 set laststatus=2
-let g:airline#extensions#tabline#enabled=1
-let g:airline_powerline_fonts=1
-let g:airline_theme='molokai'
-
 
 " Lines of history
 set history=700
@@ -123,7 +118,7 @@ au BufNewFile,BufRead *.py;
     \ set tabstop=4
     \ set softtabstop=4
     \ set shiftwidth=4
-    \ set textwidth=79
+    \ set textwidth=100
     \ set expandtab
     \ set autoindent
     \ set fileformat=unix
@@ -133,6 +128,9 @@ au BufNewFile,BufRead *.js, *.html, *.css;
     \ set tabstop=2
     \ set softtabstop=2
     \ set shiftwidth=2
+
+" JSON highlighting
+au! BufRead,BufNewFile *.json set filetype=json
 
 " Enable whitespace and tab flagging
 highlight UnwanttedTab ctermbg=red guibg=darkred
@@ -151,7 +149,26 @@ if exists('+colorcolumn')
 endif
 
 highlight OverLength ctermbg=red ctermfg=white guibg=darkred
-match OverLength /\%81v.\+/
+augroup LongLines
+    autocmd!
+    autocmd FileType * match none
+    autocmd FileType python,c,sh match OverLength '\%>101v.\+'
+augroup END
+
+augroup json_autocmd
+  autocmd!
+  autocmd FileType json set autoindent
+  autocmd FileType json set formatoptions=tcq2l
+  autocmd FileType json set textwidth=78 shiftwidth=2
+  autocmd FileType json set softtabstop=2 tabstop=8
+  autocmd FileType json set expandtab
+  autocmd FileType json set foldmethod=syntax
+augroup END
+
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost ~/.vimrc source ~/.vimrc
+augroup END " }
 
 
 " Custom settings for nerdcommenter
