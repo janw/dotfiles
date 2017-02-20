@@ -118,7 +118,7 @@ au BufNewFile,BufRead *.py;
     \ set tabstop=4
     \ set softtabstop=4
     \ set shiftwidth=4
-    \ set textwidth=79
+    \ set textwidth=100
     \ set expandtab
     \ set autoindent
     \ set fileformat=unix
@@ -149,7 +149,11 @@ if exists('+colorcolumn')
 endif
 
 highlight OverLength ctermbg=red ctermfg=white guibg=darkred
-match OverLength /\%81v.\+/
+augroup LongLines
+    autocmd!
+    autocmd FileType * match none
+    autocmd FileType python,c,sh match OverLength '\%>101v.\+'
+augroup END
 
 augroup json_autocmd
   autocmd!
