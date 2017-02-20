@@ -10,7 +10,9 @@ export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Work around OS-different versions of `hostname`
-local_hostname () { echo $(hostname -A || hostname -F || hostname) | tail -n1 }
+local_hostname () { 
+    echo $(hostname -A 2> /dev/null || hostname -F 2> /dev/null || hostname) | tail -n1 
+}
 
 source $HOME/.dotfiles/antigen/antigen.zsh
 
