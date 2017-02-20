@@ -20,7 +20,7 @@ call dein#add('flazz/vim-colorschemes')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('itmammoth/doorboy.vim')
 call dein#add('groenewege/vim-less')
-""Plugin 'elzr/vim-json' "" Useful for working with tons of JSON
+call dein#add('elzr/vim-json')
 
 " All of your Plugins must be added before the following line
 call dein#end()              " required

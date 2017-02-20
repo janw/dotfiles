@@ -1,8 +1,6 @@
 # Path to your oh-my-zsh installation.
 export DOTFILES=$HOME/.dotfiles
-export HOSTNAME=$(hostname)
 export TERM="xterm-256color"
-export WORKON_HOME=~/.envs
 
 # Basic work environment
 export EDITOR=vim
@@ -11,29 +9,25 @@ export EDITOR=vim
 export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# Work around OS-different versions of `hostname`
+local_hostname () { echo $(hostname -A || hostname -F || hostname) | tail -n1 }
+
 source $HOME/.dotfiles/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-if [[ $(hostname -A) =~ hs\-woe\.de ]]
+if [[ $(local_hostname) =~ hs\-woe\.de ]]
 then
     echo "You're at work. Hi ja1034!"
+    echo "  $(zeiterf -sd)"
     export DEFAULT_USER=ja1034
-    POWERLEVEL9K_HOME_ICON=""
 
     # Add jira quick access
     antigen bundle jira
     antigen bundle ubuntu
     export JIRA_URL="https://jira.tgm.io"
 
-
-
-    POWERLEVEL9K_CUSTOM_ZEITERFASSUNG="echo  \$(zeiterf -sd)"
-    POWERLEVEL9K_CUSTOM_ZEITERFASSUNG_BACKGROUND="yellow"
-    POWERLEVEL9K_CUSTOM_ZEITERFASSUNG_FOREGROUND="black"
-
-    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time custom_zeiterfassung)
 else
     POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
 fi
@@ -43,7 +37,6 @@ export TERM="xterm-256color"
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
-antigen bundle virtualenvwrapper
 antigen bundle dotenv
 antigen bundle zsh-users/zsh-syntax-highlighting
 
