@@ -32,7 +32,11 @@
     whitespace:
       removeTrailingWhitespace: false
   linter:
-    errorPanelHeight: 69
+    errorPanelHeight: 22
+  "linter-pep8":
+    maxLineLength: 100
+  "linter-pycodestyle":
+    maxLineLength: 100
   "linter-python-pep8":
     pep8DirToExecutable: "/usr/local/bin/"
   "one-light-ui":
