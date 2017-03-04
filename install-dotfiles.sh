@@ -55,32 +55,28 @@ echo -e "\n\nDownloading additional fonts ..."
 wget -nc "https://github.com/belluzj/fantasque-sans/releases/download/v1.7.1/FantasqueSansMono.zip"
 unzip -n FantasqueSansMono.zip -d fantasquesans 2>&1 > /dev/null
 
-
+echo -e "\n\nLinking fonts ..."
 # Link font to library and clear font cache for user fonts
 if [ "$(uname)" = "Darwin" ]
 then
-    echo -e "\n\nWe're on macOS."
+    echo -e "We're on macOS."
 
-    echo "Linking fonts ..."
     ln -sf $DOTDIR/fantasquesans/OTF/*.otf $HOME/Library/Fonts/
 
     echo "Refreshing font cache ..."
     atsutil databases -remove
 
 else
-    echo -e "\n\nWe're on Linux. "
+    echo -e "We're on Linux. "
     mkdir -p $HOME/.fonts/
     mkdir -p $HOME/.config/fontconfig/conf.d/
 
-
-    echo "Linking fonts ..."
     ln -sf $DOTDIR/fantasquesans/OTF/*.otf $HOME/.fonts
 
     echo "Refreshing font cache ..."
     #fc-cache -f
 fi
 
-    echo "Remember to change the console font accordingly!"
 fi
 
 SHELLPATH=$(getent passwd $LOGNAME | cut -d: -f7)
