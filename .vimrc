@@ -132,6 +132,9 @@ au BufNewFile,BufRead *.js, *.html, *.css;
 " JSON highlighting
 au! BufRead,BufNewFile *.json set filetype=json
 
+" YAML indentation
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 " Enable whitespace and tab flagging
 highlight UnwanttedTab ctermbg=red guibg=darkred
 highlight TrailSpace guibg=red ctermbg=darkred
