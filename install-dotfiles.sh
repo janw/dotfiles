@@ -47,6 +47,8 @@ fi
 set -u
 
 
+if [[ $SESSION_TYPE == "local" ]]; then
+
 echo -e "\n\nDownloading additional fonts ..."
 # Download a fonts from the web and install them.
 
@@ -76,6 +78,7 @@ else
 
     echo "Refreshing font cache ..."
     #fc-cache -f
+fi
 
     echo "Remember to change the console font accordingly!"
 fi
