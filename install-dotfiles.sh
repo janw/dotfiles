@@ -79,10 +79,10 @@ fi
 
 fi
 
-SHELLPATH=$(getent passwd $LOGNAME | cut -d: -f7)
+echo -e "\n\nChanging shell to the one and only zsh ..."
+MYSHELL=${SHELL:-}
 # Finally change shell if necessary
-if [[ $SHELLPATH =~ zsh$ ]]
-then
+if [[ $MYSHELL =~ zsh$ ]]; then
     echo "Shell is already zsh. Done."
 else
     chsh -s $(which zsh)
