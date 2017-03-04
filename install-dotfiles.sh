@@ -10,21 +10,12 @@ DOTDIR=$(pwd)
 # Update all submodules
 git submodule init && git submodule update
 
-echo -e "\n\nSymlinking configs, rc files, etc. ..."
+echo -e "\n\nSymlinking configs, ..."
 # Create symlinks into the home dir to enable usage of the files
 ln -sf $DOTDIR/.zshrc     $HOME
 ln -sf $DOTDIR/.vim       $HOME
 ln -sf $DOTDIR/.vimrc     $HOME
 #ln -sf $DOTDIR/.tmux.conf $HOME
-ln -sf $DOTDIR/.atom      $HOME
-ln -sf $DOTDIR/.i3        $HOME
-ln -sf $DOTDIR/.compton.conf $HOME
-
-# X server files
-ln -sf $DOTDIR/.Xdefaults        $HOME
-ln -sf $DOTDIR/.Xresources.light $HOME
-ln -sf $DOTDIR/.Xresources.dark  $HOME
-
 
 # Setup git config
 echo -e "\n\nSetting up global git config ..."
@@ -46,6 +37,17 @@ set -u
 
 
 if [[ $SESSION_TYPE == "local" ]]; then
+
+    echo -e "\n\nAdditional symlinks for local sessions"
+    ln -sf $DOTDIR/.atom      $HOME
+    ln -sf $DOTDIR/.i3        $HOME
+    ln -sf $DOTDIR/.compton.conf $HOME
+
+    # X server files
+    ln -sf $DOTDIR/.Xdefaults        $HOME
+    ln -sf $DOTDIR/.Xresources.light $HOME
+    ln -sf $DOTDIR/.Xresources.dark  $HOME
+
 
 echo -e "\n\nDownloading additional fonts ..."
 # Download a fonts from the web and install them.
