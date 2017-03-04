@@ -35,6 +35,17 @@ git config --global core.excludesfile "${DOTDIR}/gitignore_global"
 git config --global core.attributesfile "${DOTDIR}/gitattributes_global"
 
 
+set +u
+
+# The following section only applies on local sessions
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    SESSION_TYPE=remote
+else
+    SESSION_TYPE=local
+fi
+
+set -u
+
 
 echo -e "\n\nDownloading additional fonts ..."
 # Download a fonts from the web and install them.
