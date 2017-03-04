@@ -59,7 +59,6 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 
 # User specific aliases and functions
 alias ll='ls -lah'
-alias dig='dig ANY'
 
 # Some hash shortcuts (shasum required)
 alias sha256='shasum -a256'
