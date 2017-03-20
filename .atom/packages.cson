@@ -9,7 +9,9 @@ packages: [
   "linter"
   "linter-pycodestyle"
   "markdown-preview-plus"
-  "monokai"
   "package-sync"
+  "pretty-json"
+  "project-manager"
   "python-indent"
+  "remote-sync"
 ]

@@ -104,9 +104,12 @@ os_version () {
     fi
 }
 
+
 if type pyenv >/dev/null 2>&1; then
+    export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
     export SPACESHIP_VENV_SHOW=false
+    export PATH="$HOME/.pyenv/bin:$PATH"
 
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"

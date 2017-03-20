@@ -16,7 +16,7 @@
     prompt = false
 
 [diff "pandoc2md"]
-    textconv = pandoc --to=markdown --columns=80
+    textconv = pandoc --to=commonmark --columns=80
     prompt = false
 
 [diff "wrap"]
