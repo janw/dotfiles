@@ -27,6 +27,10 @@ git config --global include.path "${DOTDIR}/gitconfig_global"
 git config --global core.excludesfile "${DOTDIR}/gitignore_global"
 git config --global core.attributesfile "${DOTDIR}/gitattributes_global"
 
+git config pull.rebase true
+git config rebase.autoStash true
+
+
 
 set +u
 
