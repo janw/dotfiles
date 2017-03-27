@@ -11,10 +11,14 @@ DOTDIR=$(pwd)
 git submodule init && git submodule update
 
 echo -e "\n\nSymlinking configs, ..."
+
+mkdir -p $HOME/.config/htop/
+
 # Create symlinks into the home dir to enable usage of the files
 ln -sf $DOTDIR/.zshrc     $HOME
 ln -sf $DOTDIR/.vim       $HOME
 ln -sf $DOTDIR/.vimrc     $HOME
+ln -sf $DOTDIR/htoprc     $HOME/.config/htop/htoprc
 #ln -sf $DOTDIR/.tmux.conf $HOME
 
 # Setup git config
