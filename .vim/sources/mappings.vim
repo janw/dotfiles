@@ -31,3 +31,6 @@ nnoremap <C-H> <C-W><C-H>
 " Enable folding with the spacebar
 nnoremap <space> za
 
+" Enabel mouse-wheel scrolling
+set mouse=a
+

@@ -1,19 +1,27 @@
-My personal set of config files for vim, zsh, git (and probably more to come). It has been tested to work on macOS, and Ubuntu.
+My humble swiss army knife for getting work done. Includes config files for vim, zsh, git, and others. Regularly used (and considered tested) on Ubuntu, CentOS, and macOS.
 
-# Installing
+# Setup
 
-Simply clone the repository, and run `./install-dotfiles.sh`. This will update all submodules, create symlinks and even add the necessary fonts for Powerline themes ([Powerlevel9k](https://github.com/bhilburn/powerlevel9k), [vim-airline](https://github.com/vim-airline/vim-airline))
+Usage requires git – vim and zsh recommended. Clone the repository (best into `~/.dotfiles`), and run `install-dotfiles.sh`. This will update all submodules, create symlinks and set the shell up.
 
-This of course requires at least `git` to be installed, `vim` and `zsh` are recommended, too.
+
+## Ubuntu or macOS
 
 ```bash
-sudo apt-get install git vim zsh || brew install git vim zsh
+sudo apt-get install git vim zsh htop || brew install git vim zsh htop
 git clone https://github.com/janwh/dotfiles.git ~/.dotfiles
 sh ~/.dotfiles/install-dotfiles.sh
 ```
 
-To fully utilize the installed powerline font (currently Source Code Pro), you have to adjust the selected font of your Terminal application. On OSX there are Terminal themes included for Solarized Dark and Light.
+## CentOS 7
 
-# Future plans
+```bash
+# EPEL for htop and sane package availability
+wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm
+rpm -ihv epel-release-7-9.noarch.rpm
 
-I am just starting out to harness the potential of all the dotfiles out there and haven't used vim before either. I'll likely add a few other things to this repo, for example vim plugins as I learn more about it all.
+yum install zsh vim git htop
+
+git clone https://github.com/janwh/dotfiles.git ~/.dotfiles
+sh ~/.dotfiles/install-dotfiles.sh
+```

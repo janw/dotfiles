@@ -8,8 +8,8 @@
     packagesWithKeymapsDisabled: []
     telemetryConsent: "no"
     themes: [
-      "one-dark-ui"
-      "monokai"
+      "nord-atom-ui"
+      "nord-atom-syntax"
     ]
   editor:
     scrollPastEnd: true
@@ -20,6 +20,9 @@
     tabLength: 4
   "exception-reporting":
     userId: "1a743eaf-a8a8-050d-ec12-e52437e24ab5"
+  "file-icons":
+    onChanges: true
+    strategies: {}
   "fold-functions":
     autofoldGrammars: [
       "Python"
@@ -38,6 +41,8 @@
     maxLineLength: 100
   "linter-python-pep8":
     pep8DirToExecutable: "/usr/local/bin/"
+  minimap:
+    displayPluginsControls: false
   "one-light-ui":
     fontSize: 10
     layoutMode: "Compact"
@@ -45,6 +50,8 @@
   "package-sync":
     createOnChange: true
     forceOverwrite: true
+  "project-manager":
+    alwaysOpenInSameWindow: true
   "tree-view":
     hideVcsIgnoredFiles: true
   welcome:

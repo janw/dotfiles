@@ -10,12 +10,21 @@ local_hostname () {
     echo $(hostname -A 2> /dev/null || hostname -F 2> /dev/null || hostname) | tail -n1 
 }
 
+# Determine if session is remote or local
+local_session () {
+    if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+        echo "remote"
+    else
+        echo "local"
+    fi
+}
+
 source $HOME/.dotfiles/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-if [[ $(local_hostname) =~ hs\-woe\.de ]]
+if [[ $(local_hostname) =~ hs\-woe\.de  && $(local_session) == local ]]
 then
     echo "You're at work. Hi ja1034!"
     echo "  $(zeiterf -sd)"
@@ -108,4 +117,3 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # pyenv-virtualenv
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-
