@@ -5,10 +5,6 @@ export TERM="xterm-256color"
 # Basic work environment
 export EDITOR=vim
 
-# User configuration
-export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
-
 # Work around OS-different versions of `hostname`
 local_hostname () { 
     echo $(hostname -A 2> /dev/null || hostname -F 2> /dev/null || hostname) | tail -n1 
@@ -104,10 +100,12 @@ os_version () {
     fi
 }
 
-if type pyenv >/dev/null 2>&1; then
-    export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-    export SPACESHIP_VENV_SHOW=false
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export PATH="$PYENV_ROOT/bin:$PATH"
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
+# pyenv-virtualenv
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
