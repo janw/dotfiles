@@ -21,6 +21,7 @@ call dein#add('itmammoth/doorboy.vim')
 call dein#add('groenewege/vim-less')
 call dein#add('elzr/vim-json')
 call dein#add('davidhalter/jedi-vim')
+call dein#add('nvie/vim-flake8')
 
 " All of your Plugins must be added before the following line
 call dein#end()              " required
@@ -180,3 +181,7 @@ augroup END " }
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 let g:NERDSpaceDelims = 1
+
+" Custom settings for youcompleteme
+let g:ycm_python_binary_path = 'python'
+
