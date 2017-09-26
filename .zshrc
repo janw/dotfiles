@@ -47,6 +47,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Final steps ...
 antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
+SPACESHIP_BATTERY_SHOW=false
 antigen apply
 
 # You may need to manually set your language environment

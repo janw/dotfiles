@@ -72,9 +72,9 @@ set hlsearch
 set incsearch
 
 " Configure color scheme and slightly modify line numbers
-set background=dark
-colorscheme Monokai
-highlight LineNr ctermfg=green
+" set background=dark
+colorscheme zenburn
+" highlight LineNr ctermfg=green
 
 
 " Set utf8 as standard encoding and en_US as the standard language
