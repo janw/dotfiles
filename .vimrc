@@ -149,14 +149,15 @@ autocmd BufWritePre *.py %s/\s\+$//e
 
 " Enable overly long line flagging and colorcolumn
 if exists('+colorcolumn')
-  set colorcolumn=80
+    highlight ColorColumn ctermbg=238 guibg=#434443
+    let &colorcolumn="80,".join(range(120,999),",")
 endif
 
 highlight OverLength ctermbg=red ctermfg=white guibg=darkred
 augroup LongLines
     autocmd!
     autocmd FileType * match none
-    autocmd FileType python,c,sh match OverLength '\%>101v.\+'
+    autocmd FileType python,c,sh match OverLength '\%>121v.\+'
 augroup END
 
 augroup json_autocmd
