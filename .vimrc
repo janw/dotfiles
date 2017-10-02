@@ -22,6 +22,7 @@ call dein#add('groenewege/vim-less')
 call dein#add('elzr/vim-json')
 call dein#add('davidhalter/jedi-vim')
 call dein#add('nvie/vim-flake8')
+call dein#add('plasticboy/vim-markdown')
 
 " All of your Plugins must be added before the following line
 call dein#end()              " required
