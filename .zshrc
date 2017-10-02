@@ -92,6 +92,14 @@ upgrade_dotfiles () {
     /bin/sh $DOTFILES/upgrade-dotfiles.sh
 }
 
+note () {
+    # note-taking
+    NOTES_FOLDER="$HOME/Dropbox/Notes/"
+    fname=$(date "+%Y-%m-%d %H%M%S")
+    vim -c "put='# '" -c 'start!' -- "$NOTES_FOLDER/note_${fname}.md"
+}
+
+
 os_version () {
     #
     if hash lsb_release 2>/dev/null; then
