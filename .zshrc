@@ -26,14 +26,8 @@ antigen use oh-my-zsh
 
 if [[ $(local_hostname) =~ hs\-woe\.de  && $(local_session) == local ]]
 then
-    echo "You're at work. Hi ja1034!"
-    echo "  $(zeiterf -sd)"
-    export DEFAULT_USER=ja1034
-
-    # Add jira quick access
-    antigen bundle jira
-    export JIRA_URL="https://jira.tgm.io"
-
+    echo "You're at work. Keep up the good work!"
+    echo "➜  $(zeiterf -sd)"
 else
 
 fi
