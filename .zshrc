@@ -42,6 +42,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # Final steps ...
 antigen theme andrepolischuk/neat
 antigen apply
+export RPROMPT=''
 
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
