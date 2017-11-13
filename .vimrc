@@ -42,6 +42,9 @@ source ~/.vim/sources/mappings.vim
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Change to current dir automatically
+set autochdir
+
 " Allow for nice statusline
 set laststatus=2
 
