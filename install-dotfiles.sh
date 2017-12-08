@@ -31,7 +31,6 @@ git config pull.rebase true
 git config rebase.autoStash true
 
 
-
 set +u
 
 # The following section only applies on local sessions
@@ -42,19 +41,6 @@ else
 fi
 
 set -u
-
-
-if [[ $SESSION_TYPE == "local" ]]; then
-
-    echo -e "\n\nAdditional symlinks for local sessions"
-    ln -sf $DOTDIR/.atom      $HOME
-    ln -sf $DOTDIR/.i3        $HOME
-    ln -sf $DOTDIR/.compton.conf $HOME
-
-    # X server files
-    ln -sf $DOTDIR/.Xdefaults        $HOME
-    ln -sf $DOTDIR/.Xresources.light $HOME
-    ln -sf $DOTDIR/.Xresources.dark  $HOME
 
 
 echo -e "\n\nDownloading additional fonts ..."
