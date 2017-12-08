@@ -42,34 +42,35 @@ fi
 
 set -u
 
+if [[ $SESSION_TYPE == "local" ]]; then
 
-echo -e "\n\nDownloading additional fonts ..."
-# Download a fonts from the web and install them.
+    echo -e "\n\nDownloading additional fonts ..."
+    # Download a fonts from the web and install them.
 
-wget -nc "https://github.com/belluzj/fantasque-sans/releases/download/v1.7.1/FantasqueSansMono.zip"
-unzip -n FantasqueSansMono.zip -d fantasquesans 2>&1 > /dev/null
+    wget -nc "https://github.com/belluzj/fantasque-sans/releases/download/v1.7.1/FantasqueSansMono.zip"
+    unzip -n FantasqueSansMono.zip -d fantasquesans 2>&1 > /dev/null
 
-echo -e "\n\nLinking fonts ..."
-# Link font to library and clear font cache for user fonts
-if [ "$(uname)" = "Darwin" ]
-then
-    echo -e "We're on macOS."
+    echo -e "\n\nLinking fonts ..."
+    # Link font to library and clear font cache for user fonts
+    if [ "$(uname)" = "Darwin" ]
+    then
+        echo -e "We're on macOS."
 
-    ln -sf $DOTDIR/fantasquesans/OTF/*.otf $HOME/Library/Fonts/
+        ln -sf $DOTDIR/fantasquesans/OTF/*.otf $HOME/Library/Fonts/
 
-    echo "Refreshing font cache ..."
-    atsutil databases -remove
+        echo "Refreshing font cache ..."
+        atsutil databases -remove
 
-else
-    echo -e "We're on Linux. "
-    mkdir -p $HOME/.fonts/
-    mkdir -p $HOME/.config/fontconfig/conf.d/
+    else
+        echo -e "We're on Linux. "
+        mkdir -p $HOME/.fonts/
+        mkdir -p $HOME/.config/fontconfig/conf.d/
 
-    ln -sf $DOTDIR/fantasquesans/OTF/*.otf $HOME/.fonts
+        ln -sf $DOTDIR/fantasquesans/OTF/*.otf $HOME/.fonts
 
-    echo "Refreshing font cache ..."
-    #fc-cache -f
-fi
+        echo "Refreshing font cache ..."
+        #fc-cache -f
+    fi
 
 fi
 
