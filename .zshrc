@@ -46,8 +46,8 @@ export LANG=en_US.UTF-8
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias zshconf="vim ~/.zshrc"
+alias vimconf="vim ~/.vimrc"
 
 # User specific aliases and functions
 alias ll='ls -lah'
