@@ -189,3 +189,37 @@ let g:NERDSpaceDelims = 1
 " Custom settings for youcompleteme
 let g:ycm_python_binary_path = 'python'
 
+" Gitgutter signs:
+let g:gitgutter_sign_added = '•'
+let g:gitgutter_sign_modified = '•'
+let g:gitgutter_sign_removed = '•'
+let g:gitgutter_sign_removed_first_line = '•'
+let g:gitgutter_sign_modified_removed = '•'
+
+" Ale Linter signs
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⁈'
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+
+" Lightline blocks
+let g:lightline = {
+      \ 'active': {
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'linter_warnings', 'linter_errors', 'linter_ok' ],
+      \              [ 'filetype' ] ]
+      \ },
+      \ 'component_expand': {
+      \   'linter_warnings': 'LightlineLinterWarnings',
+      \   'linter_errors': 'LightlineLinterErrors',
+      \   'linter_ok': 'LightlineLinterOK'
+      \ },
+      \ 'component_type': {
+      \   'linter_warnings': 'warning',
+      \   'linter_errors': 'error',
+      \   'linter_ok': 'ok'
+      \ },
+      \ }
+
+
+
