@@ -76,9 +76,9 @@ set hlsearch
 set incsearch
 
 " Configure color scheme and slightly modify line numbers
-" set background=dark
-colorscheme zenburn
-" highlight LineNr ctermfg=green
+colorscheme one
+set background=light
+let g:one_allow_italics = 1
 
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -204,6 +204,7 @@ highlight clear ALEWarningSign
 
 " Lightline blocks
 let g:lightline = {
+      \ 'colorscheme': 'one',
       \ 'active': {
       \   'right': [ [ 'lineinfo' ],
       \              [ 'linter_warnings', 'linter_errors', 'linter_ok' ],
