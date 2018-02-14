@@ -179,17 +179,17 @@ autocmd ColorScheme * highlight TrailSpace guibg=red ctermbg=darkred
 autocmd BufWritePre *.py %s/\s\+$//e
 
 " Enable overly long line flagging and colorcolumn
-if exists('+colorcolumn')
-    highlight ColorColumn ctermbg=238 guibg=#434443
-    let &colorcolumn="80,".join(range(120,999),",")
-endif
+let &cc="80"
+fun! ToggleCC()
+    if &cc == ''
+        let &cc="80,".join(range(120,999),",")
+    else
+        let &cc=""
+    endif
+endfun
+nnoremap <F2> :call ToggleCC()<CR>
 
-highlight OverLength ctermbg=red ctermfg=white guibg=darkred
-augroup LongLines
-    autocmd!
-    autocmd FileType * match none
-    autocmd FileType python,c,sh match OverLength '\%>121v.\+'
-augroup END
+
 
 augroup json_autocmd
   autocmd!
