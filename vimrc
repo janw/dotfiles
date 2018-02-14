@@ -1,31 +1,58 @@
+" Initialize Plugins
+if &compatible
+	set nocompatible               " Be iMproved
+endif
 
-set nocompatible              " required
-filetype off                  " required
+" Required:
+set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
 
-" Runtime path to include Dein and initialize
-set rtp+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
-call dein#begin('~/.vim/bundle')
+" Required:
+if dein#load_state('~/.vim/bundle')
+	call dein#begin('~/.vim/bundle')
 
-" Let Dein manage Dein, required
-call dein#add('Shougo/dein.vim')
+	" Let dein manage dein
+	" Required:
+	call dein#add('Shougo/dein.vim')
 
-" Plugin Area!
-call dein#add('tmhedberg/SimpylFold')
-call dein#add('scrooloose/nerdtree')
-call dein#add('scrooloose/nerdcommenter')
-call dein#add('Xuyuanp/nerdtree-git-plugin')
-call dein#add('itchyny/lightline.vim')
-call dein#add('flazz/vim-colorschemes')
-call dein#add('airblade/vim-gitgutter')
-call dein#add('itmammoth/doorboy.vim')
-call dein#add('groenewege/vim-less')
-call dein#add('elzr/vim-json')
-call dein#add('davidhalter/jedi-vim')
-call dein#add('nvie/vim-flake8')
-call dein#add('plasticboy/vim-markdown')
+	" Basics: colorscheme, status line
+    call dein#add('itchyny/lightline.vim')
+	call dein#add('altercation/vim-colors-solarized')
 
-" All of your Plugins must be added before the following line
-call dein#end()              " required
+    " Advanced: code folding, comments, git gutter, braces matching
+    call dein#add('tmhedberg/simpylfold')
+    call dein#add('scrooloose/nerdcommenter')
+	call dein#add('airblade/vim-gitgutter')
+	call dein#add('itmammoth/doorboy.vim')
+    call dein#add('kopischke/vim-stay')
+
+    " NerdTree:  Searchable file tree panels
+    call dein#add('scrooloose/nerdtree',
+            \ {'lazy': 1, 'on_cmd': 'NERDTreeToggle'})
+	call dein#add('Xuyuanp/nerdtree-git-plugin',
+            \ {'depends': ['scrooloose/nerdtree'], 'lazy': 1, 'on_cmd': 'NERDTreeToggle'})
+
+    " Syntaxes: whatever necessary to get the job done
+	call dein#add('groenewege/vim-less',
+			\ {'lazy': 1, 'on_ft': ['less']})
+	call dein#add('elzr/vim-json',
+			\ {'lazy': 1, 'on_ft': ['json']})
+	call dein#add('davidhalter/jedi-vim',
+			\ {'lazy': 1, 'on_ft': ['py', 'python', 'python2', 'python3']})
+	call dein#add('nvie/vim-flake8',
+			\ {'lazy': 1, 'on_ft': ['py', 'python', 'python2', 'python3']})
+	call dein#add('plasticboy/vim-markdown',
+			\ {'lazy': 1, 'on_ft': ['md', 'markdown','markd']})
+
+    " Neovim: specifics
+	if has('nvim')
+		call dein#add('Shougo/deol.nvim')
+	endif
+
+	" Required:
+	call dein#end()
+	call dein#save_state()
+endif
+
 filetype plugin indent on    " required
 syntax enable                " required
 
@@ -76,9 +103,8 @@ set hlsearch
 set incsearch
 
 " Configure color scheme and slightly modify line numbers
-colorscheme one
+colorscheme solarized
 set background=light
-let g:one_allow_italics = 1
 
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -204,7 +230,7 @@ highlight clear ALEWarningSign
 
 " Lightline blocks
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'solarized',
       \ 'active': {
       \   'right': [ [ 'lineinfo' ],
       \              [ 'linter_warnings', 'linter_errors', 'linter_ok' ],
