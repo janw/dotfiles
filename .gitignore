@@ -1,22 +1,12 @@
-# Atom stuff
-/.atom/blob-store/
-/.atom/compile-cache/
-/.atom/.node-gyp/
-/.atom/packages/
-/.atom/storage/
 
 # Vim stuff
-/.vim/.netrwhist
-/.vim/bundle/
-!/.vim/bundle/Vundle.vim
+/vim/.netrwhist
+/vim/bundle/
+!/vim/bundle/Vundle.vim
 
-# Emacs stuff
-/.emacs.d/elpa
-/.emacs.d/auto-save-list
 
 # Font stuff
 fantasquesans
 firacode
 FiraCode_*.zip
 FantasqueSansMono.zip
-.atom/nohup.out
