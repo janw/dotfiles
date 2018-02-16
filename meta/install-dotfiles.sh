@@ -1,37 +1,6 @@
 #!/bin/bash
-set -euo pipefail
+set -eo pipefail
 IFS=$'\n\t'
-
-
-# Change directory into the repository if called from elsewhere
-cd "$(dirname "$0")"
-DOTDIR=$(pwd)
-
-# Update all submodules
-git submodule init && git submodule update
-
-echo -e "\n\nSymlinking configs, ..."
-
-mkdir -p $HOME/.config/htop/
-
-# Create symlinks into the home dir to enable usage of the files
-ln -sf $DOTDIR/.zshrc     $HOME
-ln -sf $DOTDIR/.vim       $HOME
-ln -sf $DOTDIR/.vimrc     $HOME
-ln -sf $DOTDIR/htoprc     $HOME/.config/htop/htoprc
-#ln -sf $DOTDIR/.tmux.conf $HOME
-
-# Setup git config
-echo -e "\n\nSetting up global git config ..."
-git config --global include.path "${DOTDIR}/gitconfig_global"
-git config --global core.excludesfile "${DOTDIR}/gitignore_global"
-git config --global core.attributesfile "${DOTDIR}/gitattributes_global"
-
-git config pull.rebase true
-git config rebase.autoStash true
-
-
-set +u
 
 # The following section only applies on local sessions
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
