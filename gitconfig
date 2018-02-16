@@ -24,3 +24,7 @@
 [diff "wrap"]
     textconv = fmt -w80
     prompt = false
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
