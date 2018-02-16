@@ -5,11 +5,19 @@
 - clean: ['~']
 
 - link:
-    ~/.tmux.conf: tmux.conf
-    ~/.vim: vim
-    ~/.vimrc: vimrc
-    ~/.zshrc: zshrc
-    ~/.latexmkrc: latexmkrc
+    ~/.tmux.conf:
+    ~/.vim:
+    ~/.vimrc:
+    ~/.zshrc:
+
+# Additional tools
+    ~/.latexmkrc:
+    ~/.config/htop/htoprc:
+
+# Git-related
+    ~/.gitconfig:
+    ~/.gitattributes_global:
+    ~/.gitignore_global:
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
