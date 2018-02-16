@@ -9,6 +9,7 @@
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
+    ~/.latexmkrc: latexmkrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
