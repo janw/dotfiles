@@ -59,6 +59,8 @@ alias sha1='shasum -a1'
 
 # Zypper is a damn long word
 alias zy='sudo zypper'
+alias undisk='diskutil unmountdisk'
+alias lsdisk='diskutil list'
 
 # Git shortcuts/aliases
 alias glol='git log --oneline --graph --max-count=7 --decorate' #  overwrites plugin's glol!
