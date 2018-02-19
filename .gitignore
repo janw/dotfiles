@@ -2,7 +2,9 @@
 # Vim stuff
 /vim/.netrwhist
 /vim/bundle/
+/vim/view
 !/vim/bundle/Vundle.vim
+.dein-installer.sh
 
 
 # Font stuff
@@ -10,3 +12,5 @@ fantasquesans
 firacode
 FiraCode_*.zip
 FantasqueSansMono.zip
+
+.tmux.local.conf
