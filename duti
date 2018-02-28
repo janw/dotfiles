@@ -1,0 +1,72 @@
+
+# Set all important video and audio files to VLC
+org.videolan.vlc mkv viewer
+org.videolan.vlc mp4 viewer
+org.videolan.vlc mp3 viewer
+org.videolan.vlc mp2 viewer
+org.videolan.vlc m4v viewer
+org.videolan.vlc flv viewer
+org.videolan.vlc avi viewer
+org.videolan.vlc wma viewer
+org.videolan.vlc wmv viewer
+org.videolan.vlc m4a viewer
+org.videolan.vlc m4b viewer
+org.videolan.vlc mov viewer
+org.videolan.vlc au  viewer
+org.videolan.vlc asf viewer
+org.videolan.vlc ogm viewer
+org.videolan.vlc ogg viewer
+org.videolan.vlc mka viewer
+org.videolan.vlc ts  viewer
+org.videolan.vlc aac viewer
+org.videolan.vlc wav viewer
+org.videolan.vlc 3gp viewer
+org.videolan.vlc flac viewer
+
+# Set some text-based formats to use MacVim
+org.vim.MacVim txt  all
+org.vim.MacVim nfo  all
+org.vim.MacVim md   all
+org.vim.MacVim json all
+org.vim.MacVim yml  all
+org.vim.MacVim yaml all
+org.vim.MacVim md   all
+org.vim.MacVim csv  all
+org.vim.MacVim py   all
+org.vim.MacVim rst  all
+org.vim.MacVim conf all
+org.vim.MacVim c    all
+org.vim.MacVim go   all
+org.vim.MacVim sh   all
+org.vim.MacVim log  all
+org.vim.MacVim ini  all
+org.vim.MacVim rb   all
+org.vim.MacVim tex  all
+org.vim.MacVim bib  all
+org.vim.MacVim sty  all
+org.vim.MacVim cls  all
+org.vim.MacVim css  all
+org.vim.MacVim scss all
+org.vim.MacVim less all
+org.vim.MacVim sass all
+org.vim.MacVim php  all
+org.vim.MacVim js   all
+
+net.sourceforge.sqlitebrowser sqlite3 all
+net.sourceforge.sqlitebrowser sqlite  all
+
+org.vim.MacVim LICENSE      all
+org.vim.MacVim AUTHORS      all
+org.vim.MacVim CHANGELOG    all
+org.vim.MacVim CONTRIBUTE   all
+org.vim.MacVim COPYING      all
+org.vim.MacVim README       all
+org.vim.MacVim TODO         all
+org.vim.MacVim Dockerfile   all
+org.vim.MacVim Brewfile     all
+org.vim.MacVim Makefile     all
+org.vim.MacVim Gemfile      all
+
+org.libreoffice.script odt all
+org.libreoffice.script ods all
+org.libreoffice.script odp all

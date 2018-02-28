@@ -20,6 +20,9 @@
     ~/.gitattributes_global:
     ~/.gitignore_global:
 
+# Collection of default applications
+    ~/.duti:
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - ["curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > .dein-installer.sh", Downloading vim package manager]
