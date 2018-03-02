@@ -25,11 +25,8 @@ if dein#load_state('~/.vim/bundle')
 	call dein#add('itmammoth/doorboy.vim')
     call dein#add('kopischke/vim-stay')
 
-    " NerdTree:  Searchable file tree panels
-    call dein#add('scrooloose/nerdtree',
-            \ {'lazy': 1, 'on_cmd': 'NERDTreeToggle'})
-	call dein#add('Xuyuanp/nerdtree-git-plugin',
-            \ {'depends': ['scrooloose/nerdtree'], 'lazy': 1, 'on_cmd': 'NERDTreeToggle'})
+    " Ctrl-P:  Searchable file opening panels
+    call dein#add('ctrlpvim/ctrlp.vim')
 
     " Syntaxes: whatever necessary to get the job done
 	call dein#add('groenewege/vim-less',
