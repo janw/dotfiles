@@ -68,13 +68,13 @@ alias gloll="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %C
 alias gbage="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:red)%(objectname:short)%(color:reset);%(color:yellow)%(refname:short)%(color:reset);(%(color:green)%(committerdate:relative)%(color:reset));%(authorname);%(contents:subject)' | column -t -s ';'"
 alias grepos="find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '[ -d {}/.git ] && (echo {} && cd {} && git status -s && echo)' \;"
 
-
 # Shell-specific comfort features
 set show-all-if-ambiguous on
 set completion-ignore-case on
 
 # Avoid homebrew from sending analytics
 export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Custom functions
 upgrade_dotfiles () {
