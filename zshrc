@@ -47,6 +47,7 @@ export LANG=en_US.UTF-8
 #
 # Example aliases
 alias zshconf="vim ~/.zshrc"
+alias zresrc="source ~/.zshrc"
 alias vimconf="vim ~/.vimrc"
 
 # User specific aliases and functions
