@@ -61,6 +61,8 @@ alias sha1='shasum -a1'
 alias zy='sudo zypper'
 alias undisk='diskutil unmountdisk'
 alias lsdisk='diskutil list'
+alias cask='brew cask'
+alias ydl='youtube-dl'
 
 # Git shortcuts/aliases
 alias glol='git log --oneline --graph --max-count=7 --decorate' #  overwrites plugin's glol!
