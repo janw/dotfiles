@@ -63,6 +63,7 @@ alias undisk='diskutil unmountdisk'
 alias lsdisk='diskutil list'
 alias cask='brew cask'
 alias ydl='youtube-dl'
+bundleid () { echo "id of app \"$@\" " | osascript }
 
 # Git shortcuts/aliases
 alias glol='git log --oneline --graph --max-count=7 --decorate' #  overwrites plugin's glol!

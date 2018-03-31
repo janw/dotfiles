@@ -23,7 +23,7 @@ org.videolan.vlc wav viewer
 org.videolan.vlc 3gp viewer
 org.videolan.vlc flac viewer
 
-# Set some text-based formats to use MacVim
+# Set some text-based formats to use Sublime Text
 com.sublimetext.3 txt  all
 com.sublimetext.3 nfo  all
 com.sublimetext.3 md   all
