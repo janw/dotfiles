@@ -1,7 +1,14 @@
 
-# What else could a sane human being want from a bashrc  
-# except for having proper git aliases as they are in zsh ...
+## Source global definitions
+if [ -f /etc/bashrc ]
+then
+    . /etc/bashrc
+fi
 
+## Default to permissions 775/664 for new dirs/files
+umask 022
+
+## Git aliases as taken from ohmyzsh git plugin
 alias g='git'
 
 alias ga='git add'
