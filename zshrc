@@ -128,12 +128,5 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export PATH="$PYENV_ROOT/bin:$PATH"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-# pyenv-virtualenv
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-if [[ $(local_hostname) =~ hs\-woe\.de  && $(local_session) == local ]]
-then
-    echo "You're at work. Yay, I guess."
-    zeiterf -sd &
-fi
 
