@@ -88,6 +88,19 @@ note () {
     vim -c "put='# '" -c 'start!' -- "$NOTES_FOLDER/note_${fname}.md"
 }
 
+subl () {
+    setopt +o nomatch
+    files=`ls -1 *.sublime-project 2>/dev/null`
+    setopt -o nomatch
+
+    nfiles=`echo $files | wc -l`
+    if [ $# -eq 0 ] && [ $nfiles -eq 1 ]
+    then
+        command subl --project "$files"
+    else
+        command subl "$@"
+    fi
+}
 
 os_version () {
     #
