@@ -1,8 +1,8 @@
-My Dotfiles
+# My Dotfiles
 
 This repository contains humble swiss army knife for getting work done. It includes config files for vim, zsh, git, and others. Regularly used (and considered tested) only on macOS, but a reduced set of features should also work on Linux e.g. Ubuntu.
 
-# Setup
+## Setup
 
 Usage requires git – vim and zsh recommended. Clone the repository (expected into `~/.dotfiles`), and run the [dotbot installer script](https://github.com/anishathalye/dotbot/). This will update all submodules, and create necessary symlinks.
 
@@ -12,15 +12,15 @@ sh ~/.dotfiles/install
 ```
 
 
-## Install required packages on ...
+### Install required packages on …
 
-### Ubuntu or macOS
+#### … Ubuntu or macOS
 
 ```bash
 sudo apt-get install git vim zsh htop
 ```
 
-### CentOS 7
+#### … CentOS 7
 
 ```bash
 # EPEL for htop and sane package availability
