@@ -15,6 +15,7 @@
 # Additional tools
     ~/.latexmkrc:
     ~/.config/htop/htoprc:
+      create: true
 
 # Git-related
     ~/.gitconfig:
