@@ -78,7 +78,9 @@ export HOMEBREW_NO_ANALYTICS=1
 
 # Custom functions
 upgrade_dotfiles () {
-    /bin/sh $DOTFILES/upgrade-dotfiles.sh
+    echo "Updating Dotfiles. Stashing changes if necessary."
+    cd "$DOTFILES"
+    git pull --rebase
 }
 
 note () {
