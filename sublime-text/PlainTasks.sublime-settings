@@ -1,0 +1,9 @@
+{
+	"open_tasks_bullet": "[ ]", // options: - | ❍ | ❑ | ■ | □ | ☐ | ▪ | ▫ | – | — | ≡ | → | › | [ ]
+	"done_tasks_bullet": "[x]", // options: + | ✓ | ✔ | √ |
+	"translate_tabs_to_spaces": false,
+	"date_format": "(%y-%m-%d %H:%M)",
+	"taskpaper_compatible": true,
+	"draw_indent_guides": true,
+	"line_numbers": false,
+}

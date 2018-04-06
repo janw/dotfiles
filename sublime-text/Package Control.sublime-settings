@@ -1,0 +1,15 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"GitGutter",
+		"LaTeXTools",
+		"Package Control",
+		"PlainTasks",
+		"Sass",
+		"Solarized Color Scheme"
+	]
+}

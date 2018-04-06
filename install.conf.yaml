@@ -26,6 +26,11 @@
 # Collection of default applications
     ~/.duti:
 
+# GUI Applications
+    ~/Library/Application Support/Sublime Text 3/Packages/User:
+      path: sublime-text
+      create: true
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - ["curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > .dein-installer.sh", Downloading vim package manager]
