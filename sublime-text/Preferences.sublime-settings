@@ -28,5 +28,5 @@
 	"theme": "Adaptive.sublime-theme",
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
-	"word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?_" // Default but including underscore
+	"word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?_"
 }
