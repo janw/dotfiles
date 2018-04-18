@@ -18,3 +18,7 @@ nnoremap <space> za
 " Enabel mouse-wheel scrolling
 set mouse=a
 
+" Clear search highlighting by hitting ESC
+nnoremap <silent><esc> :noh<CR>
+nnoremap <esc>^[ <esc>^[
+
