@@ -39,6 +39,8 @@ if dein#load_state('~/.vim/bundle')
 			\ {'lazy': 1, 'on_ft': ['py', 'python', 'python2', 'python3']})
 	call dein#add('plasticboy/vim-markdown',
 			\ {'lazy': 1, 'on_ft': ['md', 'markdown','markd']})
+	call dein#add('chase/vim-ansible-yaml',
+			\ {'lazy': 1, 'on_ft': ['yaml', 'yml']})
 
     " Neovim: specifics
 	if has('nvim')
@@ -117,15 +119,9 @@ set backspace=indent,eol,start
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use spaces instead of tabs
-set expandtab
+" Proper spaces-for-tabs behavior
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
-" Be smart when using tabs ;)
-set smarttab
-
-" 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
 
 " Linebreak on 500 characters
 set lbr
@@ -162,7 +158,7 @@ au BufNewFile,BufRead *.js, *.html, *.css;
 au! BufRead,BufNewFile *.json set filetype=json
 
 " YAML indentation
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab smarttab
 
 " Enable whitespace and tab flagging
 highlight UnwanttedTab ctermbg=red guibg=darkred
