@@ -1,6 +1,6 @@
 [user]
-    name = Jan Willhaus
-    email = mail@janwillhaus.de
+	name = Jan Willhaus
+	email = mail@janwillhaus.de
 
 [core]
     editor = vim
