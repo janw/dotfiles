@@ -6,13 +6,18 @@
 	"installed_packages":
 	[
 		"Djaneiro",
+		"Emmet",
+		"FileIcons",
 		"GitGutter",
 		"LaTeXTools",
+		"MarkdownEditing",
 		"Package Control",
 		"PlainTasks",
 		"Sass",
+		"SCSS",
 		"SideBarTools",
 		"Solarized Color Scheme",
-		"Theme - Cobalt2"
+		"Theme - Cobalt2",
+		"Tomorrow Color Schemes"
 	]
 }
