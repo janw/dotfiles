@@ -18,6 +18,9 @@
     ~/.config/htop/htoprc:
       create: true
 
+# Development-related
+    ~/.npmrc:
+
 # Git-related
     ~/.gitconfig:
     ~/.gitattributes_global:
