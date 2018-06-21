@@ -16,7 +16,8 @@ if dein#load_state('~/.vim/bundle')
 
 	" Basics: colorscheme, status line
     call dein#add('itchyny/lightline.vim')
-	call dein#add('altercation/vim-colors-solarized')
+	call dein#add('flazz/vim-colorschemes')
+        call dein#add('felixhummel/setcolors.vim')
 
     " Advanced: code folding, comments, git gutter, braces matching
     call dein#add('tmhedberg/simpylfold')
@@ -102,8 +103,8 @@ set hlsearch
 set incsearch
 
 " Configure color scheme and slightly modify line numbers
-colorscheme solarized
-set background=light
+colorscheme delek
+set background=dark
 
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -223,7 +224,7 @@ highlight clear ALEWarningSign
 
 " Lightline blocks
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': '16color',
       \ 'active': {
       \   'right': [ [ 'lineinfo' ],
       \              [ 'linter_warnings', 'linter_errors', 'linter_ok' ],
