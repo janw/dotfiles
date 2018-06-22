@@ -5,10 +5,12 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
+		"Anaconda",
+		"AutoFoldCode",
+		"BracketHighlighter",
 		"Djaneiro",
 		"Emmet",
-		"FileIcons",
-		"GitGutter",
 		"LaTeXTools",
 		"MarkdownEditing",
 		"Package Control",
@@ -17,7 +19,10 @@
 		"SCSS",
 		"SideBarTools",
 		"Solarized Color Scheme",
+		"SublimeLinter",
+		"SublimeLinter-flake8",
 		"Theme - Cobalt2",
-		"Tomorrow Color Schemes"
+		"Tomorrow Color Schemes",
+		"Vue Syntax Highlight"
 	]
 }
