@@ -1,27 +1,46 @@
 {
 	"adaptive_dividers": false,
+	"always_show_minimap_viewport": true,
 	"auto_complete_with_fields": true,
 	"bold_folder_labels": true,
+	"caret_extra_bottom": 2,
+	"caret_extra_top": 2,
+	"caret_extra_width": 1,
+	"caret_style": "smooth",
 	"close_windows_when_empty": true,
-	"color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night-Bright.tmTheme",
+	"color_scheme": "Packages/Theme - Autumn/Autumn - Lavender Magenta.tmTheme",
 	"create_window_at_startup": false,
 	"drag_text": false,
 	"enable_tab_scrolling": false,
+	"enki_theme_accent_orange": true,
+	"fade_fold_buttons": false,
 	"find_selected_text": true,
-	"font_face": "Fira Code",
-	"font_size": 16,
+	"font_face": "Calling Code",
+	"font_options":
+	[
+		"no_round"
+	],
+	"font_size": 15,
+	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Vintage",
-		"Markdown"
+		"Markdown",
+		"Vintage"
 	],
 	"indent_guide_options":
 	[
 		"draw_normal",
 		"draw_active"
 	],
-	"margin": 4,
+	"margin": 8,
+	"match_brackets": false,
+	"match_brackets_angle": false,
+	"match_brackets_braces": false,
+	"match_brackets_content": false,
+	"match_brackets_square": false,
+	"match_tags": false,
+	"overlay_scroll_bars": "enabled",
 	"rulers":
 	[
 		80,
@@ -33,9 +52,23 @@
 	"show_full_path": true,
 	"show_line_endings": true,
 	"show_tab_close_buttons": false,
-	"theme": "Adaptive.sublime-theme",
+	"theme": "Autumn - Birch.sublime-theme",
+	"theme_bar_margin_top_sm": true,
+	"theme_dirty_accent_purple": true,
+	"theme_find_panel_close_hidden": true,
+	"theme_find_panel_size_xs": true,
+	"theme_grid_border_size_sm": true,
+	"theme_minimap_viewport_opacity_hg": true,
+	"theme_sidebar_close_always_visible": true,
+	"theme_sidebar_folder_atomized": true,
+	"theme_sidebar_icon_saturation_lw": true,
+	"theme_sidebar_indent_xs": true,
+	"theme_sidebar_size_xxs": true,
+	"theme_size_xs": true,
+	"theme_tab_font_xs": true,
+	"theme_tab_size_xs": true,
+	"theme_unified": true,
 	"trim_automatic_white_space": true,
 	"trim_trailing_white_space_on_save": true,
-	"ui_scale": 0.95,
 	"word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?_"
 }

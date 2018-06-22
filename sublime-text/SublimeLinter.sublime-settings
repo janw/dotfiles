@@ -1,0 +1,24 @@
+{
+
+	"styles": [
+        {
+            "scope": "region.orangish markup.warning.sublime_linter",
+            "types": ["warning"]
+        },
+        {
+            "scope": "region.redish markup.error.sublime_linter",
+            "types": ["error"]
+        },
+        {
+            "priority": 1,
+            "icon": "heart",
+            "mark_style": "squiggly_underline"
+        }
+    ],
+    "linters": {
+        "flake8": {
+    	    "select": "",
+    	    "show-code": false,
+        }
+    }
+}
