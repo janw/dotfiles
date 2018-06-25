@@ -8,49 +8,46 @@ set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
 
 " Required:
 if dein#load_state('~/.vim/bundle')
-	call dein#begin('~/.vim/bundle')
+    call dein#begin('~/.vim/bundle')
+    call dein#add('Shougo/dein.vim')
 
-	" Let dein manage dein
-	" Required:
-	call dein#add('Shougo/dein.vim')
-
-	" Basics: colorscheme, status line
+    " Basics: colorscheme, status line
     call dein#add('itchyny/lightline.vim')
-	call dein#add('flazz/vim-colorschemes')
-        call dein#add('felixhummel/setcolors.vim')
+    call dein#add('flazz/vim-colorschemes')
+    call dein#add('felixhummel/setcolors.vim')
 
     " Advanced: code folding, comments, git gutter, braces matching
     call dein#add('tmhedberg/simpylfold')
     call dein#add('scrooloose/nerdcommenter')
-	call dein#add('airblade/vim-gitgutter')
-	call dein#add('itmammoth/doorboy.vim')
+    call dein#add('airblade/vim-gitgutter')
+    call dein#add('itmammoth/doorboy.vim')
     call dein#add('kopischke/vim-stay')
 
     " Ctrl-P:  Searchable file opening panels
     call dein#add('ctrlpvim/ctrlp.vim')
 
     " Syntaxes: whatever necessary to get the job done
-	call dein#add('groenewege/vim-less',
-			\ {'lazy': 1, 'on_ft': ['less']})
-	call dein#add('elzr/vim-json',
-			\ {'lazy': 1, 'on_ft': ['json']})
-	call dein#add('davidhalter/jedi-vim',
-			\ {'lazy': 1, 'on_ft': ['py', 'python', 'python2', 'python3']})
-	call dein#add('nvie/vim-flake8',
-			\ {'lazy': 1, 'on_ft': ['py', 'python', 'python2', 'python3']})
-	call dein#add('plasticboy/vim-markdown',
-			\ {'lazy': 1, 'on_ft': ['md', 'markdown','markd']})
-	call dein#add('chase/vim-ansible-yaml',
-			\ {'lazy': 1, 'on_ft': ['yaml', 'yml']})
+    call dein#add('groenewege/vim-less',
+                    \ {'lazy': 1, 'on_ft': ['less']})
+    call dein#add('elzr/vim-json',
+                    \ {'lazy': 1, 'on_ft': ['json']})
+    call dein#add('davidhalter/jedi-vim',
+                    \ {'lazy': 1, 'on_ft': ['py', 'python', 'python2', 'python3']})
+    call dein#add('nvie/vim-flake8',
+                    \ {'lazy': 1, 'on_ft': ['py', 'python', 'python2', 'python3']})
+    call dein#add('plasticboy/vim-markdown',
+                    \ {'lazy': 1, 'on_ft': ['md', 'markdown','markd']})
+    call dein#add('chase/vim-ansible-yaml',
+                    \ {'lazy': 1, 'on_ft': ['yaml', 'yml']})
 
     " Neovim: specifics
-	if has('nvim')
-		call dein#add('Shougo/deol.nvim')
-	endif
+    if has('nvim')
+        call dein#add('Shougo/deol.nvim')
+    endif
 
-	" Required:
-	call dein#end()
-	call dein#save_state()
+    " Required:
+    call dein#end()
+    call dein#save_state()
 endif
 
 filetype plugin indent on    " required
@@ -63,58 +60,26 @@ endif
 " Include other config files
 source ~/.vim/sources/mappings.vim
 
-" Nerdtree-specific settings
-"autocmd vimenter * NERDTree
-"autocmd VimEnter * wincmd p
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Change to current dir automatically
-set autochdir
-
-" Allow for nice statusline
-set laststatus=2
-
-" Lines of history
+" Some sane defaults
+set laststatus=3
 set history=700
-
-" Highlight current line
 set cul
-
-" Set to auto read when file is changed from the outside
 set autoread
-
-" Show line numbers
 set number
+set cmdheight=2
+set encoding=utf8
+set ffs=unix,dos,mac
+set backspace=indent,eol,start
 
-" Height of the command bar
-set cmdheight=1
-
-" Ignore case when searching
+" Search settings
 set ignorecase
-
-" When searching try to be smart about cases
 set smartcase
-
-" Highlight search results
 set hlsearch
-
-" Makes search act like search in modern browsers
 set incsearch
 
 " Configure color scheme and slightly modify line numbers
 colorscheme delek
 set background=dark
-
-
-" Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
-
-" Use Unix as the standard file type
-set ffs=unix,dos,mac
-
-" Restore proper backspace behavior
-set backspace=indent,eol,start
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -173,7 +138,6 @@ autocmd ColorScheme * highlight TrailSpace guibg=red ctermbg=darkred
 autocmd BufWritePre *.py %s/\s\+$//e
 
 " Enable overly long line flagging and colorcolumn
-let &cc="80"
 fun! ToggleCC()
     if &cc == ''
         let &cc="80,".join(range(120,999),",")
@@ -182,7 +146,6 @@ fun! ToggleCC()
     endif
 endfun
 nnoremap <F2> :call ToggleCC()<CR>
-
 
 
 augroup json_autocmd
@@ -200,14 +163,16 @@ augroup reload_vimrc " {
     autocmd BufWritePost ~/.vimrc source ~/.vimrc
 augroup END " }
 
+" CtrlP-specific settings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'rca'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Custom settings for nerdcommenter
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 let g:NERDSpaceDelims = 1
-
-" Custom settings for youcompleteme
-let g:ycm_python_binary_path = 'python'
 
 " Gitgutter signs:
 let g:gitgutter_sign_added = '•'
