@@ -128,7 +128,7 @@ os_version () {
 }
 
 # Launch into a screen session when connecting via ssh
-if [ -z "$STY" ]; then screen -R; fi
+if [ -z "$STY" ] && ([ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]); then screen -R; fi
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
