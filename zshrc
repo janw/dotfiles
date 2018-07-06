@@ -127,6 +127,9 @@ os_version () {
     fi
 }
 
+# Launch into a screen session when connecting via ssh
+if [ -z "$STY" ]; then screen -R; fi
+
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
