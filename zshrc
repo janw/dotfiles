@@ -144,4 +144,6 @@ if type "pyenv" > /dev/null; then
     fi
 fi
 
+# Source local environment variations from separate rc file
+[[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
