@@ -128,12 +128,20 @@ os_version () {
 }
 
 # Launch into a screen session when connecting via ssh
-if [ -z "$STY" ] && ([ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]); then screen -R; fi
+if [ -z "$STY" ] && ([ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]); then
+    screen -R;
+fi
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-export PATH="$PYENV_ROOT/bin:$PATH"
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+# Pyenv setup if binary exists
+if type "pyenv" > /dev/null; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+
+    if type "pyenv-virtualenv-init" > /dev/null; then
+        eval "$(pyenv virtualenv-init -)"
+    fi
+fi
+
 
