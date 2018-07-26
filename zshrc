@@ -133,7 +133,7 @@ if [ -z "$STY" ] && ([ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]); then
 fi
 
 # Pyenv setup if binary exists
-if type "pyenv" > /dev/null; then
+if type "$HOME/.pyenv/bin/pyenv" > /dev/null; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PYENV_VIRTUALENV_DISABLE_PROMPT=1
     export PATH="$PYENV_ROOT/bin:$PATH"
