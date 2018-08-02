@@ -89,7 +89,7 @@ upgrade_dotfiles () {
 
 note () {
     # note-taking
-    NOTES_FOLDER="$HOME/Dropbox/Notes/"
+    NOTES_FOLDER="$HOME/Nextcloud/Documents/Notes/"
     fname=$(date "+%Y-%m-%d %H%M%S")
     vim -c "put='# '" -c 'start!' -- "$NOTES_FOLDER/note_${fname}.md"
 }
