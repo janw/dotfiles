@@ -6,7 +6,11 @@ autodetach      on
 defscrollback   5000
 mousetrack      on
 termcapinfo     xterm* ti@:te@
+startup_message off
 
 hardstatus      alwayslastline
 hardstatus      string '%{= kw}%-w%{+b yk} %n %t%?(%u)%? %{-}%+w %=%{g} | %{G}%H%? %1`%? %{g}| %{c}%l %{g}| %{B}%Y-%m-%d %{g}%c'
 
+# Bind C-a v to copy buffer to Mac OS X clipboard.
+# --src: https://gist.github.com/Coomer/9277921
+bind v eval "writebuf" "exec sh -c 'pbcopy < /tmp/screen-exchange'"
