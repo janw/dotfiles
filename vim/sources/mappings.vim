@@ -22,3 +22,8 @@ set mouse=a
 nnoremap <silent><esc> :noh<CR>
 nnoremap <esc>^[ <esc>^[
 
+" Map copy-paste emulation
+inoremap <C-v> <esc>"+pa
+vnoremap <C-c> "+y
+vnoremap <C-d> "+d
+
