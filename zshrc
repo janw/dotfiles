@@ -127,11 +127,6 @@ os_version () {
     fi
 }
 
-# Launch into a screen session when connecting via ssh
-if [ -z "$STY" ] && ([ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]); then
-    screen -R;
-fi
-
 # Pyenv setup if binary exists
 if type "$HOME/.pyenv/bin/pyenv" > /dev/null; then
     export PYENV_ROOT="$HOME/.pyenv"
@@ -146,4 +141,9 @@ fi
 
 # Source local environment variations from separate rc file
 [[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
+
+# Launch into a screen session when connecting via ssh
+if [ -z "$STY" ] && ([ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]) && [[ "$-" =~ "i" ]]; then
+    exec screen -q -Rd;
+fi
 
