@@ -65,6 +65,7 @@ alias lsdisk='diskutil list'
 alias cask='brew cask'
 alias ydl='youtube-dl'
 bundleid () { echo "id of app \"$@\" " | osascript }
+sssh () { ssh -t "$@" screen -q -Rd }
 
 # Git shortcuts/aliases
 alias glol='git log --oneline --graph --max-count=7 --decorate' #  overwrites plugin's glol!
@@ -144,6 +145,7 @@ fi
 
 # Launch into a screen session when connecting via ssh
 if [ -z "$STY" ] && ([ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]) && [[ "$-" =~ "i" ]]; then
-    exec screen -q -Rd;
+    echo "Would launch screen …"
+    #exec screen -q -Rd;
 fi
 
