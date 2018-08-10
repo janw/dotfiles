@@ -5,37 +5,37 @@ au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 au BufWritePost ~/.vimrc source ~/.vimrc
 
 " Python: Enable PEP8 compliant python indentation
-au BufRead,BufNewFile *.py;
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=120
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
+au BufRead,BufNewFile *.py set filetype=python
+    \ tabstop=4
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ textwidth=120
+    \ expandtab
+    \ autoindent
+    \ fileformat=unix
 
 " Webdev: Enable proper indentation
-au BufRead,BufNewFile *.js, *.html, *.css;
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+au BufRead,BufNewFile *.js,*.html,*.css set
+    \ tabstop=2
+    \ softtabstop=2
+    \ shiftwidth=2
 
 " JSON: Highlighting
-au! BufRead,BufNewFile *.json;
-    \ set autoindent
-    \ set formatoptions=tcq2l
-    \ set shiftwidth=2
-    \ set softtabstop=2
-    \ set tabstop=8
-    \ set expandtab
-    \ set foldmethod=syntax
-    \ set filetype=json
+au! BufRead,BufNewFile *.json set
+    \ autoindent
+    \ formatoptions=tcq2l
+    \ shiftwidth=2
+    \ softtabstop=2
+    \ tabstop=8
+    \ expandtab
+    \ foldmethod=syntax
+    \ filetype=json
 
 " YAML: Indentation
-au BufRead,BufNewFile *.yml, *.yaml;
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
-    \ set expandtab
-    \ set smarttab
-    \ set filetype=yaml
+au BufRead,BufNewFile *.yml,*.yaml set
+    \ tabstop=2
+    \ softtabstop=2
+    \ shiftwidth=2
+    \ expandtab
+    \ smarttab
+    \ filetype=yaml
