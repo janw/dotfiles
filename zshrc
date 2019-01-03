@@ -128,18 +128,6 @@ os_version () {
     fi
 }
 
-# Pyenv setup if binary exists
-if type "$HOME/.pyenv/bin/pyenv" > /dev/null; then
-    export PYENV_ROOT="$HOME/.pyenv"
-    export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-    export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
-
-    if type "pyenv-virtualenv-init" > /dev/null; then
-        eval "$(pyenv virtualenv-init -)"
-    fi
-fi
-
 # Source local environment variations from separate rc file
 [[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
