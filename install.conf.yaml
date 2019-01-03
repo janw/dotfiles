@@ -12,6 +12,7 @@
     ~/.zshrc:
       force: true
     ~/.screenrc:
+    ~/.doingrc:
 
 # Additional tools
     ~/.latexmkrc:
