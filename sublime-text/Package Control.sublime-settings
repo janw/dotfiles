@@ -5,12 +5,12 @@
 	],
 	"installed_packages":
 	[
-		"A File Icon",
 		"Anaconda",
 		"AutoFoldCode",
 		"BracketHighlighter",
 		"Djaneiro",
 		"Emmet",
+		"FileIcons",
 		"LaTeXTools",
 		"MarkdownEditing",
 		"Package Control",

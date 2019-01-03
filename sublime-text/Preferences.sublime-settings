@@ -8,7 +8,7 @@
 	"caret_extra_width": 1,
 	"caret_style": "smooth",
 	"close_windows_when_empty": true,
-	"color_scheme": "Packages/Theme - Autumn/Autumn - Lavender Magenta.tmTheme",
+	"color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night-Bright.tmTheme",
 	"create_window_at_startup": false,
 	"drag_text": false,
 	"enable_tab_scrolling": false,
@@ -25,6 +25,7 @@
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"A File Icon",
 		"Markdown",
 		"Vintage"
 	],
@@ -52,7 +53,7 @@
 	"show_full_path": true,
 	"show_line_endings": true,
 	"show_tab_close_buttons": false,
-	"theme": "Autumn - Birch.sublime-theme",
+	"theme": "Adaptive.sublime-theme",
 	"theme_bar_margin_top_sm": true,
 	"theme_dirty_accent_purple": true,
 	"theme_find_panel_close_hidden": true,

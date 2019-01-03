@@ -33,6 +33,7 @@
     ~/Library/Application Support/Sublime Text 3/Packages/User:
       path: sublime-text
       create: true
+      force: true
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
