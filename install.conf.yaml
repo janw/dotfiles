@@ -18,6 +18,7 @@
     ~/.latexmkrc:
     ~/.config/htop/htoprc:
       create: true
+    ~/.config/flake8:
 
 # Development-related
     ~/.npmrc:
