@@ -7,7 +7,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # Automatically activate pipenv shell, when cd'ing into a "pipenv'ed" dir
-function auto_pipenv_shell {
+function auto_python_env {
     if grep -sq "poetry" "pyproject.toml" && [ ! -n "${POETRY_ACTIVE+1}" ]; then
         poetry shell
     elif [ -f "Pipfile" ] && [ ! -n "${PIPENV_ACTIVE+1}" ]; then
