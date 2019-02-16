@@ -11,6 +11,8 @@
     ~/.vimrc:
     ~/.zshrc:
       force: true
+    ~/.zsh:
+      create: true
     ~/.screenrc:
     ~/.doingrc:
 

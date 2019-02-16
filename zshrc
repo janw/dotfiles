@@ -6,8 +6,8 @@ export TERM="xterm-256color"
 export EDITOR=vim
 
 # Work around OS-different versions of `hostname`
-local_hostname () { 
-    echo $(hostname -A 2> /dev/null || hostname -F 2> /dev/null || hostname) | tail -n1 
+local_hostname () {
+    echo $(hostname -A 2> /dev/null || hostname -F 2> /dev/null || hostname) | tail -n1
 }
 
 # Determine if session is remote or local
@@ -39,39 +39,6 @@ export RPROMPT=''
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
-# ssh key selection (always use ed25519)
-# export SSH_KEY_PATH="~/.ssh/id_ed25519"
-
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-alias zshconf="vim ~/.zshrc"
-alias zresrc="source ~/.zshrc"
-alias vimconf="vim ~/.vimrc"
-
-# User specific aliases and functions
-alias ll='ls -lah'
-
-# Some hash shortcuts (shasum required)
-alias sha256='shasum -a256'
-alias sha512='shasum -a512'
-alias sha1='shasum -a1'
-
-# Zypper is a damn long word
-alias zy='sudo zypper'
-alias undisk='diskutil unmountdisk'
-alias lsdisk='diskutil list'
-alias cask='brew cask'
-alias ydl='youtube-dl'
-bundleid () { echo "id of app \"$@\" " | osascript }
-sssh () { ssh -t "$@" screen -q -Rd }
-
-# Git shortcuts/aliases
-alias glol='git log --oneline --graph --max-count=7 --decorate' #  overwrites plugin's glol!
-alias gloll="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" #  re-instates plugin's glol!
-alias gbage="git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:red)%(objectname:short)%(color:reset);%(color:yellow)%(refname:short)%(color:reset);(%(color:green)%(committerdate:relative)%(color:reset));%(authorname);%(contents:subject)' | column -t -s ';'"
-alias grepos="find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '[ -d {}/.git ] && (echo {} && cd {} && git status -s && echo)' \;"
 
 # Shell-specific comfort features
 set show-all-if-ambiguous on
@@ -127,6 +94,11 @@ os_version () {
         system_profiler SPSoftwareDataType | grep "System Version:"
     fi
 }
+
+# Source a few more tools/settings
+source $DOTFILES/zsh/python.zsh
+source $DOTFILES/zsh/aliases.zsh
+source $DOTFILES/zsh/tools.zsh
 
 # Source local environment variations from separate rc file
 [[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
