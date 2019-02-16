@@ -27,6 +27,7 @@
 	[
 		"A File Icon",
 		"Markdown",
+		"Python",
 		"Vintage"
 	],
 	"indent_guide_options":
@@ -44,7 +45,7 @@
 	"overlay_scroll_bars": "enabled",
 	"rulers":
 	[
-		80,
+		88,
 		120
 	],
 	"scroll_past_end": true,

@@ -5,13 +5,13 @@
 	],
 	"installed_packages":
 	[
-		"Anaconda",
+		"A File Icon",
 		"AutoFoldCode",
 		"BracketHighlighter",
-		"Djaneiro",
 		"Emmet",
 		"FileIcons",
 		"LaTeXTools",
+		"MagicPython",
 		"MarkdownEditing",
 		"Package Control",
 		"PlainTasks",
@@ -19,6 +19,7 @@
 		"SCSS",
 		"SideBarTools",
 		"Solarized Color Scheme",
+		"sublack",
 		"SublimeLinter",
 		"SublimeLinter-flake8",
 		"Theme - Autumn",

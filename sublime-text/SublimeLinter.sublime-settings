@@ -19,8 +19,8 @@
         "flake8": {
     	    "select": "",
     	    "show-code": false,
-            "max-line-length": 120,
-            "max-complexity": -1,
+            "max-line-length": 88,
+            "max-complexity": 18,
             "jobs": "3",
             "executable": "~/.pyenv/shims/flake8",
             "lint_mode": "load_save"
