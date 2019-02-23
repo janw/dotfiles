@@ -38,6 +38,10 @@
       path: sublime-text
       create: true
       force: true
+    ~/Library/Application Support/pypoetry:
+      path: poetry
+      create: true
+      force: true
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
