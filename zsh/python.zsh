@@ -1,9 +1,11 @@
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
+if [ ! -n "${POETRY_ACTIVE+1}" ]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    if command -v pyenv 1>/dev/null 2>&1; then
+      eval "$(pyenv init -)"
+    fi
 fi
 
 # Automatically activate pipenv shell, when cd'ing into a "pipenv'ed" dir
