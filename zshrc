@@ -36,11 +36,14 @@ antigen bundle httpie
 
 # Bundles from third-party sources
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle Tarrasch/zsh-autoenv
 
 # Final steps ...
 antigen theme andrepolischuk/neat
 antigen apply
 export RPROMPT=''
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='bg=053'
 
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
