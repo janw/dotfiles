@@ -27,6 +27,12 @@ antigen use oh-my-zsh
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
 antigen bundle dotenv
+antigen bundle docker
+antigen bundle docker-compose
+antigen bundle kubectl
+antigen bundle helm
+antigen bundle sublime
+antigen bundle httpie
 
 # Bundles from third-party sources
 antigen bundle zsh-users/zsh-syntax-highlighting
