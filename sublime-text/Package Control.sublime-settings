@@ -7,8 +7,11 @@
 	[
 		"AutoFoldCode",
 		"BracketHighlighter",
+		"Caddyfile Syntax",
+		"Dockerfile Syntax Highlighting",
 		"Emmet",
 		"FileIcons",
+		"JSON Reindent",
 		"LaTeXTools",
 		"MagicPython",
 		"MarkdownEditing",
