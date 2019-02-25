@@ -17,6 +17,7 @@
 		"MarkdownEditing",
 		"Package Control",
 		"PlainTasks",
+		"ProjectManager",
 		"Sass",
 		"SCSS",
 		"SideBarTools",
@@ -26,6 +27,7 @@
 		"SublimeLinter-flake8",
 		"Theme - Autumn",
 		"Theme - Cobalt2",
+		"TOML",
 		"Tomorrow Color Schemes",
 		"Vue Syntax Highlight"
 	]
