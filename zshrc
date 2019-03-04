@@ -40,10 +40,21 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle Tarrasch/zsh-autoenv
 
 # Final steps ...
-antigen theme andrepolischuk/neat
+antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 antigen apply
-export RPROMPT=''
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='bg=053'
+export HISTSIZE=1000
+export SAVEHIST=1000
+BULLETTRAIN_PROMPT_ORDER=(
+  status
+  dir
+  git
+  context
+  virtualenv
+)
+BULLETTRAIN_CONTEXT_DEFAULT_USER=jan
+BULLETTRAIN_PROMPT_CHAR="❯"
+BULLETTRAIN_STATUS_EXIT_SHOW=true
 
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
@@ -104,8 +115,9 @@ os_version () {
     fi
 }
 
+export PATH="/usr/local/bin:$PATH"
+
 # Source a few more tools/settings
-source $DOTFILES/zsh/python.zsh
 source $DOTFILES/zsh/aliases.zsh
 source $DOTFILES/zsh/tools.zsh
 
