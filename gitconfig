@@ -11,7 +11,7 @@
     attributesfile = ~/.gitattributes_global
 
 [push]
-    default = simple
+	default = current
 
 [diff "hilighter"]
     textconv = pygmentize -f terminal256 -O style=fruity
