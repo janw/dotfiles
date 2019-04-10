@@ -49,3 +49,4 @@
   - [git submodule update --init --recursive, Installing submodules]
   - ["curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > .dein-installer.sh", Downloading vim package manager]
   - ["sh ./.dein-installer.sh ~/.vim/bundle", Installing vim package manager]
+  - [mkdir -p ~/repos, Creating repository directory]

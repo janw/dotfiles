@@ -115,7 +115,9 @@ os_version () {
     fi
 }
 
-export PATH="/usr/local/bin:$PATH"
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
+export PROJECT_HOME=$HOME/repos
 
 # Source a few more tools/settings
 source $DOTFILES/zsh/aliases.zsh
