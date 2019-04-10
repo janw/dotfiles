@@ -9,6 +9,8 @@
     ~/.tmux.line.conf:
     ~/.vim:
     ~/.vimrc:
+    ~/.zprofile:
+      force: true
     ~/.zshrc:
       force: true
     ~/.zsh:
