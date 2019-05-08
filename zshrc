@@ -19,42 +19,31 @@ local_session () {
     fi
 }
 
-source $DOTFILES/antigen/antigen.zsh
+# source $DOTFILES/antigen/antigen.zsh
+source "${HOME}/.zgen/zgen.zsh"
 
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
+# if the init script doesn't exist
+if ! zgen saved; then
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle dotenv
-antigen bundle docker
-antigen bundle docker-compose
-antigen bundle kubectl
-antigen bundle helm
-antigen bundle sublime
-antigen bundle httpie
+  # specify plugins here
+  zgen oh-my-zsh
+  zgen oh-my-zsh plugins/git
+  zgen oh-my-zsh plugins/dotenv
+  zgen oh-my-zsh plugins/docker
+  zgen oh-my-zsh plugins/docker-compose
+  zgen oh-my-zsh plugins/kubectl
+  zgen oh-my-zsh plugins/helm
+  zgen oh-my-zsh plugins/httpie
 
-# Bundles from third-party sources
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle Tarrasch/zsh-autoenv
+  zgen load zsh-users/zsh-syntax-highlighting
+  zgen load zsh-users/zsh-autosuggestions
 
-# Final steps ...
-antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
-antigen apply
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='bg=053'
-export HISTSIZE=1000
-export SAVEHIST=1000
-BULLETTRAIN_PROMPT_ORDER=(
-  status
-  dir
-  git
-  context
-  virtualenv
-)
-BULLETTRAIN_CONTEXT_DEFAULT_USER=jan
-BULLETTRAIN_PROMPT_CHAR="❯"
-BULLETTRAIN_STATUS_EXIT_SHOW=true
+  zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+
+  # generate the init script from plugins above
+  zgen save
+fi
+
 
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
@@ -63,72 +52,27 @@ export LANG=en_US.UTF-8
 # Shell-specific comfort features
 set show-all-if-ambiguous on
 set completion-ignore-case on
+export HISTSIZE=1000
+export SAVEHIST=1000
 
 # Avoid homebrew from sending analytics
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-# Custom functions
-upgrade_dotfiles () {
-    echo "Updating Dotfiles. Stashing changes if necessary."
-    cd "$DOTFILES"
-    git pull --rebase
-}
-
-note () {
-    # note-taking
-    NOTES_FOLDER="$HOME/Nextcloud/Documents/Notes/"
-    fname=$(date "+%Y-%m-%d %H%M%S")
-    vim -c "put='# '" -c 'start!' -- "$NOTES_FOLDER/note_${fname}.md"
-}
-
-subl () {
-    setopt +o nomatch
-    files=`ls -1 *.sublime-project 2>/dev/null`
-    setopt -o nomatch
-
-    nfiles=`echo $files | wc -l`
-    if [ $# -eq 0 ] && [ $nfiles -eq 1 ]
-    then
-        command subl --project "$files"
-    else
-        command subl "$@"
-    fi
-}
-
-os_version () {
-    #
-    if hash lsb_release 2>/dev/null; then
-        lsb_release -a | grep "Release:|Codename:" | awk '{print $2}'
-    fi
-
-    if [ -f "/etc/issue" ]; then
-        cat /etc/issue
-    fi
-
-    if [ -f "/etc/*-release" ]; then
-        cat /etc/*-release
-    fi
-
-    if hash system_profiler 2>/dev/null; then
-        system_profiler SPSoftwareDataType | grep "System Version:"
-    fi
-}
-
+# Working environment for python
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
 export PROJECT_HOME=$HOME/repos
 
 # Source a few more tools/settings
+source $DOTFILES/zsh/theming.zsh
 source $DOTFILES/zsh/aliases.zsh
 source $DOTFILES/zsh/tools.zsh
 
 # Source local environment variations from separate rc file
 [[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
-# Launch into a screen session when connecting via ssh
+# Hint about screen
 if [ -z "$STY" ] && ([ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]) && [[ "$-" =~ "i" ]]; then
-    echo "Would launch screen …"
-    #exec screen -q -Rd;
+    echo "Computering on a remote machine? Might wanna screen that."
 fi
-

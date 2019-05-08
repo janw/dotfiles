@@ -5,8 +5,6 @@
 - clean: ['~']
 
 - link:
-    ~/.tmux.conf:
-    ~/.tmux.line.conf:
     ~/.vim:
     ~/.vimrc:
     ~/.zprofile:
@@ -32,14 +30,7 @@
     ~/.gitattributes_global:
     ~/.gitignore_global:
 
-# Collection of default applications
-    ~/.duti:
-
 # GUI Applications
-    ~/Library/Application Support/Sublime Text 3/Packages/User:
-      path: sublime-text
-      create: true
-      force: true
     ~/Library/Application Support/pypoetry:
       path: poetry
       create: true
