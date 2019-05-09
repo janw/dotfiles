@@ -3,3 +3,7 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	branch = master
+[submodule "zgen"]
+	path = zgen
+	url = https://github.com/tarjoilija/zgen.git
+	branch = master

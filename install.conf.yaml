@@ -13,6 +13,7 @@
       force: true
     ~/.zsh:
       create: true
+    ~/.zgen:
     ~/.screenrc:
     ~/.doingrc:
 
