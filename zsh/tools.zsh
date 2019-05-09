@@ -19,3 +19,12 @@ os_version () {
 
 bundleid () { echo "id of app \"$@\" " | osascript }
 sssh () { ssh -t "$@" screen -q -Rd }
+
+# Alias LSDeluxe over ls if present
+if command  -v lsd 1>/dev/null 2>&1; then
+    alias l='lsd -l'
+    alias ll='lsd -lah'
+    alias la='lsd -a'
+    alias lla='lsd -la'
+    alias lt='lsd --tree'
+fi
