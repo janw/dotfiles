@@ -28,3 +28,6 @@ alias grepos="find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '[ -d {}/.git ]
 alias gbtm="git checkout master && git pull"
 alias gtl="git tag --format=\"%(align:12)%(color:bold green)%(refname:strip=2)%(end) %(align:12)%(color:red)%(objectname:short)%(end) %(color:reset)%(authordate:short)  (%(authordate:relative))\""
 alias gpu='git pull'
+
+# Kubernetes shortcuts
+alias kcontext='kubectl config set-context $(kubectl config current-context) --namespace
