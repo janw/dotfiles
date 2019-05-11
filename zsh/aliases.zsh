@@ -30,4 +30,4 @@ alias gtl="git tag --format=\"%(align:12)%(color:bold green)%(refname:strip=2)%(
 alias gpu='git pull'
 
 # Kubernetes shortcuts
-alias kcontext='kubectl config set-context $(kubectl config current-context) --namespace
+alias kcontext='kubectl config set-context $(kubectl config current-context) --namespace'
