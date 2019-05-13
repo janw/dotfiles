@@ -7,4 +7,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # Setup Poetry in login shell only
-source $HOME/.poetry/env
+if [ -f $HOME/.poetry/env ]; then
+    source $HOME/.poetry/env
+fi
