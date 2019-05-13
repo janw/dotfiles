@@ -22,6 +22,7 @@ if dein#load_state('~/.vim/bundle')
     call dein#add('ctrlpvim/ctrlp.vim')
 
     " Syntaxes: whatever necessary to get the job done
+    call dein#add('stephpy/vim-yaml')
     call dein#add('groenewege/vim-less',
                     \ {'lazy': 1, 'on_ft': ['less']})
     call dein#add('elzr/vim-json',
@@ -32,8 +33,6 @@ if dein#load_state('~/.vim/bundle')
                     \ {'lazy': 1, 'on_ft': ['py', 'python', 'python2', 'python3']})
     call dein#add('plasticboy/vim-markdown',
                     \ {'lazy': 1, 'on_ft': ['md', 'markdown','markd']})
-    call dein#add('chase/vim-ansible-yaml',
-                    \ {'lazy': 1, 'on_ft': ['yaml', 'yml']})
 
     " Neovim: specifics
     if has('nvim')

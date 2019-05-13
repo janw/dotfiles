@@ -46,6 +46,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
 
 " Gitgutter signs:
 let g:gitgutter_sign_added = '•'

@@ -38,4 +38,3 @@ au BufRead,BufNewFile *.yml,*.yaml set
     \ shiftwidth=2
     \ expandtab
     \ smarttab
-    \ filetype=yaml
