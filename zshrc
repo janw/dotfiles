@@ -73,6 +73,6 @@ source $DOTFILES/zsh/tools.zsh
 [[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
 # Hint about screen
-if [ -z "$STY" ] && ([ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]) && [[ "$-" =~ "i" ]]; then
+if [[ -n $SESSION_TYPE_SSH ]]; then
     echo "Computering on a remote machine? Might wanna screen that."
 fi
