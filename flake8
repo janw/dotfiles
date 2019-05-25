@@ -3,10 +3,10 @@ max_line_length = 88
 exclude =
 	.git
 	__pycache__
-	venv/
-	.eggs/
+	venv
+	.venv
+	.eggs
 	tests
 show-source = true
-application-import-names = rittal
 import-order-style = pep8
 
