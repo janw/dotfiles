@@ -5,7 +5,7 @@ au BufEnter /private/tmp/crontab.* setl backupcopy=yes
 au BufWritePost ~/.vimrc source ~/.vimrc
 
 " Python: Enable PEP8 compliant python indentation
-au BufRead,BufNewFile *.py set filetype=python
+au BufRead,BufNewFile *.py set
     \ tabstop=4
     \ softtabstop=4
     \ shiftwidth=4
@@ -13,12 +13,7 @@ au BufRead,BufNewFile *.py set filetype=python
     \ expandtab
     \ autoindent
     \ fileformat=unix
-
-" Webdev: Enable proper indentation
-au BufRead,BufNewFile *.js,*.html,*.css set
-    \ tabstop=2
-    \ softtabstop=2
-    \ shiftwidth=2
+    \ filetype=python
 
 " JSON: Highlighting
 au! BufRead,BufNewFile *.json set
@@ -38,3 +33,8 @@ au BufRead,BufNewFile *.yml,*.yaml set
     \ shiftwidth=2
     \ expandtab
     \ smarttab
+    \ shiftround
+    \ filetype=yaml
+
+au BufRead,BufNewFile *.md,*.markd,*.markdown set
+    \ filetype=markdown

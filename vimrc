@@ -49,17 +49,10 @@ let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 
 " Gitgutter signs:
-let g:gitgutter_sign_added = '•'
-let g:gitgutter_sign_modified = '•'
-let g:gitgutter_sign_removed = '•'
-let g:gitgutter_sign_removed_first_line = '•'
-let g:gitgutter_sign_modified_removed = '•'
-
-" Ale Linter signs
-let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '⁈'
-highlight clear ALEErrorSign
-highlight clear ALEWarningSign
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '~'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = 'v'
+let g:gitgutter_sign_modified_removed = '^'
 
 source ~/.vim/sources/lightline.vim
-

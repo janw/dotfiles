@@ -11,8 +11,7 @@ if dein#load_state('~/.vim/bundle')
     call dein#add('flazz/vim-colorschemes')
     call dein#add('felixhummel/setcolors.vim')
 
-    " Advanced: code folding, comments, git gutter, braces matching
-    call dein#add('tmhedberg/simpylfold')
+    " Advanced: comments, git gutter, braces matching
     call dein#add('scrooloose/nerdcommenter')
     call dein#add('airblade/vim-gitgutter')
     call dein#add('itmammoth/doorboy.vim')
@@ -22,22 +21,12 @@ if dein#load_state('~/.vim/bundle')
     call dein#add('ctrlpvim/ctrlp.vim')
 
     " Syntaxes: whatever necessary to get the job done
-    call dein#add('stephpy/vim-yaml')
-    call dein#add('groenewege/vim-less',
-                    \ {'lazy': 1, 'on_ft': ['less']})
+    call dein#add('avakhov/vim-yaml',
+      \ {'lazy': 1, 'on_ft': ['yaml']})
     call dein#add('elzr/vim-json',
-                    \ {'lazy': 1, 'on_ft': ['json']})
-    call dein#add('davidhalter/jedi-vim',
-                    \ {'lazy': 1, 'on_ft': ['py', 'python', 'python2', 'python3']})
-    call dein#add('nvie/vim-flake8',
-                    \ {'lazy': 1, 'on_ft': ['py', 'python', 'python2', 'python3']})
+      \ {'lazy': 1, 'on_ft': ['json']})
     call dein#add('plasticboy/vim-markdown',
-                    \ {'lazy': 1, 'on_ft': ['md', 'markdown','markd']})
-
-    " Neovim: specifics
-    if has('nvim')
-        call dein#add('Shougo/deol.nvim')
-    endif
+      \ {'lazy': 1, 'on_ft': ['markdown']})
 
     " Required:
     call dein#end()
