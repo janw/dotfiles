@@ -38,7 +38,7 @@ if ! zgen saved; then
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-autosuggestions
 
-  zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+  zgen load denysdovhan/spaceship-prompt spaceship
 
   # generate the init script from plugins above
   zgen save
