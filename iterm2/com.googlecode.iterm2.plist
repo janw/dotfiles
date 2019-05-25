@@ -14,6 +14,8 @@
 	<integer>1</integer>
 	<key>AppleWindowTabbingMode</key>
 	<string>manual</string>
+	<key>CloseBookmarksWindowAfterOpening</key>
+	<true/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Belafonte Day</key>
@@ -1512,9 +1514,7 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/repos/tomorrow-theme/iTerm2</string>
-	<key>NSNavLastUserSetHideExtensionButtonState</key>
-	<false/>
+	<string>~/.dotfiles/iterm2</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
@@ -2333,8 +2333,10 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>InconsolataForPowerline 16</string>
+			<string>InconsolataNerdFontComplete-Medium 15</string>
 			<key>Only The Default BG Color Uses Transparency</key>
+			<false/>
+			<key>Open Toolbelt</key>
 			<false/>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
@@ -2381,7 +2383,7 @@
 			<key>Thin Strokes</key>
 			<integer>4</integer>
 			<key>Transparency</key>
-			<real>0.092726840101522837</real>
+			<real>0.0</real>
 			<key>Triggers</key>
 			<array>
 				<dict>
@@ -2412,7 +2414,7 @@
 			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1</real>
+			<real>1.0458337255271084</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
