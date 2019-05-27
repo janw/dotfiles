@@ -7,7 +7,6 @@ SPACESHIP_PROMPT_ORDER=(
   dir           # Current directory section
   host          # Hostname section
   git           # Git section (git_branch + git_status)
-  docker        # Docker section
   venv          # virtualenv section
   pyenv         # Pyenv section
   kubecontext   # Kubectl context section
@@ -21,6 +20,9 @@ SPACESHIP_RPROMPT_ORDER=(
   jobs          # Background jobs indicator
 )
 SPACESHIP_DIR_TRUNC_PREFIX="…/"
+SPACESHIP_PROMPT_DEFAULT_PREFIX=""
+SPACESHIP_KUBECONTEXT_PREFIX=""
+SPACESHIP_PYENV_PREFIX=""
 SPACESHIP_GIT_PREFIX=""
 SPACESHIP_EXIT_CODE_SHOW=true
 SPACESHIP_TIME_SHOW=true
