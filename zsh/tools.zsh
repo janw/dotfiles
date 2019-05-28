@@ -28,3 +28,36 @@ if command  -v lsd 1>/dev/null 2>&1; then
     alias lla='lsd -la'
     alias lt='lsd --tree'
 fi
+
+ktoken-account () {
+cat <<'EOF' | kubectl apply -f -
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-user
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: admin-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: admin-user
+  namespace: kube-system
+EOF
+}
+
+ktoken () {
+    secret_name=$(kubectl -n kube-system get secret | grep '^admin-user-' | awk '{print $1}')
+    if [ -z "$secret_name" ]; then
+        echo "No admin-user account available. Run ktoken-account first."
+        return 1
+    fi
+    kubectl -n kube-system describe secret "$secret_name" | grep token: | awk '{printf $2}' | pbcopy
+    echo "Copied token to clipboard."
+}
