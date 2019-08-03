@@ -1,12 +1,17 @@
 
+/zsh/.zcompdump*
+/zsh/.zsh_history
+/zsh/.zfunc/_*
+.zshrc.local
+
 # Vim stuff
 /vim/.netrwhist
 /vim/bundle
 /vim/view
-.dein-installer.sh
+/vim/plugged
+/vim/autoload/plug.vim
 
 # Poetry/Python
 poetry/auth.toml
-vim/pack/kite
 alfred/Alfred.alfredpreferences/remote/images/
 alfred/Alfred.alfredpreferences/remote/pages/

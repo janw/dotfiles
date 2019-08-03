@@ -1,41 +1,18 @@
-" Set runtime path to include dein package manager
-set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
+call plug#begin('~/.vim/plugged')
 
-" Required:
-if dein#load_state('~/.vim/bundle')
-    call dein#begin('~/.vim/bundle')
-    call dein#add('Shougo/dein.vim')
+Plug 'tpope/vim-sensible'
+Plug 'itchyny/lightline.vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'felixhummel/setcolors.vim'
 
-    " Basics: colorscheme, status line
-    call dein#add('itchyny/lightline.vim')
-    call dein#add('flazz/vim-colorschemes')
-    call dein#add('felixhummel/setcolors.vim')
+Plug 'scrooloose/nerdcommenter'
+Plug 'airblade/vim-gitgutter'
+Plug 'itmammoth/doorboy.vim'
+Plug 'kopischke/vim-stay'
+Plug 'ctrlpvim/ctrlp.vim'
 
-    " Advanced: comments, git gutter, braces matching
-    call dein#add('scrooloose/nerdcommenter')
-    call dein#add('airblade/vim-gitgutter')
-    call dein#add('itmammoth/doorboy.vim')
-    call dein#add('kopischke/vim-stay')
+Plug 'avakhov/vim-yaml', { 'for': 'yaml' }
+Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
-    " Ctrl-P:  Searchable file opening panels
-    call dein#add('ctrlpvim/ctrlp.vim')
-
-    " Syntaxes: whatever necessary to get the job done
-    call dein#add('avakhov/vim-yaml',
-      \ {'lazy': 1, 'on_ft': ['yaml']})
-    call dein#add('elzr/vim-json',
-      \ {'lazy': 1, 'on_ft': ['json']})
-    call dein#add('plasticboy/vim-markdown',
-      \ {'lazy': 1, 'on_ft': ['markdown']})
-
-    " Required:
-    call dein#end()
-    call dein#save_state()
-endif
-
-filetype plugin indent on    " required
-syntax enable                " required
-
-if dein#check_install()
-  call dein#install()
-endif
+call plug#end()

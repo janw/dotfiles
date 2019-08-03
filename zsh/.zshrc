@@ -20,7 +20,7 @@ local_session () {
 }
 
 # source $DOTFILES/antigen/antigen.zsh
-source "${HOME}/.zgen/zgen.zsh"
+source "${ZDOTDIR}/zgen/zgen.zsh"
 
 # if the init script doesn't exist
 if ! zgen saved; then
@@ -35,10 +35,9 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/helm
   zgen oh-my-zsh plugins/httpie
 
+  zgen load romkatv/powerlevel10k powerlevel10k
   zgen load zsh-users/zsh-syntax-highlighting
   zgen load zsh-users/zsh-autosuggestions
-
-  zgen load denysdovhan/spaceship-prompt spaceship
 
   # generate the init script from plugins above
   zgen save
@@ -65,14 +64,17 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
 export PROJECT_HOME=$HOME/repos
 
 # Source a few more tools/settings
-source $DOTFILES/zsh/theming.zsh
-source $DOTFILES/zsh/aliases.zsh
-source $DOTFILES/zsh/tools.zsh
+source $ZDOTDIR/theming.zsh
+source $ZDOTDIR/aliases.zsh
+source $ZDOTDIR/tools.zsh
 
 # Source local environment variations from separate rc file
 [[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
+[[ -s "$ZDOTDIR/.zshrc.local" ]] && source "$ZDOTDIR/.zshrc.local"
+[[ -f "$ZDOTDIR/.p10k.zsh" ]] && source "$ZDOTDIR/.p10k.zsh"
 
 # Hint about screen
 if [[ -n $SESSION_TYPE_SSH ]]; then
     echo "Computering on a remote machine? Might wanna screen that."
 fi
+

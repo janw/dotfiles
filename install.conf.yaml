@@ -7,29 +7,21 @@
 - link:
     ~/.vim:
     ~/.vimrc:
-    ~/.zprofile:
-      force: true
-    ~/.zshrc:
-      force: true
+    ~/.zshenv:
     ~/.zsh:
       create: true
-    ~/.zgen:
-    ~/.screenrc:
     ~/.doingrc:
 
 # Additional tools
-    ~/.latexmkrc:
     ~/.config/htop/htoprc:
       create: true
+    ~/.config/screen/screenrc:
+      create: true
     ~/.config/flake8:
+    ~/.config/git:
 
 # Development-related
     ~/.npmrc:
-
-# Git-related
-    ~/.gitconfig:
-    ~/.gitattributes_global:
-    ~/.gitignore_global:
 
 # GUI Applications
     ~/Library/Application Support/pypoetry:
@@ -39,6 +31,5 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - ["curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > .dein-installer.sh", Downloading vim package manager]
-  - ["sh ./.dein-installer.sh ~/.vim/bundle", Installing vim package manager]
+  - ["curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim", Downloading vim package manager]
   - [mkdir -p ~/repos, Creating repository directory]

@@ -7,8 +7,6 @@
     precomposeunicode = true
     pager = less -FX
     autocrlf = input
-    excludesfile = ~/.gitignore_global
-    attributesfile = ~/.gitattributes_global
 
 [push]
 	default = current

@@ -20,3 +20,6 @@ else
     sshd|*/sshd) export SESSION_TYPE_SSH=1;;
   esac
 fi
+
+# Created by `userpath` on 2019-08-01 09:03:32
+export PATH="$PATH:/Users/jan/.local/bin"
