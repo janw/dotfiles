@@ -1,9 +1,8 @@
- 
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	branch = master
-[submodule "zgen"]
+[submodule "zsh/zgen"]
 	path = zsh/zgen
 	url = https://github.com/tarjoilija/zgen.git
 	branch = master
