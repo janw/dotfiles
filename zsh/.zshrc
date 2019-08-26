@@ -77,4 +77,3 @@ source $ZDOTDIR/tools.zsh
 if [[ -n $SESSION_TYPE_SSH ]]; then
     echo "Computering on a remote machine? Might wanna screen that."
 fi
-
