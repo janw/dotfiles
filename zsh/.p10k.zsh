@@ -516,11 +516,11 @@ fi
   #
   # You can define different colors, icons and content expansions for different classes:
   #
-  #   typeset -g POWERLEVEL9K_KUBECONTEXT_TEST_FOREGROUND=2
-  #   typeset -g POWERLEVEL9K_KUBECONTEXT_TEST_VISUAL_IDENTIFIER_EXPANSION='⭐'
-  #   typeset -g POWERLEVEL9K_KUBECONTEXT_TEST_CONTENT_EXPANSION='> ${P9K_CONTENT} <'
+  typeset -g POWERLEVEL9K_KUBECONTEXT_PROD_FOREGROUND=1
+  typeset -g POWERLEVEL9K_KUBECONTEXT_PROD_VISUAL_IDENTIFIER_EXPANSION='‼️  ⎈'
+  typeset -g POWERLEVEL9K_KUBECONTEXT_PROD_CONTENT_EXPANSION='${P9K_CONTENT} ‼️'
   typeset -g POWERLEVEL9K_KUBECONTEXT_CLASSES=(
-      # '*prod*'  PROD    # These values are examples that are unlikely
+      '*prod*'  PROD    # These values are examples that are unlikely
       # '*test*'  TEST    # to match your needs. Customize them as needed.
       '*'       DEFAULT)
   typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_FOREGROUND=134
@@ -566,7 +566,7 @@ fi
   # The expansion below will show P9K_KUBECONTEXT_CLOUD_CLUSTER if it's not empty and fall back
   # to P9K_KUBECONTEXT_NAME. Parameter expansions are very flexible and fast, too. See reference:
   # http://zsh.sourceforge.net/Doc/Release/Expansion.html#Parameter-Expansion.
-  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_CONTENT_EXPANSION='${P9K_KUBECONTEXT_CLOUD_CLUSTER:-${P9K_KUBECONTEXT_NAME}}'
+  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_CONTENT_EXPANSION='${P9K_KUBECONTEXT_CLOUD_CLUSTER:-${P9K_KUBECONTEXT_NAME}}:${P9K_KUBECONTEXT_NAMESPACE}'
 
   # Custom prefix.
   # typeset -g POWERLEVEL9K_KUBECONTEXT_PREFIX='%fat '
