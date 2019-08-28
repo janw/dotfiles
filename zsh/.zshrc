@@ -56,7 +56,6 @@ export SAVEHIST=1000
 
 # Avoid homebrew from sending analytics
 export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Working environment for python
 export WORKON_HOME=$HOME/.virtualenvs
