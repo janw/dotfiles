@@ -6,3 +6,5 @@
 *.o
 __pycache__
 *.pyc
+.kube
+.python-version

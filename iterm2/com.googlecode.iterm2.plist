@@ -1595,11 +1595,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>2049 110 445 356 0 0 2560 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>970 768 620 392 0 0 2560 1417 </string>
+	<string>1632 624 620 392 0 0 2560 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>1385 957 770 429 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 2560 1417 0 0 2560 1417 </string>
+	<string>0 0 1680 1027 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 0 1274 1417 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2542,7 +2542,7 @@
 			<key>Use Underline Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.0458337255271084</real>
+			<real>1.05</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
@@ -3270,6 +3270,8 @@
 	</array>
 	<key>NoSyncSearchHistory2</key>
 	<array>
+		<string>r5hlqvmxfg</string>
+		<string>info</string>
 		<string>canal</string>
 		<string>discov</string>
 		<string>require</string>
@@ -3278,8 +3280,6 @@
 		<string>check</string>
 		<string>health</string>
 		<string>names</string>
-		<string>scrapee</string>
-		<string>additional</string>
 	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>568128392.27732801</real>
@@ -3418,9 +3418,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-09-10T08:08:59Z</date>
+	<date>2019-09-19T10:49:35Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUSkippedVersion</key>
+	<string>3.3.4</string>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SeparateStatusBarsPerPane</key>
