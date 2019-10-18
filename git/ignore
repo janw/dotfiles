@@ -8,3 +8,5 @@ __pycache__
 *.pyc
 .kube
 .python-version
+.mypy_cache
+.env
