@@ -66,3 +66,5 @@ gstart () {
     git checkout master && git pull origin master
     git checkout $1 2>/dev/null || git checkout -b $1
 }
+alias __git-checkout_main=_git_checkout
+compdef _git gstart=git-checkout
