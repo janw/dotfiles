@@ -61,3 +61,8 @@ ktoken () {
     kubectl -n kube-system describe secret "$secret_name" | grep token: | awk '{printf $2}' | pbcopy
     echo "Copied token to clipboard."
 }
+
+gstart () {
+    git checkout master && git pull origin master
+    git checkout $1 2>/dev/null || git checkout -b $1
+}
