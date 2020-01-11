@@ -18,7 +18,7 @@ alias zy='sudo zypper'
 alias undisk='diskutil unmountdisk'
 alias lsdisk='diskutil list'
 alias cask='brew cask'
-alias ydl='youtube-dl'
+alias ydl='youtube-dl --format "(bestvideo[height<=?1080]+bestaudio/best)" -o "~/Downloads/%(title)s [%(id)s].%(ext)s"'
 
 # Git shortcuts/aliases
 alias glol='git log --oneline --graph --max-count=7 --decorate' #  overwrites plugin's glol!
