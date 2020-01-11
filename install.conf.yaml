@@ -24,7 +24,7 @@
 
     ~/Library/Preferences/com.pancake.therm.plist:
       path: therm.plist
-      if: "[ `uname` = Darwin ]"
+      if: '[ `uname` = Darwin ] && [ ! -f "$HOME/Library/Preferences/com.pancake.therm.plist" ]'
 
     ~/.npmrc:
 
