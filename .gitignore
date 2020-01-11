@@ -11,7 +11,9 @@
 /vim/plugged
 /vim/autoload/plug.vim
 
-# Poetry/Python
-poetry/auth.toml
 alfred/Alfred.alfredpreferences/remote/images/
 alfred/Alfred.alfredpreferences/remote/pages/
+
+# Poetry/Python
+poetry/auth.toml
+ipython/profile_default/history.sqlite
