@@ -22,7 +22,10 @@
     ~/.config/flake8:
     ~/.config/git:
 
-# Development-related
+    ~/Library/Preferences/com.pancake.therm.plist:
+      path: therm.plist
+      if: "[ `uname` = Darwin ]"
+
     ~/.npmrc:
 
 - shell:
