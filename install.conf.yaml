@@ -20,10 +20,14 @@
     # Additional tools
     ~/.config/htop/htoprc:
       create: true
+      force: true
     ~/.config/screen/screenrc:
       create: true
+      force: true
     ~/.config/flake8:
+      force: true
     ~/.config/git:
+      force: true
 
     ~/Library/Preferences/com.pancake.therm.plist:
       path: therm.plist
