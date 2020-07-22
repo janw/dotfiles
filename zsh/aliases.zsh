@@ -18,7 +18,6 @@ alias zy='sudo zypper'
 alias undisk='diskutil unmountdisk'
 alias lsdisk='diskutil list'
 alias cask='brew cask'
-alias ydl='youtube-dl --format "(bestvideo[height<=?1080]+bestaudio/best)" -o "~/Downloads/%(title)s [%(id)s].%(ext)s"'
 
 # Git shortcuts/aliases
 alias glol='git log --oneline --graph --max-count=7 --decorate' #  overwrites plugin's glol!
@@ -36,3 +35,9 @@ alias gstartb='git checkout master && git pull origin master && git checkout -b'
 alias kcontext='kubectl config set-context $(kubectl config current-context) --namespace'
 
 alias codeclimate='docker run --interactive --tty --rm --env CODECLIMATE_CODE="$PWD" --volume "$PWD":/code --volume /var/run/docker.sock:/var/run/docker.sock --volume /tmp/cc:/tmp/cc codeclimate/codeclimate'
+
+alias ydl='youtube-dl'
+
+alias ydl-chan='youtube-dl -o "/mnt/alpha/media/youtube/%(uploader)s [%(channel_id)s]/%(playlist_index)03d %(upload_date)s %(title)s [%(id)s].%(ext)s" --playlist-reverse --download-archive="/mnt/alpha/media/youtube/archive.log"'
+
+alias ydl-mov='youtube-dl -o "/mnt/alpha/media/youtube_movies/%(uploader)s [%(channel_id)s]/%(title)s [%(id)s].%(ext)s" --download-archive="/mnt/alpha/media/youtube_movies/archive.log"'
