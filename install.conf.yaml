@@ -28,6 +28,10 @@
       force: true
     ~/.config/git:
       force: true
+    ~/.config/youtube-dl/config:
+      path: youtube-dl.conf
+      create: true
+      force: true
 
     ~/Library/Preferences/com.pancake.therm.plist:
       path: therm.plist
