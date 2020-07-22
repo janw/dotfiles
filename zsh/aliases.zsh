@@ -38,6 +38,6 @@ alias codeclimate='docker run --interactive --tty --rm --env CODECLIMATE_CODE="$
 
 alias ydl='youtube-dl'
 
-alias ydl-chan='youtube-dl -o "/mnt/alpha/media/youtube/%(uploader)s [%(channel_id)s]/%(playlist_index)03d %(upload_date)s %(title)s [%(id)s].%(ext)s" --playlist-reverse --download-archive="/mnt/alpha/media/youtube/archive.log"'
+alias ydl-chan='youtube-dl -o "/mnt/alpha/media/youtube/%(uploader)s [%(channel_id)s]/%(playlist_index)03d %(upload_date)s %(title)s [%(id)s].%(ext)s" --playlist-reverse --download-archive="/mnt/alpha/media/youtube/archive.txt"'
 
-alias ydl-mov='youtube-dl -o "/mnt/alpha/media/youtube_movies/%(uploader)s [%(channel_id)s]/%(title)s [%(id)s].%(ext)s" --download-archive="/mnt/alpha/media/youtube_movies/archive.log"'
+alias ydl-mov='youtube-dl -o "/mnt/alpha/media/youtube_movies/%(uploader)s [%(channel_id)s]/%(title)s [%(id)s].%(ext)s" --download-archive="/mnt/alpha/media/youtube_movies/archive.txt"'
