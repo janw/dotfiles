@@ -1,4 +1,16 @@
 
+confirm_input () {
+    read -k 1 -r "input?Are you sure? [y/N] "
+    case $input in
+        [yY][eE][sS]|[yY])
+        return 0
+        ;;
+        *)
+        return 1
+        ;;
+    esac
+}
+
 os_version () {
     if hash lsb_release 2>/dev/null; then
         lsb_release -a | grep "Release:|Codename:" | awk '{print $2}'
@@ -72,3 +84,15 @@ gstart () {
 }
 alias __git-checkout_main=_git_checkout
 compdef _git gstart=git-checkout
+
+fixcask () {
+    local targetcask="$1"
+    local reinstall_args=("${@:2}")
+    [ -z "$targetcask" ] && return
+    brew cask info "$targetcask" || return
+
+    echo -e "\nThis will remove $targetcask from the Caskroom and reinstall it."
+    confirm_input || return
+    rm -rfv "$(brew --prefix)/Caskroom/$targetcask"
+    brew cask reinstall "$targetcask" $reinstall_args
+}
