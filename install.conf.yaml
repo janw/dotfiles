@@ -9,13 +9,17 @@
 
 - link:
     ~/.vim:
+      create: true
+      force: true
     ~/.vimrc:
+      force: true
     ~/.zshenv:
+      force: true
     ~/.zsh:
       create: true
     ~/.ipython:
       create: true
-    ~/.doingrc:
+      force: true
 
     # Additional tools
     ~/.config/htop/htoprc:
@@ -27,12 +31,18 @@
     ~/.config/flake8:
       force: true
     ~/.config/git:
+      create: true
       force: true
+
+    # Optionals
     ~/.config/youtube-dl/config:
       path: youtube-dl.conf
       create: true
       force: true
-
+      if: 'command -v youtube-dl'
+    ~/.doingrc:
+      force: true
+      if: '[ `uname` = Darwin ]'
     ~/Library/Preferences/com.pancake.therm.plist:
       path: therm.plist
       if: '[ `uname` = Darwin ] && [ ! -f "$HOME/Library/Preferences/com.pancake.therm.plist" ]'
