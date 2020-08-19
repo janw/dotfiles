@@ -22,10 +22,10 @@ sssh () { ssh -t "$@" screen -q -Rd }
 
 # Alias LSDeluxe over ls if present
 if command  -v lsd 1>/dev/null 2>&1; then
+    alias lsd="lsd --date '+%Y-%m-%d %T' "
     alias l='lsd -l'
-    alias ll='lsd -la'
-    alias la='lsd -a'
-    alias lla='lsd -la'
+    alias ll='lsd -lA'
+    alias la='lsd -A'
     alias lt='lsd --tree'
 fi
 
