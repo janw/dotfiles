@@ -29,6 +29,10 @@ if command  -v lsd 1>/dev/null 2>&1; then
     alias lt='lsd --tree'
 fi
 
+if command -v trash >/dev/null; then
+    alias trm='trash'
+fi
+
 ktoken-account () {
 cat <<'EOF' | kubectl apply -f -
 apiVersion: v1
