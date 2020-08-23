@@ -2,6 +2,7 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	branch = master
+	ignore = dirty
 [submodule "zsh/zgen"]
 	path = zsh/zgen
 	url = https://github.com/tarjoilija/zgen.git
