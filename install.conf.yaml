@@ -56,3 +56,8 @@
         Downloading vim package manager,
       ]
     - [mkdir -p ~/repos, Creating repository directory]
+
+    - description: Creating symlink into repo dir
+      command: >-
+        [[ "$PWD" = *"/repos/dotfiles" ]] ||
+        ln -s $PWD $HOME/repos/dotfiles
