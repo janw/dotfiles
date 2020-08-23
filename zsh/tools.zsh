@@ -45,6 +45,10 @@ if command -v trash >/dev/null; then
     alias trm='trash'
 fi
 
+if test -x "$HOME/repos/machine/machine"; then
+    alias machine="$HOME/repos/machine/machine"
+fi
+
 ktoken-account () {
 cat <<'EOF' | kubectl apply -f -
 apiVersion: v1
