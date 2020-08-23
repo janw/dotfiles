@@ -10,7 +10,9 @@ __pycache__
 .python-version
 .mypy_cache
 .env
-.venv
+.venv/
+venv/
 .vscode/
 *.egg-info/
 pyproject.tmp
+tmp/
