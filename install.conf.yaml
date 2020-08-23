@@ -45,17 +45,24 @@
       if: '[ `uname` = Darwin ]'
     ~/Library/Preferences/com.pancake.therm.plist:
       path: therm.plist
-      if: '[ `uname` = Darwin ] && [ ! -f "$HOME/Library/Preferences/com.pancake.therm.plist" ]'
+      if: >-
+        [ `uname` = Darwin ] &&
+        [ ! -f "$HOME/Library/Preferences/com.pancake.therm.plist" ]
 
     ~/.npmrc:
 
 - shell:
-    - [git submodule update --init --recursive, Installing submodules]
-    - [
-        "curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim",
-        Downloading vim package manager,
-      ]
-    - [mkdir -p ~/repos, Creating repository directory]
+    - description: Installing submodules
+      command: git submodule update --init --recursive
+
+    - description: Downloading vim package manager
+      command: >-
+        [[ -f "$HOME/.vim/autoload/plug.vim" ]] ||
+        curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+    - description: Creating repository directory
+      command: mkdir -p ~/repos
 
     - description: Creating symlink into repo dir
       command: >-
