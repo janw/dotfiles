@@ -49,6 +49,12 @@ if test -x "$HOME/repos/machine/machine"; then
     alias machine="$HOME/repos/machine/machine"
 fi
 
+if command -v go >/dev/null; then
+    export GOPATH="$HOME/go"
+    export GOBIN="$GOPATH/bin"
+    export PATH="$GOBIN:$PATH"
+fi
+
 ktoken-account () {
 cat <<'EOF' | kubectl apply -f -
 apiVersion: v1
