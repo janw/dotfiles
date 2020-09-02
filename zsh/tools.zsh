@@ -1,4 +1,3 @@
-
 confirm_input () {
     read -k 1 -r "input?Are you sure? [y/N] "
     case $input in
@@ -105,4 +104,46 @@ fixcask () {
     confirm_input || return
     rm -rfv "$(brew --prefix)/Caskroom/$targetcask"
     brew cask reinstall "$targetcask" $reinstall_args
+}
+
+retry () {
+    while ! zsh --pipefail -e -i -c "$@"
+    do
+        echo "Retrying"
+        sleep 2
+    done
+}
+
+pyenv_exec () {
+    local version=$1
+    PYENV_VERSION="$version" \
+    PYTHONWARNINGS=ignore:DEPRECATION::pip._internal.cli.base_command \
+    pyenv exec "${@:2}"
+}
+
+pyenv_update_venvs () {
+    if [ ! -e ".python-version" ]; then
+        echo "No .python-version file found"
+        return 1
+    fi
+
+    if ! command -v pyenv >/dev/null; then
+        echo "Pyenv not installed."
+        return 1
+    fi
+
+    pip_args=()
+    for rfile in requirements*.txt
+    do
+        echo "Using $rfile"
+        pip_args+=( '-r' )
+        pip_args+=( "$rfile" )
+    done
+
+    while IFS= read -r version; do
+        pyversion="$(pyenv_exec "$version" python -V 2>&1)"
+        echo "Updating $version ($pyversion)"
+        pyenv_exec "$version" pip install -qU pip
+        pyenv_exec "$version" pip install -q "${pip_args[@]}"
+    done < .python-version
 }
