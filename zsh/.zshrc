@@ -68,9 +68,9 @@ source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/tools.zsh
 
 # Source local environment variations from separate rc file
-[[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
-[[ -s "$ZDOTDIR/.zshrc.local" ]] && source "$ZDOTDIR/.zshrc.local"
-[[ -f "$ZDOTDIR/.p10k.zsh" ]] && source "$ZDOTDIR/.p10k.zsh"
+test -s "$HOME/.zshrc.local"* && source "$HOME/.zshrc.local"*
+test -s "$ZDOTDIR/.zshrc.local"* && source "$ZDOTDIR/.zshrc.local"*
+[[ -s "$ZDOTDIR/.p10k.zsh" ]] && source "$ZDOTDIR/.p10k.zsh"
 
 # Hint about screen
 if [[ -n $SESSION_TYPE_SSH ]]; then
