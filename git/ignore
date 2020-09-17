@@ -9,10 +9,15 @@ __pycache__
 .kube
 .python-version
 .mypy_cache
+.pytest_cache
 .env
 .venv/
 venv/
 .vscode/
+*.eggs
 *.egg-info/
 pyproject.tmp
+*.sqlite3
+node_modules
+dist/
 tmp/
