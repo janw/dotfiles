@@ -70,7 +70,7 @@ source $ZDOTDIR/tools.zsh
 # Source local environment variations from separate rc file
 test -s "$HOME/.zshrc.local"* && source "$HOME/.zshrc.local"*
 test -s "$ZDOTDIR/.zshrc.local"* && source "$ZDOTDIR/.zshrc.local"*
-[[ -s "$ZDOTDIR/.p10k.zsh" ]] && source "$ZDOTDIR/.p10k.zsh"
+[[ -f "$ZDOTDIR/.p10k.zsh" ]] && source "$ZDOTDIR/.p10k.zsh"
 
 # Hint about screen
 if [[ -n $SESSION_TYPE_SSH ]]; then
