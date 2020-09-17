@@ -1,0 +1,52 @@
+#!/bin/bash
+set -e
+# Include any branches for which you wish to disable this script
+if [ -z "$BRANCHES_TO_SKIP" ]; then
+  BRANCHES_TO_SKIP=(develop)
+fi
+
+SED='sed'
+if command -v gsed >/dev/null; then
+    SED='gsed'
+fi
+
+fg_green="$(tput setaf 2)"
+bold="$(tput bold)"
+reset="$(tput me)"
+self="$(basename "$0") hook"
+
+fancy_echo() {
+  local fmt="$1"; shift
+
+  # shellcheck disable=SC2059
+  printf "${fg_green}${self}: ${bold}$fmt${reset}\n" "$@"
+}
+
+# Get the current branch name
+BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+
+# Ticket name is retrieved as a string between the first slash and the second hyphen
+TICKET_NAME=$(echo "$BRANCH_NAME" | $SED -re 's/.*[-_]([A-Z]+-[[:digit:]]+)$/\1/')
+
+# If sed fails, the ticket name will be the entire branch name: exit
+if [ "$TICKET_NAME" = "$BRANCH_NAME" ]; then
+    fancy_echo "No ticket name found in branch"
+    exit 0;
+fi
+
+# If branch is excluded: exit
+BRANCH_EXCLUDED=$(printf "%s\n" "${BRANCHES_TO_SKIP[@]}" | \
+    grep -c "^$BRANCH_NAME$" || true)
+if [ "$BRANCH_EXCLUDED" -gt 0 ]; then
+    fancy_echo "Committing on excluded branch $BRANCH_NAME, skipping ticket name"
+    exit 0
+fi
+
+ALREADY_IN_MSG=$(head -n1 "$1" | grep -c "$TICKET_NAME" || true)
+# If it isn't excluded or already in commit message, prepend the ticket name to the given message
+if [ "$ALREADY_IN_MSG" -gt 0 ]; then
+    fancy_echo "Ticket name is already in commit message title"
+    exit 0
+fi
+
+$SED -i.bak -e "1s/$/ ($TICKET_NAME)/" "$1"
