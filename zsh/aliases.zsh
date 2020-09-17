@@ -21,6 +21,7 @@ alias cask='brew cask'
 
 # Git shortcuts/aliases
 alias glol='git log --oneline --max-count=15 --decorate' #  overwrites plugin's glol!
+alias gam='git commit --amend '  # overwrites plugin's gam (git am)
 alias gloll="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" #  re-instates plugin's glol!
 alias gbage="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:red)%(objectname:short)%(color:reset);%(color:yellow)%(refname:short)%(color:reset);(%(color:green)%(committerdate:relative)%(color:reset));%(authorname);%(contents:subject)' | column -t -s ';'"
 alias gbral="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:red)%(objectname:short)%(color:reset) ; %(align:36)%(authorname) (%(color:green)%(committerdate:relative)%(color:reset))%(end) ; %(color:yellow)%(align:64)%(refname:short)%(end)%(color:reset) ; %(contents:subject)' "
