@@ -65,3 +65,7 @@
       command: >-
         [[ "$PWD" = *"/repos/dotfiles" ]] ||
         ln -s $PWD $HOME/repos/dotfiles
+
+    - description: Creating dummy .local files
+      command: >-
+        touch "$PWD/git/config.local"

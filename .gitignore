@@ -17,3 +17,6 @@ alfred/Alfred.alfredpreferences/remote/pages/
 # Poetry/Python
 poetry/auth.toml
 ipython/profile_default/history.sqlite
+
+# All .local customizations
+*.local
