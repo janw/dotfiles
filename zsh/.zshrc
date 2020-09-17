@@ -68,8 +68,12 @@ source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/tools.zsh
 
 # Source local environment variations from separate rc file
-test -s "$HOME/.zshrc.local"* && source "$HOME/.zshrc.local"*
-test -s "$ZDOTDIR/.zshrc.local"* && source "$ZDOTDIR/.zshrc.local"*
+eval "$(find -L "$HOME" "$ZDOTDIR" \
+    -maxdepth 1 \
+    -name '.zshrc.local*' \
+    -exec echo . \'{}\'';' \;)"
+
+# shellcheck disable=SC1090
 [[ -f "$ZDOTDIR/.p10k.zsh" ]] && source "$ZDOTDIR/.p10k.zsh"
 
 # Hint about screen
