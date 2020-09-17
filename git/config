@@ -1,6 +1,6 @@
 [user]
-	name = Jan Willhaus
-	email = mail@janwillhaus.de
+    name = Jan Willhaus
+    email = mail@janwillhaus.de
 
 [core]
     editor = vim
@@ -10,8 +10,8 @@
     hooksPath = ~/.config/git/hooks
 
 [push]
-	default = current
-	followTags = true
+    default = current
+    followTags = true
 
 [diff "hilighter"]
     textconv = pygmentize -f terminal256 -O style=fruity
@@ -29,14 +29,14 @@
     textconv = fmt -w80
     prompt = false
 [pull]
-	rebase = true
+    rebase = true
 [rebase]
-	autoStash = true
+    autoStash = true
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 
 [include]
     path = config.local
