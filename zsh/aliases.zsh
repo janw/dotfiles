@@ -4,6 +4,7 @@
 alias zshconf="vim ~/.zshrc"
 alias zresrc="source ~/.zshrc"
 alias vimconf="vim ~/.vimrc"
+alias upgrade_dotfiles="bash $DOTFILES/tools/upgrade.sh"
 
 # User specific aliases and functions
 alias ll='ls -lah'
