@@ -12,7 +12,7 @@ fi
 
 fg_green="$(tput setaf 2)"
 bold="$(tput bold)"
-reset="$(tput me)"
+reset="$(tput sgr0)"
 self="$(basename "$0") hook"
 
 fancy_echo() {
