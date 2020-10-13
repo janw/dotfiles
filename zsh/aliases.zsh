@@ -33,6 +33,8 @@ alias gcom="git checkout master"
 alias gcmp="git checkout master && git pull"
 alias gfrm='git fetch && git rebase origin/master '
 alias gstartb='git checkout master && git pull origin master && git checkout -b'
+alias ggrep='git rev-list --all | xargs git grep'
+alias gampf='gam --no-edit && gpf'
 
 # Kubernetes shortcuts
 alias kcontext='kubectl config set-context $(kubectl config current-context) --namespace'
