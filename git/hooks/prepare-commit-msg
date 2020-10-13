@@ -26,7 +26,7 @@ fancy_echo() {
 BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
 
 # Ticket name is retrieved as a string between the first slash and the second hyphen
-TICKET_NAME=$(echo "$BRANCH_NAME" | $SED -re 's/.*[-_]([A-Z]+-[[:digit:]]+)$/\1/')
+TICKET_NAME=$(echo "$BRANCH_NAME" | $SED -re 's/.*[_-]([A-Z]+-[[:digit:]]+)$/\1/')
 
 # If sed fails, the ticket name will be the entire branch name: exit
 if [ "$TICKET_NAME" = "$BRANCH_NAME" ]; then

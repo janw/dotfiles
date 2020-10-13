@@ -7,7 +7,6 @@
     precomposeunicode = true
     pager = less -FX
     autocrlf = input
-    hooksPath = ~/.config/git/hooks
 
 [push]
     default = current
