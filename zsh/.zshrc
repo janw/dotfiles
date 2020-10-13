@@ -54,6 +54,7 @@ set show-all-if-ambiguous on
 set completion-ignore-case on
 export HISTSIZE=1000
 export SAVEHIST=1000
+export WORDCHARS=
 
 # Avoid homebrew from sending analytics
 export HOMEBREW_NO_ANALYTICS=1
