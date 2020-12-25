@@ -6,20 +6,6 @@ export TERM="xterm-256color"
 export EDITOR=vim
 export PROJECT_HOME=$HOME/repos
 
-# Work around OS-different versions of `hostname`
-local_hostname () {
-    echo $(hostname -A 2> /dev/null || hostname -F 2> /dev/null || hostname) | tail -n1
-}
-
-# Determine if session is remote or local
-local_session () {
-    if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-        echo "remote"
-    else
-        echo "local"
-    fi
-}
-
 # source $DOTFILES/antigen/antigen.zsh
 source "${ZDOTDIR}/zgen/zgen.zsh"
 

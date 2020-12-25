@@ -10,6 +10,20 @@ confirm_input () {
     esac
 }
 
+# Work around OS-different versions of `hostname`
+local_hostname () {
+    echo $(hostname -A 2> /dev/null || hostname -F 2> /dev/null || hostname) | tail -n1
+}
+
+# Determine if session is remote or local
+local_session () {
+    if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+        echo "remote"
+    else
+        echo "local"
+    fi
+}
+
 os_version () {
     if hash lsb_release 2>/dev/null; then
         lsb_release -a | grep "Release:|Codename:" | awk '{print $2}'
