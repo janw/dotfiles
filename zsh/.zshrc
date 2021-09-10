@@ -4,6 +4,7 @@ export TERM="xterm-256color"
 
 # Basic work environment
 export EDITOR=vim
+export PROJECT_HOME=$HOME/repos
 
 # Work around OS-different versions of `hostname`
 local_hostname () {
@@ -32,7 +33,6 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/docker
   zgen oh-my-zsh plugins/docker-compose
   zgen oh-my-zsh plugins/kubectl
-  zgen oh-my-zsh plugins/helm
   zgen oh-my-zsh plugins/httpie
 
   zgen load romkatv/powerlevel10k powerlevel10k
@@ -58,11 +58,6 @@ export WORDCHARS=
 
 # Avoid homebrew from sending analytics
 export HOMEBREW_NO_ANALYTICS=1
-
-# Working environment for python
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
-export PROJECT_HOME=$HOME/repos
 
 # Source a few more tools/settings
 source $ZDOTDIR/theming.zsh
