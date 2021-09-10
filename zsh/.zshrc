@@ -69,14 +69,14 @@ source $ZDOTDIR/theming.zsh
 source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/tools.zsh
 
+# shellcheck disable=SC1090
+[[ -f "$ZDOTDIR/.p10k.zsh" ]] && source "$ZDOTDIR/.p10k.zsh"
+
 # Source local environment variations from separate rc file
 eval "$(find -L "$HOME" "$ZDOTDIR" \
     -maxdepth 1 \
     -name '.zshrc.local*' \
     -exec echo . \'{}\'';' \;)"
-
-# shellcheck disable=SC1090
-[[ -f "$ZDOTDIR/.p10k.zsh" ]] && source "$ZDOTDIR/.p10k.zsh"
 
 # Hint about screen
 if [[ -n $SESSION_TYPE_SSH ]]; then
