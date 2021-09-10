@@ -1,0 +1,12 @@
+#!/bin/bash
+FILE=$1
+MESSAGE=$(cat "$FILE")
+TICKET=$(git rev-parse --abbrev-ref HEAD | grep -Eo '(\w+/)?(\w+[-_])?[0-9]+' | grep -Eo '(\w+[-])?[0-9]+$' | tr "[:lower:]" "[:upper:]")
+if [[ $TICKET == "" || $(head -n 1 "$MESSAGE") == "$TICKET"* ]]; then
+    exit 0
+fi
+
+{
+    echo "$TICKET "
+    echo "$MESSAGE"
+} >"$FILE"
