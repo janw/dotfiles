@@ -25,3 +25,8 @@ fi
 
 # Created by `userpath` on 2019-08-01 09:03:32
 export PATH="$PATH:/Users/jan/.local/bin"
+
+# Source local environment variations from separate profile
+if [ -e "$HOME/.zprofile.local" ]; then
+ . $HOME/.zprofile.local
+fi
