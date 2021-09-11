@@ -20,7 +20,7 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
 # many other tests omitted
 else
   case $(ps -o comm= -p $PPID) in
-    sshd|*/sshd) export SESSION_TYPE_SSH=1;;
+  sshd | */sshd) export SESSION_TYPE_SSH=1 ;;
   esac
 fi
 
@@ -29,5 +29,5 @@ export PATH="$PATH:/Users/jan/.local/bin"
 
 # Source local environment variations from separate profile
 if [ -e "$HOME/.zprofile.local" ]; then
- . $HOME/.zprofile.local
+  . $HOME/.zprofile.local
 fi

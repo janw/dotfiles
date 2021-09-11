@@ -30,7 +30,6 @@ if ! zgen saved; then
   zgen save
 fi
 
-
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -55,11 +54,11 @@ source $ZDOTDIR/tools.zsh
 
 # Source local environment variations from separate rc file
 eval "$(find -L "$HOME" "$ZDOTDIR" \
-    -maxdepth 1 \
-    -name '.zshrc.local*' \
-    -exec echo . \'{}\'';' \;)"
+  -maxdepth 1 \
+  -name '.zshrc.local*' \
+  -exec echo . \'{}\'';' \;)"
 
 # Hint about screen
 if [[ -n $SESSION_TYPE_SSH ]]; then
-    echo "Computering on a remote machine? Might wanna screen that."
+  echo "Computering on a remote machine? Might wanna screen that."
 fi
