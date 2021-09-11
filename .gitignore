@@ -1,4 +1,3 @@
-
 /zsh/.zcompdump*
 /zsh/.zsh_history
 /zsh/.zsh_sessions
@@ -21,3 +20,7 @@ ipython/profile_default/history.sqlite
 
 # All .local customizations
 *.local
+.cache/
+
+# Alfred prefs
+alfred/**/prefs.plist
