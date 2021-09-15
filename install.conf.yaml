@@ -61,9 +61,9 @@
         curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-    - description: Creating symlink into repo dir
+    - description: Creating symlink into repo dir if necessary
       command: >-
-        [[ "$PWD" = *"/repos/dotfiles" ]] ||
+        [[ "$PWD" = *"/repos/dotfiles" || -e "$HOME/repos/dotfiles" ]] ||
         ln -s $PWD $HOME/repos/dotfiles
 
     - description: Creating dummy .local files
