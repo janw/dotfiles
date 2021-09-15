@@ -24,7 +24,7 @@ resetAutoStash=$(git config --bool rebase.autoStash 2>&1)
 git config rebase.autoStash true
 
 
-printf "${BLUE}%s${RESET}\n" "Updating Dotfiles"
+printf "${BLUE}%s${RESET}\n" "Updating Dotfiles in $DOTFILES"
 if git pull --rebase --stat origin master
 then
   status=0
@@ -48,6 +48,13 @@ case "$resetAutoStash" in
   "") git config --unset rebase.autoStash ;;
   *) git config rebase.autoStash "$resetAutoStash" ;;
 esac
+
+if [ "$(git diff --diff-filter=U --name-only | wc -l)" -eq 0 ]; then
+  printf "${BLUE}%s${RESET}\n" "Running dotbot installer ..."
+  sh "$DOTFILES/install"
+else
+  printf "${RED}%s${RESET}\n" "Skipping dotbot installer due to unmerged changes"
+fi
 
 # Exit with `1` if the update failed
 exit $status
