@@ -19,6 +19,7 @@ alias zy='sudo zypper'
 alias undisk='diskutil unmountdisk'
 alias lsdisk='diskutil list'
 alias cask='brew cask'
+alias lsblkk='lsblk -ldo model,size,path,wwn,serial -I8 --sort model'
 
 # Git shortcuts/aliases
 git_janw_default_branch() {
