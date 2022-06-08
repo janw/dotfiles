@@ -7,3 +7,4 @@
 	path = zsh/zgen
 	url = https://github.com/jandamm/zgenom.git
 	branch = main
+	ignore = dirty

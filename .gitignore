@@ -3,6 +3,7 @@
 /zsh/.zsh_sessions
 /zsh/.zfunc/_*
 .zshrc.local
+*.zwc
 
 # Vim stuff
 /vim/.netrwhist
