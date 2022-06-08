@@ -5,5 +5,5 @@
 	ignore = dirty
 [submodule "zsh/zgen"]
 	path = zsh/zgen
-	url = https://github.com/tarjoilija/zgen.git
-	branch = master
+	url = https://github.com/jandamm/zgenom.git
+	branch = main

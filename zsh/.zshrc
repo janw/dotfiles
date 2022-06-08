@@ -7,25 +7,28 @@ export EDITOR=vim
 export PROJECT_HOME=$HOME/repos
 
 # source $DOTFILES/antigen/antigen.zsh
-source "${ZDOTDIR}/zgen/zgen.zsh"
+source "${ZDOTDIR}/zgen/zgenom.zsh"
 
 # if the init script doesn't exist
-if ! zgen saved; then
+if ! zgenom saved; then
 
   # specify plugins here
-  zgen oh-my-zsh
-  zgen oh-my-zsh plugins/git
-  zgen oh-my-zsh plugins/dotenv
-  zgen oh-my-zsh plugins/docker
-  zgen oh-my-zsh plugins/docker-compose
-  zgen oh-my-zsh plugins/kubectl
+  zgenom ohmyzsh
+  zgenom ohmyzsh plugins/git
+  zgenom ohmyzsh plugins/dotenv
+  zgenom ohmyzsh plugins/docker
+  zgenom ohmyzsh plugins/docker-compose
+  zgenom ohmyzsh plugins/kubectl
 
-  zgen load romkatv/powerlevel10k powerlevel10k
-  zgen load zsh-users/zsh-autosuggestions
-  zgen load zsh-users/zsh-history-substring-search
+  zgenom load romkatv/powerlevel10k powerlevel10k
+  zgenom load zsh-users/zsh-autosuggestions
+  zgenom load zsh-users/zsh-history-substring-search
 
   # generate the init script from plugins above
-  zgen save
+  zgenom save
+
+  zgenom compile "$HOME/.zshrc"
+  zgenom compile $ZDOTDIR
 fi
 
 # You may need to manually set your language environment
