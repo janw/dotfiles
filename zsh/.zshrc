@@ -45,6 +45,9 @@ export WORDCHARS=
 # Avoid homebrew from sending analytics
 export HOMEBREW_NO_ANALYTICS=1
 
+# Less annoying OMZ update reminder frequency
+zstyle ':omz:update' frequency 90
+
 # Source a few more tools/settings
 source $ZDOTDIR/theming.zsh
 source $ZDOTDIR/aliases.zsh
