@@ -61,8 +61,3 @@ eval "$(find -L "$HOME" "$ZDOTDIR" \
   -maxdepth 1 \
   -name '.zshrc.local*' \
   -exec echo . \'{}\'';' \;)"
-
-# Hint about screen
-if [[ -n $SESSION_TYPE_SSH ]]; then
-  echo "Computering on a remote machine? Might wanna screen that."
-fi
