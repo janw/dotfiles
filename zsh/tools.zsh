@@ -67,45 +67,6 @@ if command -v go >/dev/null; then
     export GOBIN="$GOPATH/bin"
     export PATH="$GOBIN:$PATH"
 fi
-
-ktoken-account () {
-cat <<'EOF' | kubectl apply -f -
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: admin-user
-  namespace: kube-system
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: admin-user
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: cluster-admin
-subjects:
-- kind: ServiceAccount
-  name: admin-user
-  namespace: kube-system
-EOF
-}
-
-ktoken () {
-    secret_name=$(kubectl -n kube-system get secret | grep '^admin-user-' | awk '{print $1}')
-    if [ -z "$secret_name" ]; then
-        echo "No admin-user account available. Run ktoken-account first."
-        return 1
-    fi
-    kubectl -n kube-system describe secret "$secret_name" | grep token: | awk '{printf $2}' | pbcopy
-    echo "Copied token to clipboard."
-}
-
-gstart () {
-    git checkout master && git pull origin master
-    git checkout $1 2>/dev/null || git checkout -b $1
-}
-alias __git-checkout_main=_git_checkout
 compdef _git gstart=git-checkout
 
 fixcask () {
@@ -128,36 +89,12 @@ retry () {
     done
 }
 
-pyenv_exec () {
-    local version=$1
-    PYENV_VERSION="$version" \
-    PYTHONWARNINGS=ignore:DEPRECATION::pip._internal.cli.base_command \
-    pyenv exec "${@:2}"
-}
 
-pyenv_update_venvs () {
-    if [ ! -e ".python-version" ]; then
-        echo "No .python-version file found"
-        return 1
+toggle-flake8-user-conf () {
+    if [ -f "$HOME/.config/flake8" ]; then
+        mv "$HOME/.config/flake8"{,.bak} && echo disabled
+    else
+        mv "$HOME/.config/flake8"{.bak,} && echo enabled
+
     fi
-
-    if ! command -v pyenv >/dev/null; then
-        echo "Pyenv not installed."
-        return 1
-    fi
-
-    pip_args=()
-    for rfile in requirements*.txt
-    do
-        echo "Using $rfile"
-        pip_args+=( '-r' )
-        pip_args+=( "$rfile" )
-    done
-
-    while IFS= read -r version; do
-        pyversion="$(pyenv_exec "$version" python -V 2>&1)"
-        echo "Updating $version ($pyversion)"
-        pyenv_exec "$version" pip install -qU pip
-        pyenv_exec "$version" pip install -q "${pip_args[@]}"
-    done < .python-version
 }
