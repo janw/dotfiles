@@ -10,7 +10,7 @@ __pycache__
 .python-version
 .mypy_cache
 .pytest_cache
-.env
+.env*
 .venv/
 venv/
 .vscode/
@@ -21,3 +21,8 @@ pyproject.tmp
 node_modules
 dist/
 tmp/
+report.html
+_janw/
+.pre-commit-config.yaml
+swagger.json
+.dmypy.json
