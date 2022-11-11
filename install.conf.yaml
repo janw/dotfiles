@@ -53,6 +53,10 @@
     - description: Installing submodules
       command: git submodule update --init --recursive
 
+    - description: Remove old zgen directory
+      command: >-
+        rm -rf "$PWD/zsh/zgen"
+
     - description: Downloading vim package manager
       command: >-
         [[ -f "$HOME/.vim/autoload/plug.vim" ]] ||
