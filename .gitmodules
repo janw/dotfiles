@@ -3,8 +3,8 @@ path = dotbot
 url = https://github.com/anishathalye/dotbot
 branch = master
 ignore = dirty
-[submodule "zsh/zsgenom"]
-path = zsh/zsgenom
+[submodule "zsh/zgenom"]
+path = zsh/zgenom
 url = https://github.com/jandamm/zgenom.git
 branch = main
 ignore = dirty
