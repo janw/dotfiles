@@ -1,10 +1,5 @@
 [submodule "dotbot"]
-	path = dotbot
-	url = https://github.com/anishathalye/dotbot
-	branch = master
-	ignore = dirty
-[submodule "zsh/zgen"]
-	path = zsh/zgen
-	url = https://github.com/jandamm/zgenom.git
-	branch = main
-	ignore = dirty
+path = dotbot
+url = https://github.com/anishathalye/dotbot
+branch = master
+ignore = dirty
