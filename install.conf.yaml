@@ -8,6 +8,9 @@
     - ~/repos
 
 - link:
+    ~/repos/dotfiles:
+      create: true
+      path: ''
     ~/.vim:
       create: true
       force: true
@@ -53,15 +56,5 @@
     - description: Installing submodules
       command: git submodule update --init --recursive
 
-    - description: Remove old zgen directory
-      command: >-
-        rm -rf "$PWD/zsh/zgen"
-
-    - description: Creating symlink into repo dir if necessary
-      command: >-
-        [[ "$PWD" = *"/repos/dotfiles" || -e "$HOME/repos/dotfiles" ]] ||
-        ln -s $PWD $HOME/repos/dotfiles
-
     - description: Creating dummy .local files
-      command: >-
-        touch "$PWD/git/config.local"
+      command: touch git/config.local
