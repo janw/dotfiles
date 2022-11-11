@@ -49,8 +49,6 @@
         [ `uname` = Darwin ] &&
         [ ! -f "$HOME/Library/Preferences/com.pancake.therm.plist" ]
 
-    ~/.npmrc:
-
 - shell:
     - description: Installing submodules
       command: git submodule update --init --recursive
