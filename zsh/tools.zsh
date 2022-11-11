@@ -98,3 +98,49 @@ toggle-flake8-user-conf () {
 
     fi
 }
+
+: ${ZSH_DOTENVLOCAL_FILE:=.env.local}
+
+source_envlocal() {
+  if [[ ! -f "$ZSH_DOTENVLOCAL_FILE" ]]; then
+    return
+  fi
+
+  # test .env syntax
+  zsh -fn $ZSH_DOTENVLOCAL_FILE || {
+    echo "dotenv: error when sourcing '$ZSH_DOTENVLOCAL_FILE' file" >&2
+    return 1
+  }
+
+  setopt localoptions allexport
+  source $ZSH_DOTENVLOCAL_FILE
+}
+
+autoload -U add-zsh-hook
+add-zsh-hook chpwd source_envlocal
+
+source_envlocal
+
+slugify() {
+    echo "$1" |
+        iconv -t ascii//TRANSLIT |
+        sed -E \
+            -e 's/[~\^]+//g' \
+            -e 's/[^a-zA-Z0-9]+/-/g' \
+            -e 's/^-+\|-+$//g' \
+            -e 's/-$//g' \
+            -e 's/^-//g' |
+        tr A-Z a-z
+}
+
+docker_image_name_from_git() {
+    local image_name
+    local image_tag
+    local full_name
+    image_name=$(slugify $(basename $(git rev-parse --show-toplevel)))
+    image_tag=$(slugify $(git rev-parse --abbrev-ref HEAD))
+
+    echo "${image_name}:${image_tag}"
+}
+
+alias gitimgname='docker_image_name_from_git'

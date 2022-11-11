@@ -1,4 +1,3 @@
-
 # For a full list of active aliases, run `alias`.
 #
 alias zshconf="vim ~/.zshrc"
@@ -29,8 +28,11 @@ git_janw_default_branch() {
     echo "$default_branch"
 }
 
-alias glol='git log --oneline --max-count=15 --decorate' #  overwrites plugin's glol!
-alias gam='git commit --amend '  # overwrites plugin's gam (git am)
+#  overwrites plugin's glol
+alias glol='git log --oneline --max-count=15 --decorate'
+# overwrites plugin's gam (git am)
+alias gam='git commit --amend '
+
 alias gloll="git log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit" #  re-instates plugin's glol!
 alias gbage="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:red)%(objectname:short)%(color:reset);%(color:yellow)%(refname:short)%(color:reset);(%(color:green)%(committerdate:relative)%(color:reset));%(authorname);%(contents:subject)' | column -t -s ';'"
 alias gbral="git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:red)%(objectname:short)%(color:reset) ; %(align:36)%(authorname) (%(color:green)%(committerdate:relative)%(color:reset))%(end) ; %(color:yellow)%(align:64)%(refname:short)%(end)%(color:reset) ; %(contents:subject)' "
@@ -45,6 +47,24 @@ alias gstartb='gcom && git pull origin $(git_janw_default_branch) && git checkou
 alias ggrep='git rev-list --all | xargs git grep'
 alias gampf='gam --no-edit && gpf'
 alias gmsg='git log --format=%B -n 1'
+alias ghead='git rev-parse HEAD'
+
+git_checkout_fetch_rebase_push() {
+    if [ -z "$1" ]; then
+        echo Please provide a branch name to check out
+        return 1
+    fi
+
+    git checkout "$1" || return 1
+    git fetch origin "$(git_janw_default_branch)" || return 1
+    git rebase "origin/$(git_janw_default_branch)" || return 1
+    git push --force-with-lease
+}
+
+alias gfrmc='git_checkout_fetch_rebase_push '
+
+alias gpurm='git pull --rebase origin $(git_janw_default_branch) '
+alias gppf='gpurm && gpf'
 
 # Kubernetes shortcuts
 alias kcontext='kubectl config set-context $(kubectl config current-context) --namespace'
@@ -61,3 +81,7 @@ alias doco='docker-compose'
 alias dockr='docker run --rm -it -v $PWD:/code'
 
 alias flush-dns='sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache'
+
+alias caff='caffeinate -di'
+alias date-utc='date -uI seconds'
+alias kubens='DEBUG= kubens '
