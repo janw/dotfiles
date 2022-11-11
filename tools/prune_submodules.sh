@@ -15,7 +15,7 @@ for submodule_cfg in $submodules_cfg; do
     if [ "$submodule_cfg_exists" == 0 ]; then
         echo "Removing stale submodule ${submodule_cfg}"
         mkdir -p archived-submodules
-        mv "$submodule_cfg" archived-submodules/
+        mv "$submodule_cfg" archived-submodules/ || true
         git config -f .git/config --remove-section "submodule.$submodule_cfg"
     fi
 done
