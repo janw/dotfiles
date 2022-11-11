@@ -15,18 +15,8 @@ fi
 
 cd "$DOTFILES"
 
-# Set git config values
-# Line endings
-git config core.eol lf
-git config core.autocrlf false
-# Autostash on rebase
-resetAutoStash=$(git config --bool rebase.autoStash 2>&1)
-git config rebase.autoStash true
-
-
 printf "${BLUE}%s${RESET}\n" "Updating Dotfiles in $DOTFILES"
-if git pull --rebase --stat origin master
-then
+if git pull --autostash --rebase --stat origin master; then
   status=0
 
   printf '%s    _                        %s __ %s  _       _    __ _ _               %s\n' "$BLUE" "$RED" "$BLUE" "$RESET"
@@ -42,12 +32,6 @@ else
   status=$?
   printf "\n${RED}%s${RESET}\n\n" 'There was an error updating. Try again later?'
 fi
-
-# Unset git-config values set just for the upgrade
-case "$resetAutoStash" in
-  "") git config --unset rebase.autoStash ;;
-  *) git config rebase.autoStash "$resetAutoStash" ;;
-esac
 
 if [ "$(git diff --diff-filter=U --name-only | wc -l)" -eq 0 ]; then
   printf "${BLUE}%s${RESET}\n" "Running dotbot installer ..."
