@@ -34,8 +34,10 @@ else
 fi
 
 if [ "$(git diff --diff-filter=U --name-only | wc -l)" -eq 0 ]; then
+  printf "${BLUE}%s${RESET}\n" "Checking submodules ..."
+  bash "$DOTFILES/tools/prune_submodules.sh"
   printf "${BLUE}%s${RESET}\n" "Running dotbot installer ..."
-  sh "$DOTFILES/install"
+  bash "$DOTFILES/install"
 else
   printf "${RED}%s${RESET}\n" "Skipping dotbot installer due to unmerged changes"
 fi
