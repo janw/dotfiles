@@ -85,3 +85,4 @@ alias flush-dns='sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelpe
 alias caff='caffeinate -di'
 alias date-utc='date -uI seconds'
 alias kubens='DEBUG= kubens '
+alias sops='EDITOR="code -w" sops '
