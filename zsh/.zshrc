@@ -6,6 +6,10 @@ export TERM="xterm-256color"
 export EDITOR=vim
 export PROJECT_HOME=$HOME/repos
 
+# Less annoying OMZ update reminder frequency
+zstyle ':omz:update' frequency 90
+export DISABLE_AUTO_UPDATE=true
+
 # source $DOTFILES/antigen/antigen.zsh
 source "${ZDOTDIR}/zgen/zgenom.zsh"
 
@@ -21,7 +25,6 @@ if ! zgenom saved; then
   zgenom ohmyzsh plugins/kubectl
 
   zgenom load romkatv/powerlevel10k powerlevel10k
-  zgenom load zsh-users/zsh-autosuggestions
   zgenom load zsh-users/zsh-history-substring-search
 
   # generate the init script from plugins above
@@ -44,9 +47,6 @@ export WORDCHARS=
 
 # Avoid homebrew from sending analytics
 export HOMEBREW_NO_ANALYTICS=1
-
-# Less annoying OMZ update reminder frequency
-zstyle ':omz:update' frequency 90
 
 # Source a few more tools/settings
 source $ZDOTDIR/theming.zsh
