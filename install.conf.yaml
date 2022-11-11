@@ -43,9 +43,6 @@
       create: true
       force: true
       if: 'command -v youtube-dl'
-    ~/.doingrc:
-      force: true
-      if: '[ `uname` = Darwin ]'
     ~/Library/Preferences/com.pancake.therm.plist:
       path: therm.plist
       if: >-
