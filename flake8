@@ -1,12 +1,9 @@
 [flake8]
-max_line_length = 88
-exclude =
+extend-exclude =
 	.git
 	__pycache__
 	venv
 	.venv
 	.eggs
-	tests
+	tmp
 show-source = true
-import-order-style = pep8
-
