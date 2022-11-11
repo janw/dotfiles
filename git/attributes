@@ -1,4 +1,3 @@
-*.txt   text
-*.tex   diff=wrap
-*.docx  diff=pandoc2md
-*.odt   diff=pandoc2md
+*.txt text
+*.docx diff=pandoc2md
+*.odt diff=pandoc2md
