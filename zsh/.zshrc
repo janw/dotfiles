@@ -1,17 +1,8 @@
-# Path to your oh-my-zsh installation.
-export DOTFILES=$HOME/.dotfiles
-export TERM="xterm-256color"
-
-# Basic work environment
-export EDITOR=vim
-export PROJECT_HOME=$HOME/repos
-
 # Less annoying OMZ update reminder frequency
 zstyle ':omz:update' frequency 90
 export DISABLE_AUTO_UPDATE=true
 
-# source $DOTFILES/antigen/antigen.zsh
-source "${ZDOTDIR}/zgen/zgenom.zsh"
+source "${ZDOTDIR}/zgenom/zgenom.zsh"
 
 # if the init script doesn't exist
 if ! zgenom saved; then

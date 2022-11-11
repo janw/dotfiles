@@ -21,3 +21,6 @@ export PATH="$PATH:/Users/jan/.local/bin"
 if [ -e "$HOME/.zprofile.local" ]; then
   . $HOME/.zprofile.local
 fi
+
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=/opt/homebrew/sbin:$PATH
