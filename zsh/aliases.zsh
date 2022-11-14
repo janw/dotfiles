@@ -77,7 +77,7 @@ alias ydl-chan='youtube-dl -o "/mnt/alpha/media/youtube/%(uploader)s [%(channel_
 
 alias ydl-mov='youtube-dl -o "/mnt/alpha/media/youtube_movies/%(uploader)s [%(channel_id)s]/%(title)s [%(id)s].%(ext)s" --download-archive="/mnt/alpha/media/youtube_movies/archive.txt"'
 
-alias doco='docker-compose'
+alias doco='docker compose'
 alias dockr='docker run --rm -it -v $PWD:/code'
 
 alias flush-dns='sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache'
