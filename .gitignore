@@ -25,3 +25,6 @@ ipython/profile_default/history.sqlite
 
 # Alfred prefs
 alfred/**/prefs.plist
+
+# Fish
+/fish/fish_variables

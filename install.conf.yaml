@@ -36,6 +36,9 @@
     ~/.config/git:
       create: true
       force: true
+    ~/.config/fish:
+      create: true
+      force: true
 
     # Optionals
     ~/.config/youtube-dl/config:
