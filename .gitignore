@@ -28,3 +28,4 @@ alfred/**/prefs.plist
 
 # Fish
 /fish/fish_variables
+/fish/fisher/
