@@ -10,3 +10,6 @@ set -gx PROJECT_HOME $HOME/repos
 
 set -gx PATH /opt/homebrew/bin $PATH
 set -gx PATH /opt/homebrew/sbin $PATH
+
+set -g FISH_DOTENV_ALLOWLIST "$__fish_config_dir/cache/.dotenv-allowed.list"
+set -g FISH_DOTENV_BLOCKLIST "$__fish_config_dir/cache/.dotenv-blocked.list"
