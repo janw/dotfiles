@@ -1,12 +1,20 @@
+# Inspired by https://github.com/jorgebucaran/pyenv (archived)
+
 status --is-interactive || exit
 command -v pyenv 1>/dev/null || exit
+set -l pyenv_root ""
 
-while set pyenv_index (contains -i -- "$HOME/.pyenv/shims" $PATH)
-    set -eg PATH[$pyenv_index]
+if test -z "$PYENV_ROOT"
+    set pyenv_root ~/.pyenv
+    set -x PYENV_ROOT "$pyenv_root"
+else
+    set pyenv_root "$PYENV_ROOT"
 end
-set -e pyenv_index
-set -gx PATH "$HOME/.pyenv/shims" $PATH
-set -gx PYENV_SHELL fish
+
+if status --is-login
+    set -x PATH "$pyenv_root/shims" $PATH
+    set -x PYENV_SHELL fish
+end
 
 function pyenv
     set command $argv[1]
