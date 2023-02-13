@@ -30,3 +30,4 @@ alfred/**/prefs.plist
 /fish/fish_variables
 /fish/fisher/
 /fish/cache/
+/fish/conf.d/local.fish
