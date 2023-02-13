@@ -5,3 +5,5 @@ set fish_function_path $fish_function_path[1] $fisher_path/functions $fish_funct
 for file in $fisher_path/conf.d/*.fish
     source $file
 end
+
+set -gx tide_git_truncation_length 120
