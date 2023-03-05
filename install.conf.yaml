@@ -20,6 +20,8 @@
       force: true
     ~/.zsh:
       create: true
+    ~/.bin:
+      create: true
     ~/.ipython:
       create: true
       force: true
