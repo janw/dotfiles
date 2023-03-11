@@ -10,12 +10,12 @@ alias cask='brew cask'
 alias lsblkk='lsblk -ldo model,size,path,wwn,serial -I8 --sort model'
 
 alias doco='docker compose'
-alias dockr='docker run --rm -it -v $PWD:/code'
+alias dockr='docker run --rm -it -w /code -v $PWD:/code'
 
 alias flush-dns='sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache'
 
 alias caff='caffeinate -di'
 alias date-utc='date -uIseconds'
-alias kubens='DEBUG= kubens '
-alias sops='EDITOR="code -w" sops '
+alias kubens='DEBUG= command kubens '
+alias sops='EDITOR="code -w" command sops '
 alias machine="$PROJECT_HOME/machine/machine"
