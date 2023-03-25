@@ -41,6 +41,9 @@
     ~/.config/fish:
       create: true
       force: true
+    ~/.config/starship.toml:
+      create: true
+      force: true
 
     # Optionals
     ~/.config/youtube-dl/config:

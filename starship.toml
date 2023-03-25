@@ -1,0 +1,85 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+format = """
+$username\
+$hostname\
+$localip\
+$directory\
+$vcsh\
+$fossil_branch\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$lua\
+$nim\
+$nodejs\
+$opa\
+$perl\
+$php\
+$ruby\
+$rust\
+$terraform\
+$vagrant\
+$env_var\
+$custom\
+$sudo\
+$fill \
+$jobs\
+$python\
+$kubernetes\
+$cmd_duration\
+$time\
+$line_break\
+$status\
+$os\
+$container\
+$shell\
+$character\
+"""
+
+[directory]
+truncate_to_repo = false
+style = 'fg:39'
+before_repo_root_style = 'dimmed fg:39'
+repo_root_style = 'bold fg:39'
+
+[git_branch]
+symbol = ''
+truncation_length = 42
+
+[git_status]
+format = '([$conflicted$deleted$renamed$modified$staged$ahead_behind]($style) )'
+
+[kubernetes]
+format = '([$symbol$context/$namespace]($style) )'
+style = 'fg:bright-blue'
+disabled = false
+
+[jobs]
+symbol = ''
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+symbol = '󰌠 '
+style = '   fg:bright-green'
+
+[time]
+format = '@ [$time]($style)'
+style = 'dimmed'
+disabled = false
+
+[cmd_duration]
+format = '[$duration]($style) '
+min_time = 5_000
+style = 'dimmed'
