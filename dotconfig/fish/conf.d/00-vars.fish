@@ -12,3 +12,5 @@ set -gx PATH $HOME/.bin $PATH
 
 set -g FISH_DOTENV_ALLOWLIST "$__fish_config_dir/cache/.dotenv-allowed.list"
 set -g FISH_DOTENV_BLOCKLIST "$__fish_config_dir/cache/.dotenv-blocked.list"
+
+set -gx LESSHISTFILE /dev/null
