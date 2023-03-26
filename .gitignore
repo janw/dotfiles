@@ -27,7 +27,7 @@ ipython/profile_default/history.sqlite
 alfred/**/prefs.plist
 
 # Fish
-/fish/fish_variables
-/fish/fisher/
-/fish/cache/
-/fish/conf.d/local.fish
+dotconfig/fish/fish_variables
+dotconfig/fish/fisher/
+dotconfig/fish/cache/
+dotconfig/fish/conf.d/local.fish

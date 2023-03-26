@@ -1,65 +1,34 @@
 - defaults:
     link:
+      create: true
+      force: true
       relink: true
 
-- clean: ["~"]
+- clean:
+    ~/:
+    ~/.config:
+      recursive: true
 
 - create:
     - ~/repos
 
 - link:
     ~/repos/dotfiles:
-      create: true
       path: ''
     ~/.vim:
-      create: true
-      force: true
     ~/.vimrc:
-      force: true
     ~/.zshenv:
-      force: true
     ~/.zsh:
-      create: true
     ~/.bin:
-      create: true
     ~/.ipython:
-      create: true
-      force: true
 
-    # Additional tools
-    ~/.config/htop/htoprc:
-      create: true
-      force: true
-    ~/.config/screen/screenrc:
-      create: true
-      force: true
-    ~/.config/flake8:
-      force: true
-    ~/.config/git:
-      create: true
-      force: true
-    ~/.config/fish:
-      create: true
-      force: true
-    ~/.config/starship.toml:
-      create: true
-      force: true
-
-    # Optionals
-    ~/.config/youtube-dl/config:
-      path: youtube-dl.conf
-      create: true
-      force: true
-      if: 'command -v youtube-dl'
-    ~/Library/Preferences/com.pancake.therm.plist:
-      path: therm.plist
-      if: >-
-        [ `uname` = Darwin ] &&
-        [ ! -f "$HOME/Library/Preferences/com.pancake.therm.plist" ]
+    ~/.config/:
+      glob: true
+      path: dotconfig/*
 
 - shell:
     - description: Installing submodules
       command: git submodule update --init --recursive
 
-    - description: Creating dummy .local files
-      command: touch git/config.local
+    - description: Creating dummy git local config
+      command: touch dotconfig/git/config.local
