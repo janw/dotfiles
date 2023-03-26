@@ -24,10 +24,10 @@ $env_var\
 $custom\
 $sudo\
 $fill \
+$cmd_duration\
 $jobs\
 $python\
 $kubernetes\
-$cmd_duration\
 $time\
 $line_break\
 $status\
@@ -51,14 +51,23 @@ before_repo_root_style = 'dimmed fg:39'
 repo_root_style = 'bold fg:39'
 
 [git_branch]
-symbol = ''
+format ='[$branch(:$remote_branch)]($style)'
+style = 'fg:225'
 truncation_length = 42
 
 [git_status]
-format = '([$conflicted$deleted$renamed$modified$staged$ahead_behind]($style) )'
+format = '([$stashed$conflicted$modified$ahead_behind]($style) )'
+style = 'fg:225'
+conflicted = ' =${count}'
+ahead = ' ⇡${count}'
+diverged = ' ⇡${ahead_count} ⇣${behind_count}'
+behind = ' ⇣${count}'
+stashed = ' *${count}'
+modified = ' ~${count}'
 
 [kubernetes]
 format = '([$symbol$context/$namespace]($style) )'
+symbol = '⎈ '
 style = 'fg:bright-blue'
 disabled = false
 
@@ -67,11 +76,11 @@ symbol = ''
 
 [python]
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-symbol = '󰌠 '
+symbol = ' '
 style = '   fg:bright-green'
 
 [time]
-format = '@ [$time]($style)'
+format = '[$time]($style)'
 style = 'dimmed'
 disabled = false
 
