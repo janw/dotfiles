@@ -7,26 +7,15 @@ add_newline = true
 format = """
 $username\
 $hostname\
-$localip\
 $directory\
-$vcsh\
-$fossil_branch\
 $git_branch\
 $git_commit\
 $git_state\
 $git_metrics\
 $git_status\
 $golang\
-$guix_shell\
-$haskell\
-$haxe\
 $helm\
-$lua\
-$nim\
 $nodejs\
-$opa\
-$perl\
-$php\
 $ruby\
 $rust\
 $terraform\
@@ -48,6 +37,13 @@ $shell\
 $character\
 """
 
+[username]
+format = '[$user]($style)'
+style_user = 'fg:183'
+
+[hostname]
+format = '[@$hostname]($style) '
+style = 'fg:183'
 [directory]
 truncate_to_repo = false
 style = 'fg:39'
