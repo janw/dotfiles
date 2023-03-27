@@ -19,3 +19,5 @@ alias date-utc='date -uIseconds'
 alias kubens='DEBUG= command kubens '
 alias sops='EDITOR="code -w" command sops '
 alias machine="$PROJECT_HOME/machine/machine"
+
+alias r="cd $PROJECT_HOME"
