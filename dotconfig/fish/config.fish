@@ -7,3 +7,8 @@ if status is-interactive
         starship init fish | source
     end
 end
+
+set localdir (dirname (status --current-filename))
+for file in $localdir/local.d/*.fish
+    source $file
+end
