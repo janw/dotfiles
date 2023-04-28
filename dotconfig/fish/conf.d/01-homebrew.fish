@@ -1,6 +1,6 @@
 set -l platform (uname -s)
 set -l arch (uname -p)
-set -l HOMEBREW_HOME /usr/local
+set -gx HOMEBREW_HOME /usr/local
 
 
 if [ "$platform" = Linux ]
