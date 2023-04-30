@@ -6,6 +6,9 @@ if status is-interactive
     if command -v starship >/dev/null
         starship init fish | source
     end
+    if command -v direnv >/dev/null
+        direnv hook fish | source
+    end
 end
 
 set localdir (dirname (status --current-filename))

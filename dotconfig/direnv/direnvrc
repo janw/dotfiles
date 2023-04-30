@@ -1,0 +1,7 @@
+#!/bin/bash
+
+use_venv() {
+    local venv="$PWD/$1"
+    load_prefix "$venv"
+    export VIRTUAL_ENV="$venv"
+}
