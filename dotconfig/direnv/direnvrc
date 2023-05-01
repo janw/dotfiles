@@ -5,3 +5,22 @@ use_venv() {
     load_prefix "$venv"
     export VIRTUAL_ENV="$venv"
 }
+
+layout_poetry() {
+    PYPROJECT_FILE="${PYPROJECT_FILE:-pyproject.toml}"
+    if [ ! -f "$PYPROJECT_FILE" ]; then
+        log_error "No $PYPROJECT_FILE file found. Use \`poetry init\` to create it first."
+        exit 2
+    fi
+
+    VIRTUAL_ENV=$(poetry env info -p 2>/dev/null || true)
+
+    if [[ -z $VIRTUAL_ENV || ! -d $VIRTUAL_ENV ]]; then
+        poetry install --no-root
+        VIRTUAL_ENV=$(poetry env info -p)
+    fi
+
+    PATH_add "$VIRTUAL_ENV/bin"
+    export POETRY_ACTIVE=1
+    export VIRTUAL_ENV
+}

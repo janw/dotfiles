@@ -78,7 +78,7 @@ disabled = false
 symbol = ''
 
 [python]
-format = '[${symbol}($virtualenv )]($style)'
+format = '([${symbol}$virtualenv]($style) )'
 symbol = ' '
 style = '   fg:bright-green'
 
