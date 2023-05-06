@@ -1,9 +1,9 @@
 # Check if main exists and use instead of master
 function git_main_branch
     command git rev-parse --git-dir &>/dev/null || return
-    for ref in refs/{heads,remotes/{origin,upstream}}/{main,trunk}
+    for ref in refs/{heads,remotes/{origin,upstream}}/{main,master,trunk}
         if command git show-ref -q --verify $ref
-            echo $ref
+            echo $ref | string replace -r '^.*/' ''
             return
         end
     end
