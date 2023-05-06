@@ -17,6 +17,14 @@ function git_janw_default_branch
     echo "$default_branch"
 end
 
+# Rename local main branch after abolishing master upstream
+function git_abolish_master
+    git branch -m master main
+    git fetch origin
+    git branch -u origin/main main
+    git remote set-head origin -a
+end
+
 #
 # Aliases
 # (sorted mostly alphabetically)
