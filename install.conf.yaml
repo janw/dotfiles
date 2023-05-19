@@ -35,6 +35,6 @@
 
     - description: Install starship prompt if necessary
       stderr: true
-      command: |
-        command -v starship > /dev/null
-          or curl -sS https://starship.rs/install.sh | FORCE=1 sh
+      command: >
+        sh -c 'command -v starship > /dev/null
+        || curl -sS https://starship.rs/install.sh | FORCE=1 sh'
