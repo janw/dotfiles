@@ -6,6 +6,41 @@ use_venv() {
     export VIRTUAL_ENV="$venv"
 }
 
+use_vscode_venv() {
+    if [ -z "${VIRTUAL_ENV:-}" ]; then
+        echo VIRTUAL_ENV not set
+        return 1
+    fi
+
+    local interpreter="${VIRTUAL_ENV}/bin/python"
+    case "$interpreter" in
+        "$PWD"*)
+        interpreter="\${workspaceFolder}${interpreter#"$PWD"}"
+        ;;
+        "$HOME"*)
+        interpreter="\${userHome}${interpreter#"$HOME"}"
+        ;;
+    esac
+
+    local interpreter_setting='python.defaultInterpreterPath'
+    local settings_dir="${PWD}/.vscode"
+    local settings_file="${settings_dir}/settings.json"
+    local jq_call=(jq --indent 4 ".\"$interpreter_setting\"=\"${interpreter}\"")
+
+    if [ ! -f "$settings_file" ]; then
+        mkdir -p "$settings_dir"
+        echo '{}' > "$settings_file"
+    fi
+
+    local current_interpreter
+    current_interpreter="$(jq -r ".\"$interpreter_setting\"" "$settings_file")"
+
+    if [ "$current_interpreter" != "$interpreter" ]; then
+        echo "direnv: setting vscode $interpreter_setting=$interpreter"
+        "${jq_call[@]}" "$settings_file" | sponge "$settings_file"
+    fi
+}
+
 layout_poetry() {
     PYPROJECT_FILE="${PYPROJECT_FILE:-pyproject.toml}"
     if [ ! -f "$PYPROJECT_FILE" ]; then
