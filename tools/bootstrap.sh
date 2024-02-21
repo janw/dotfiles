@@ -57,6 +57,7 @@ if [ "$(uname)" = "Darwin" ]; then
     brew install asdf
   fi
   asdf plugin-add python
+  asdf plugin-add poetry
   asdf plugin-add nodejs
   asdf plugin-add direnv
   asdf install
