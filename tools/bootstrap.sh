@@ -61,6 +61,8 @@ if [ "$(uname)" = "Darwin" ]; then
   asdf plugin-add direnv
   asdf install
 
+  asdf global direnv system
+  asdf global python latest
 fi
 
 section "✔️ Done"
