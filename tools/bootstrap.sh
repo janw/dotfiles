@@ -1,11 +1,11 @@
-#!/usr/bin/env bash
-set -o pipefail
+#!/usr/bin/env sh
+set -e
 
 echo_color() {
-  local color="$1"
+  color="$1"
   shift
   tput setaf "$color"
-  echo -e "$1"
+  printf '%s\n' "$1"
   tput sgr0
 }
 
