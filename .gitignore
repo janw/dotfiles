@@ -31,3 +31,4 @@ dotconfig/fish/fish_variables
 dotconfig/fish/fisher/
 dotconfig/fish/cache/
 dotconfig/fish/conf.d/local.fish
+dotconfig/fish/local.d/
