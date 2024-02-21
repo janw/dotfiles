@@ -18,6 +18,7 @@ test -e $HOMEBREW_HOME/bin/brew || exit 0
 
 set -gx PATH "$HOMEBREW_HOME/bin" $PATH
 set -gx HOMEBREW_NO_ANALYTICS 1
+set -gx HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK 1
 
 if [ $HOMEBREW_HOME != /usr/local ] && [ -e /usr/local/bin/brew ]
     alias oldbrew=/usr/local/bin/brew
