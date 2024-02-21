@@ -42,11 +42,13 @@ export HOMEBREW_NO_ANALYTICS=1
 source $ZDOTDIR/theming.zsh
 source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/tools.zsh
+source /Users/jan/.docker/init-zsh.sh || true
+
+eval "$(starship init zsh)"
+eval "$(direnv hook zsh)"
 
 # Source local environment variations from separate rc file
 eval "$(find -L "$HOME" "$ZDOTDIR" \
   -maxdepth 1 \
   -name '.zshrc.local*' \
   -exec echo . \'{}\'';' \;)"
-
-eval "$(starship init zsh)"

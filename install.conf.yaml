@@ -30,11 +30,7 @@
     - description: Installing submodules
       command: git submodule update --init --recursive
 
-    - description: Creating dummy git local config
-      command: touch dotconfig/git/config.local
-
-    - description: Install starship prompt if necessary
+    - description: Bootstrapping ...
+      command: bash tools/bootstrap.sh
+      stdout: true
       stderr: true
-      command: >
-        sh -c 'command -v starship > /dev/null
-        || curl -sS https://starship.rs/install.sh | FORCE=1 sh'

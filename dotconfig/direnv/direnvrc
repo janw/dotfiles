@@ -6,6 +6,10 @@ use_venv() {
     export VIRTUAL_ENV="$venv"
 }
 
+use_asdf() {
+    source_env "$(asdf direnv envrc "$@")"
+}
+
 use_vscode_venv() {
     if [ -z "${VIRTUAL_ENV:-}" ]; then
         echo VIRTUAL_ENV not set
@@ -14,10 +18,10 @@ use_vscode_venv() {
 
     local interpreter="${VIRTUAL_ENV}/bin/python"
     case "$interpreter" in
-        "$PWD"*)
+    "$PWD"*)
         interpreter="\${workspaceFolder}${interpreter#"$PWD"}"
         ;;
-        "$HOME"*)
+    "$HOME"*)
         interpreter="\${userHome}${interpreter#"$HOME"}"
         ;;
     esac
@@ -29,7 +33,7 @@ use_vscode_venv() {
 
     if [ ! -f "$settings_file" ]; then
         mkdir -p "$settings_dir"
-        echo '{}' > "$settings_file"
+        echo '{}' >"$settings_file"
     fi
 
     local current_interpreter
