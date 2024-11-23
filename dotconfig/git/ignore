@@ -8,6 +8,7 @@ __pycache__
 *.pyc
 .kube
 .python-version
+.tool-versions
 .mypy_cache
 .pytest_cache
 .env*
