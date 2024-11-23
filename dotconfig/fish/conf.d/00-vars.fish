@@ -9,5 +9,6 @@ set -gx EDITOR vim
 set -gx PROJECT_HOME $HOME/repos
 
 set -gx PATH $HOME/.bin $PATH
+set -gx PATH $HOME/bin $PATH
 
 set -gx LESSHISTFILE /dev/null
