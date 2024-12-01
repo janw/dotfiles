@@ -16,7 +16,7 @@ fi
 cd "$DOTFILES"
 
 printf "${BLUE}%s${RESET}\n" "Updating Dotfiles in $DOTFILES"
-if git pull --autostash --stat origin master; then
+if git pull --autostash --stat origin main; then
   status=0
 
   printf '%s    _                        %s __ %s  _       _    __ _ _               %s\n' "$BLUE" "$RED" "$BLUE" "$RESET"
