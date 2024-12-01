@@ -1,4 +1,5 @@
 ignored:
   - DL3013  # Pinned versions on pip install
   - DL3008  # Pinned versions on apt-get install
+  - DL3018  # Pinned versions on apk add
   - SC1091  # Not following source calls
