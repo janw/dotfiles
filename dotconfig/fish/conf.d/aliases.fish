@@ -16,7 +16,7 @@ alias flush-dns 'sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelpe
 alias caff 'caffeinate -di'
 alias date-utc 'date -uIseconds'
 alias kubens 'DEBUG= command kubens '
-alias sops 'EDITOR "code -w" command sops '
+alias sops 'EDITOR="code -w" command sops '
 alias machine "$PROJECT_HOME/machine/machine"
 
 alias r "cd $PROJECT_HOME"
