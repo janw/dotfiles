@@ -1,7 +1,11 @@
 #!/bin/bash
 
 use_venv() {
-    local venv="$PWD/$1"
+    local venv="$PWD/${1:-venv}"
+    if [ ! -d "$venv" ]; then
+        echo "$venv does not exist"
+        return 1
+    fi
     load_prefix "$venv"
     export VIRTUAL_ENV="$venv"
 }
