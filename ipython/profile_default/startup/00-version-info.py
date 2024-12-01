@@ -11,3 +11,5 @@ print(
         version_info[2],
     )
 )
+print("Prefix      :", sys.prefix)
+print("Base Prefix :", sys.base_prefix)
