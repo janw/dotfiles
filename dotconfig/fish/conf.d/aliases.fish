@@ -9,7 +9,7 @@ alias sha1 'shasum -a1'
 alias lsblkk 'lsblk -ldo model,size,path,wwn,serial -I8 --sort model'
 
 alias doco 'docker compose'
-alias dockr 'docker run --rm -it -w /code -v $PWD:/code'
+alias dockerrr 'docker run --rm -it -w "$PWD" -v "$PWD:$PWD"'
 
 alias flush-dns 'sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache'
 
