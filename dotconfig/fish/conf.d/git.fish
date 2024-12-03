@@ -17,6 +17,10 @@ function git_janw_default_branch
     echo "$default_branch"
 end
 
+function git_current_branch
+    git rev-parse --abbrev-ref HEAD
+end
+
 # Rename local main branch after abolishing master upstream
 function git_abolish_master
     git branch -m master main
@@ -101,11 +105,11 @@ alias gga='git gui citool --amend'
 
 
 alias ggpur='ggu'
-alias ggpull='git pull origin "$(git_current_branch)"'
-alias ggpush='git push origin "$(git_current_branch)"'
+alias ggpull='git pull origin "(git_current_branch)"'
+alias ggpush='git push origin "(git_current_branch)"'
 
-alias ggsup='git branch --set-upstream-to=origin/$(git_current_branch)'
-alias gpsup='git push --set-upstream origin $(git_current_branch)'
+alias ggsup='git branch --set-upstream-to=origin/(git_current_branch)'
+alias gpsup='git push --set-upstream origin (git_current_branch)'
 
 alias ghh='git help'
 
@@ -123,7 +127,7 @@ alias glgga='git log --graph --decorate --all'
 alias glgm='git log --graph --max-count=10'
 alias glo='git log --oneline --decorate'
 alias glols="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --stat"
-alias glod="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'"
+alias glod="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'"
 alias glods="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short"
 alias glola="git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --all"
 alias glog='git log --oneline --decorate --graph'
