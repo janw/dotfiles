@@ -21,6 +21,7 @@
     ~/.zsh:
     ~/.bin:
     ~/.ipython:
+    ~/.tmux.conf:
 
     ~/.config/:
       glob: true

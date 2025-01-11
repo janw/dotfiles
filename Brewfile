@@ -11,6 +11,7 @@ tap "janw/tap"
 brew "fish"
 brew "zsh"
 brew "bash"
+brew "starship"
 
 # Databases + tools
 cask "postgres-unofficial"
