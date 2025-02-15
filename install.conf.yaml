@@ -11,7 +11,7 @@
 
 - create:
     - ~/repos:
-      mode: 0755
+        mode: 0755
 
 - link:
     ~/repos/dotfiles:
