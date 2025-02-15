@@ -1,3 +1,5 @@
+command -v brew > /dev/null || exit 0
+
 set -l platform (uname -s)
 set -l arch (uname -p)
 set -gx HOMEBREW_HOME /usr/local

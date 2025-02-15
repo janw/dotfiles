@@ -8,7 +8,11 @@ set -gx TERM xterm-256color
 set -gx EDITOR vim
 set -gx PROJECT_HOME $HOME/repos
 
-set -gx PATH $HOME/.bin $PATH
-set -gx PATH $HOME/bin $PATH
+if test -e $HOME/.bin
+    set -gx PATH $HOME/.bin $PATH
+end
+if test -e $HOME/bin
+    set -gx PATH $HOME/bin $PATH
+end
 
 set -gx LESSHISTFILE /dev/null

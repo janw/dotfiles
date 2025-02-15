@@ -10,7 +10,8 @@
       recursive: true
 
 - create:
-    - ~/repos
+    - ~/repos:
+      mode: 0755
 
 - link:
     ~/repos/dotfiles:

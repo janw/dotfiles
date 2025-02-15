@@ -1,3 +1,5 @@
+command -v kubectl > /dev/null || exit 0
+
 ## https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectl
 # This command is used a LOT both below and in daily life
 alias k=kubectl

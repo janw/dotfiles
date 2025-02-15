@@ -1,3 +1,3 @@
-if command -v pipx >/dev/null
-    set -gx PATH $PATH $HOME/.local/bin
-end
+command -v pipx > /dev/null || exit 0
+
+set -gx PATH $PATH $HOME/.local/bin
