@@ -50,7 +50,7 @@ if [ "$(uname)" = "Darwin" ]; then
   fi
 
   section "Installing tools from Brewfile"
-  brew bundle --no-lock install Brewfile
+  brew bundle
 
   section "Installing asdf-managed languages"
   if command_is_missing asdf; then
