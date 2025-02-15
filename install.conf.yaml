@@ -29,9 +29,6 @@
       path: dotconfig/*
 
 - shell:
-    - description: Installing submodules
-      command: git submodule update --init --recursive
-
     - description: Bootstrapping ...
       command: bash tools/bootstrap.sh
       stdout: true

@@ -9,7 +9,7 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
-git submodule update --init --recursive "${DOTBOT_DIR}"
+git submodule update --init --recursive
 
 for pyver in 3.13 3.12 3.11 3.10 3.9 3.8 3.7 3; do
     if command -v python${pyver} >/dev/null; then
