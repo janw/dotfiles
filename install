@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 set -e
 
 CONFIG="install.conf.yaml"
@@ -12,4 +11,20 @@ cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+for pyver in 3.13 3.12 3.11 3.10 3.9 3.8 3.7 3; do
+    if command -v python${pyver} >/dev/null; then
+        PYTHON_BIN="python${pyver}"
+        echo "Using ${PYTHON_BIN}"
+        break
+    fi
+done
+
+if [ -z "${PYTHON_BIN}" ]; then
+    echo "No supported python version found"
+    exit 1
+fi
+
+exec "$PYTHON_BIN" "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" \
+    -d "${BASEDIR}" \
+    -c "${CONFIG}" \
+    "${@}"
